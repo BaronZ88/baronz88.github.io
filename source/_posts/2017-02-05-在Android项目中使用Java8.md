@@ -25,6 +25,8 @@ tags:
 * [接口默认方法\(Default Methods\)](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html) 
 * [重复注解\(Repeating Annotations\)](https://docs.oracle.com/javase/tutorial/java/annotations/repeating.html)
 
+<!-- more -->
+
 简单的说就是现在你的项目要想使用Stream API、接口默认方法和重复注解就要求你的minSdkVersion>=24，而Lambda表达式和方法引用则对minSdkVersion无要求。关于这些新特的使用及分析可以看看我之前的文章。
 
 ## Jack(Java Android Compiler Kit)

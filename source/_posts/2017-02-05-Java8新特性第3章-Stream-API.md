@@ -21,6 +21,8 @@ for (Shape shape : shapes){
 shapes.foreach(s -> s.setColor(RED));
 ```
 
+<!-- more -->
+
 __第一种__写法我们叫外部迭代，for-each调用`shapes`的`iterator()`依次遍历集合中的元素。这种外部迭代有一些问题：
 
 * for循环是串行的，而且必须按照集合中元素的顺序依次进行；
@@ -33,7 +35,9 @@ __第二种__写法我们叫内部迭代，两段代码虽然看起来只是语�
 
 
 ## 一、什么是Stream
+
 Stream不是集合元素，它也不是数据结构、不能保存数据，它更像一个更高级的`Interator`。Stream提供了强大的数据集合操作功能，并被深入整合到现有的集合类和其它的JDK类型中。流的操作可以被组合成流水线（Pipeline）。拿前面的例子来说，如果我只想把蓝色改成红色：
+
 
 ```java
 shapes.stream()
@@ -45,6 +49,7 @@ shapes.stream()
 
 如果我们想把蓝色的形状提取到新的List里，则可以：
 
+
 ```java
 List<Shape> blue = shapes.stream()
 						  .filter(s -> s.getColor() == BLUE)
@@ -55,25 +60,31 @@ List<Shape> blue = shapes.stream()
 
 如果每个形状都被保存在`Box`里，然后我们想知道哪个盒子至少包含一个蓝色形状，我们可以这么写：
 
+
 ```java
 Set<Box> hasBlueShape = shapes.stream()
-                               .filter(s -> s.getColor() == BLUE)
-                              .map(s -> s.getContainingBox())
-                              .collect(Collectors.toSet());
+        .filter(s -> s.getColor() == BLUE)
+        .map(s -> s.getContainingBox())
+        .collect(Collectors.toSet());
 ```
                                   
-`map()`操作通过映射函数（这里的映射函数接收一个形状，然后返回包含它的盒子）对输入流里面的元素进行依次转换，然后产生新流。
+`map()`操作符通过映射函数（这里的映射函数接收一个形状，然后返回包含它的盒子）对输入流里面的元素进行依次转换，然后产生新流。
 
 如果我们需要得到蓝色物体的总重量，我们可以这样表达：
 
+
 ```java
 int sum = shapes.stream()
-                .filter(s -> s.getColor() == BLUE)
-                .mapToInt(s -> s.getWeight())
-                .sum();
+        .filter(s -> s.getColor() == BLUE)
+        .mapToInt(s -> s.getWeight())
+        .sum();
+
 ```            
 
+
+
 ## 二、Stream vs Collection
+
 流（Stream）和集合（Collection）的区别：
 
 * Collection主要用来对元素进行管理和访问；
@@ -82,39 +93,35 @@ int sum = shapes.stream()
 * 对Stream的操作会产生一个结果，但是Stream并不会改变数据源；
 * 大多数Stream的操作(filter,map,sort等)都是以惰性的方式实现的。这使得我们可以使用一次遍历完成整个流水线操作,并可以用短路操作提供更高效的实现。
 
+
+
 ## 三、惰性求值 vs 急性求值
+
 `filter()`和`map()`这样的操作既可以被急性求值（以`filter()`为例，急性求值需要在方法返回前完成对所有元素的过滤），也可以被惰性求值（用`Stream`代表过滤结果，当且仅当需要时才进行过滤操作）在实际中进行惰性运算可以带来很多好处。比如说，如果我们进行惰性过滤，我们就可以把过滤和流水线里的其它操作混合在一起，从而不需要对数据进行多遍遍历。相类似的，如果我们在一个大型集合里搜索第一个满足某个条件的元素，我们可以在找到后直接停止，而不是继续处理整个集合。（这一点对无限数据源是很重要，惰性求值对于有限数据源起到的是优化作用，但对无限数据源起到的是决定作用，没有惰性求值，对无限数据源的操作将无法终止）
 
-对于`filter()`和`map()`这样的操作，我们很自然的会把它当成是惰性求值操作，不过它们是否真的是惰性取决于它们的具体实现。另外，像`sum()`这样生成值的操作和`forEach()`这样产生副作用的操作都是__天然急性求值__，因为它们必须要产生具体的结果。
+对于`filter()`和`map()`这样的操作符，我们很自然的会把它当成是惰性求值操作，不过它们是否真的是惰性取决于它们的具体实现。另外，像`sum()`这样生成值的操作和`forEach()`这样产生副作用的操作都是__天然急性求值__，因为它们必须要产生具体的结果。
 
 我们拿下面这段代码举例：
 
+
 ```java
 int sum = shapes.stream()
-                .filter(s -> s.getColor() == BLUE)
-                .mapToInt(s -> s.getWeight())
-                .sum();
+        .filter(s -> s.getColor() == BLUE)
+        .mapToInt(s -> s.getWeight())
+        .sum();
 ```                
                     
 这里的`filter()`和`map()`都是惰性的，这就意味着在调用`sum()`之前不会从数据源中提取任何元素。在`sum()`操作之后才会把`filter()`、`map()`和`sum()`放在对数据源一次遍历中。这样可以大大减少维持中间结果所带来的开销。
 
-<!--####6.流水线(Pipeline)的并行操作
-流水线可以是串行的也可以是并行的，串行和并行是流的属性。默认情况下数据源返回的都是串行流，但是我们可以通过`parallel()`将串行流转换为并行流,就像下面这样：
-
-	int sum = shapes.parallelStream()
-                .filter(s -> s.getColor = BLUE)
-                .mapToInt(s -> s.getWeight())
-                .sum();
-那么，串行流和并行流有什么区别呢？
-
-流的数据源可能是一个可变集合，如果当我们在遍历流时数据源被改变了，那么就会产生干扰。所以在进行流操作的时候，数据源应该保持不变。如果在单线程模型下，我们只需要保证lambda表达式不修改流的数据源就OK了；但如果是多线程环境，lambda在执行时可能会同时运行在多个线程上-->
 
 ## 四、举个栗子🌰
+
 前面长篇大论的介绍概念实在太枯燥，为了方便大家理解我们用Streams API来实现一个具体的业务场景。
 
 假设我们有一个房源库项目，这个房源库中有一系列的小区，每个小区都有小区名和房源列表，每套房子又有价格、面积等属性。现在我们需要筛选出含有100平米以上房源的小区，并按照小区名排序。
 
 我们先来看看不用Streams API如何实现：
+
 
 ```java
 List<Community> result = new ArrayList<>();
@@ -134,8 +141,11 @@ for (Community community : communities) {
     });
     return result;      
 ```
-       
+
+
 如果使用Streams API:
+
+
 
 ```java
 return communities.stream()

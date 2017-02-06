@@ -23,6 +23,8 @@ tags:
 
 进入App首页后，首先我们需要从数据库中获取当前城市的天气数据，如果数据库中存在天气数据则在UI页面上展示天气数据；如果数据库中未存储当前城市的天气数据，或者已存储的天气数据的发布时间相比现在已经超过了一小时，并且网络属于连接状态则调用API从服务端获取天气数据。如果获取到到的天气数据发布时间和当前数据库中的天气数据发布时间一致则丢弃掉从服务端获取到的天气数据，如果不一致则更新数据库并且在页面上展示最新的天气信息。（同时天气数据源是可配置的，可选择是小米天气数据源还是Know天气数据源）
 
+<!-- more -->
+
 ## 解决方案
 
 首先我们需要创建一个从数据库获取天气数据的Observable `observableForGetWeatherFromDB`，同时我们也需要创建一个从API获取天气数据的Observable `observableForGetWeatherFromNetWork`；为了在无网络状态下免于创建`observableForGetWeatherFromNetWork`我们在这之前需要首先判断下网络状态。最后使用`contact`操作符将两个Observable合并，同时使用`distinct`和`takeUntil`操作符来过滤筛选数据以符合业务需求，然后结合`subscribeOn`和`observeOn`做线程切换。上述这一套复杂的业务逻辑如果使用传统编码方式将是极其复杂的。下面我们来看看使用RxJava如何清晰简洁的来实现这个复杂的业务：
