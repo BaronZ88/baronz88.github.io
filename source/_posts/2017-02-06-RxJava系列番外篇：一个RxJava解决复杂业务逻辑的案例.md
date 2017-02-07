@@ -2,20 +2,20 @@
 title: RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例
 date: 2017-02-06 00:30:27
 categories: rxjava
-tags: 
+tags:
 - RxJava
 - Android
 ---
 
 之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：
 
-* [RxJava系列1(简介)](https://baronz88.github.io/bolg/rxjava/RxJava系列1-简介/)
-* [RxJava系列2(基本概念及使用介绍)](https://baronz88.github.io/bolg/rxjava/RxJava系列2-基本概念及使用介绍/)
-* [RxJava系列3(转换操作符)](https://baronz88.github.io/bolg/rxjava/RxJava系列3-转换操作符/)
-* [RxJava系列4(过滤操作符)](https://baronz88.github.io/bolg/rxjava/RxJava系列4-过滤操作符/)
-* [RxJava系列5(组合操作符)](https://baronz88.github.io/bolg/rxjava/RxJava系列5-组合操作符/)
-* [RxJava系列6(从微观角度解读RxJava源码)](https://baronz88.github.io/bolg/rxjava/RxJava系列6-从微观角度解读RxJava源码/)   
-* [RxJava系列7(最佳实践)](https://baronz88.github.io/bolg/rxjava/RxJava系列7-最佳实践/) 
+* [RxJava系列1(简介)](http://baronzhang.com/bolg/rxjava/RxJava系列1-简介/)
+* [RxJava系列2(基本概念及使用介绍)](http://baronzhang.com/bolg/rxjava/RxJava系列2-基本概念及使用介绍/)
+* [RxJava系列3(转换操作符)](http://baronzhang.com/bolg/rxjava/RxJava系列3-转换操作符/)
+* [RxJava系列4(过滤操作符)](http://baronzhang.com/bolg/rxjava/RxJava系列4-过滤操作符/)
+* [RxJava系列5(组合操作符)](http://baronzhang.com/bolg/rxjava/RxJava系列5-组合操作符/)
+* [RxJava系列6(从微观角度解读RxJava源码)](http://baronzhang.com/bolg/rxjava/RxJava系列6-从微观角度解读RxJava源码/)   
+* [RxJava系列7(最佳实践)](http://baronzhang.com/bolg/rxjava/RxJava系列7-最佳实践/)
 
 ## 业务场景
 
@@ -198,7 +198,7 @@ observableForGetWeatherData.subscribeOn(Schedulers.io())
 欢迎大家留言讨论。
 
 > 本文中的代码在[MinimalistWeather](https://github.com/BaronZ88/MinimalistWeather)中的`WeatherDataRepository`类中有同样的实现，文章中为了更完整的将整个实现过程呈现出来，对代码做了部分改动。
-> 
+>
 > 如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。
 >   
 > * 知乎专栏：[https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)  

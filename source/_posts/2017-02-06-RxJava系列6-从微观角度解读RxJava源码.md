@@ -2,18 +2,18 @@
 title: RxJava系列6(从微观角度解读RxJava源码)
 date: 2017-02-06 00:21:05
 categories: rxjava
-tags: 
+tags:
 - RxJava
 - Android
 ---
 
-* [RxJava系列1(简介)](https://baronz88.github.io/bolg/rxjava/RxJava系列1-简介/)
-* [RxJava系列2(基本概念及使用介绍)](https://baronz88.github.io/bolg/rxjava/RxJava系列2-基本概念及使用介绍/)
-* [RxJava系列3(转换操作符)](https://baronz88.github.io/bolg/rxjava/RxJava系列3-转换操作符/)
-* [RxJava系列4(过滤操作符)](https://baronz88.github.io/bolg/rxjava/RxJava系列4-过滤操作符/)
-* [RxJava系列5(组合操作符)](https://baronz88.github.io/bolg/rxjava/RxJava系列5-组合操作符/)
-* [RxJava系列6(从微观角度解读RxJava源码)](https://baronz88.github.io/bolg/rxjava/RxJava系列6-从微观角度解读RxJava源码/)   
-* [RxJava系列7(最佳实践)](https://baronz88.github.io/bolg/rxjava/RxJava系列7-最佳实践/) 
+* [RxJava系列1(简介)](http://baronzhang.com/bolg/rxjava/RxJava系列1-简介/)
+* [RxJava系列2(基本概念及使用介绍)](http://baronzhang.com/bolg/rxjava/RxJava系列2-基本概念及使用介绍/)
+* [RxJava系列3(转换操作符)](http://baronzhang.com/bolg/rxjava/RxJava系列3-转换操作符/)
+* [RxJava系列4(过滤操作符)](http://baronzhang.com/bolg/rxjava/RxJava系列4-过滤操作符/)
+* [RxJava系列5(组合操作符)](http://baronzhang.com/bolg/rxjava/RxJava系列5-组合操作符/)
+* [RxJava系列6(从微观角度解读RxJava源码)](http://baronzhang.com/bolg/rxjava/RxJava系列6-从微观角度解读RxJava源码/)   
+* [RxJava系列7(最佳实践)](http://baronzhang.com/bolg/rxjava/RxJava系列7-最佳实践/)
 
 ***
 
@@ -103,9 +103,9 @@ public static <T> Observable.OnSubscribe<T> onCreate(Observable.OnSubscribe<T> o
 
 ```java
 public abstract class Subscriber<T> implements Observer<T>, Subscription {
-    
+
     private final SubscriptionList subscriptions;//订阅事件集，所有发送给当前Subscriber的事件都会保存在这里
-    
+
     ...
 
     protected Subscriber(Subscriber<?> subscriber, boolean shareSubscriptions) {
@@ -127,7 +127,7 @@ public abstract class Subscriber<T> implements Observer<T>, Subscription {
 
     public void onStart() {
     }
-    
+
     ...
 }
 ```
@@ -156,7 +156,7 @@ static <T> Subscription subscribe(Subscriber<? super T> subscriber, Observable<T
 	...
 
     subscriber.onStart();
-    
+
     if (!(subscriber instanceof SafeSubscriber)) {
         subscriber = new SafeSubscriber<T>(subscriber);
     }
@@ -244,7 +244,7 @@ Subscriber<String> subscriberOne = new Subscriber<String>() {
     }
 };
 
-Observable<String> observableB = 
+Observable<String> observableB =
         observableA.map(new Func1<Integer, String>() {
                 @Override
                 public String call(Integer integer) {
@@ -270,32 +270,32 @@ public final <R> Observable<R> map(Func1<? super T, ? extends R> func) {
 public final class OnSubscribeMap<T, R> implements OnSubscribe<R> {
 
     final Observable<T> source;//ObservableA
-    
+
     final Func1<? super T, ? extends R> transformer;//map操作符中的转换函数Func1。T为转换前的数据类型，在上面的例子中为Integer；R为转换后的数据类型，在该例中为String。
 
     public OnSubscribeMap(Observable<T> source, Func1<? super T, ? extends R> transformer) {
         this.source = source;
         this.transformer = transformer;
     }
-    
+
     @Override
     public void call(final Subscriber<? super R> o) {//结合第一小节的分析结果，我们知道这里的入参o其实就是我们自己new的观察者subscriberOne。
         MapSubscriber<T, R> parent = new MapSubscriber<T, R>(o, transformer);
         o.add(parent);
         source.unsafeSubscribe(parent);
     }
-    
+
     static final class MapSubscriber<T, R> extends Subscriber<T> {
-        
+
         final Subscriber<? super R> actual;//这里的actual就是我们在调用subscribe()时创建的观察者mSubscriber
         final Func1<? super T, ? extends R> mapper;//变换函数
         boolean done;
-        
+
         public MapSubscriber(Subscriber<? super R> actual, Func1<? super T, ? extends R> mapper) {
             this.actual = actual;
             this.mapper = mapper;
         }
-        
+
         @Override
         public void onNext(T t) {
             R result;
@@ -309,19 +309,19 @@ public final class OnSubscribeMap<T, R> implements OnSubscribe<R> {
             }
             actual.onNext(result);
         }
-        
+
         @Override
         public void onError(Throwable e) {
             ...
             actual.onError(e);
         }
-        
+
         @Override
         public void onCompleted() {
             ...
             actual.onCompleted();
         }
-        
+
         @Override
         public void setProducer(Producer p) {
             actual.setProducer(p);
@@ -432,18 +432,18 @@ public final class OperatorSubscribeOn<T> implements OnSubscribe<T> {
     public void call(final Subscriber<? super T> subscriber) {
         final Worker inner = scheduler.createWorker();
         subscriber.add(inner);
-        
+
         inner.schedule(new Action0() {
             @Override
             public void call() {
                 final Thread t = Thread.currentThread();
-                
+
                 Subscriber<T> s = new Subscriber<T>(subscriber) {
                     @Override
                     public void onNext(T t) {
                         subscriber.onNext(t);
                     }
-                    
+
                     @Override
                     public void onError(Throwable e) {
                         try {
@@ -452,7 +452,7 @@ public final class OperatorSubscribeOn<T> implements OnSubscribe<T> {
                             inner.unsubscribe();
                         }
                     }
-                    
+
                     @Override
                     public void onCompleted() {
                         try {
@@ -461,7 +461,7 @@ public final class OperatorSubscribeOn<T> implements OnSubscribe<T> {
                             inner.unsubscribe();
                         }
                     }
-                    
+
                     @Override
                     public void setProducer(final Producer p) {
                         subscriber.setProducer(new Producer() {
@@ -612,7 +612,7 @@ public final <R> Observable<R> lift(final Operator<? extends R, ? super T> opera
 
 ```java
 public final class OnSubscribeLift<T, R> implements OnSubscribe<R> {
-    
+
     final OnSubscribe<T> parent;
 
     final Operator<? extends R, ? super T> operator;
@@ -693,23 +693,23 @@ static final class ObserveOnSubscriber<T> extends Subscriber<T> implements Actio
         final Queue<Object> q = this.queue;
         final Subscriber<? super T> localChild = this.child;
         final NotificationLite<T> localOn = this.on;
-        
+
         for (;;) {
             long requestAmount = requested.get();
-            
+
             while (requestAmount != currentEmission) {
                 boolean done = finished;
                 Object v = q.poll();
                 boolean empty = v == null;
-                
+
                 if (checkTerminated(done, empty, localChild, q)) {
                     return;
                 }
-                
+
                 if (empty) {
                     break;
                 }
-                
+
                 localChild.onNext(localOn.getValue(v));
 
                 currentEmission++;
@@ -719,7 +719,7 @@ static final class ObserveOnSubscriber<T> extends Subscriber<T> implements Actio
                     currentEmission = 0L;
                 }
             }
-            
+
             if (requestAmount == currentEmission) {
                 if (checkTerminated(finished, q.isEmpty(), localChild, q)) {
                     return;
@@ -733,7 +733,7 @@ static final class ObserveOnSubscriber<T> extends Subscriber<T> implements Actio
             }
         }
     }
-    
+
     ...
 }
 ```
