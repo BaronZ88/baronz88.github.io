@@ -1,7 +1,7 @@
 ---
 title: RxJava系列6(从微观角度解读RxJava源码)
 date: 2017-02-06 00:21:05
-categories: rxjava
+categories: RxJava
 tags:
 - RxJava
 - Android

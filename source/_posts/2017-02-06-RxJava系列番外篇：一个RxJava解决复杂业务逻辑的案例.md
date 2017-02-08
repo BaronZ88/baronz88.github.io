@@ -1,7 +1,7 @@
 ---
 title: RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例
 date: 2017-02-06 00:30:27
-categories: rxjava
+categories: RxJava
 tags:
 - RxJava
 - Android

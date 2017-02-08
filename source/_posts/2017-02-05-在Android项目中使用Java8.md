@@ -1,7 +1,7 @@
 ---
 title: 在Android项目中使用Java8
 date: 2017-02-05 23:37:48
-categories: java
+categories: Java
 tags:
 - Java
 - Android
