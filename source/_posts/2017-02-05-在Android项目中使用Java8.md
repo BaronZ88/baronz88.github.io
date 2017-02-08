@@ -2,8 +2,8 @@
 title: 在Android项目中使用Java8
 date: 2017-02-05 23:37:48
 categories: java
-tags: 
-- Java 
+tags:
+- Java
 - Android
 ---
 
@@ -19,13 +19,13 @@ tags:
 
 遗憾的是目前Android平台仅支持Java8的部分新特性，当我们在开发面向Android N及以上版本的应用时(即minSdkVersion>=24)，可以使用如下新特性：
 
+<!-- more -->
+
 * [Lambda表达式\(Lambda Expressions\)](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)（也可以在minSdkVersion<24的情况下使用）
 * [方法引用\(Method References\)](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)（也可以在minSdkVersion<24的情况下使用）
 * [Stream API\(Streams\)](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html)
-* [接口默认方法\(Default Methods\)](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html) 
+* [接口默认方法\(Default Methods\)](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)
 * [重复注解\(Repeating Annotations\)](https://docs.oracle.com/javase/tutorial/java/annotations/repeating.html)
-
-<!-- more -->
 
 简单的说就是现在你的项目要想使用Stream API、接口默认方法和重复注解就要求你的minSdkVersion>=24，而Lambda表达式和方法引用则对minSdkVersion无要求。关于这些新特的使用及分析可以看看我之前的文章。
 
@@ -39,7 +39,7 @@ tags:
   <font color="ff0000"> `javac (.java --> .class) --> dx (.class --> .dex)` </font>
 * 新版 Jack 工具链：  
   <font color="ff0000"> `Jack (.java --> .jack --> .dex)` </font>
-	
+
 ## 配置
 
 为了在项目中使用Java8，我们还需要项目module中的gradle.build文件中加入如下代码：
@@ -49,20 +49,20 @@ android {
 
   compileSdkVersion 24
   buildToolsVersion "24.0.3"
-    
+
   defaultConfig {
-    
+
     applicationId "me.baron.hellojava8"
     minSdkVersion 24
     targetSdkVersion 24
     versionCode 1
     versionName "1.0"
-        
+
     jackOptions {
       enabled true
     }
   }
-  
+
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8

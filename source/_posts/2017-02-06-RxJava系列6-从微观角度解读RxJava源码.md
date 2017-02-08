@@ -30,6 +30,8 @@ tags:
 
 在[RxJava系列2(基本概念及使用介绍)](http://www.jianshu.com/p/ba61c047c230)中我们介绍过，一个最基本的RxJava调用是这样的：
 
+<!-- more -->
+
 **示例A**
 
 ```java
@@ -54,8 +56,6 @@ Observable.create(new Observable.OnSubscribe<String>() {
 });
 ```
 
-<!-- more -->
-
 首先调用`Observable.create()`创建一个被观察者`Observable`，同时创建一个`OnSubscribe`作为`create()`方法的入参；接着创建一个观察者`Subscriber`，然后通过`subseribe()`实现二者的订阅关系。这里涉及到三个关键对象和一个核心的方法：
 
 * **Observable**（被观察者）
@@ -64,7 +64,7 @@ Observable.create(new Observable.OnSubscribe<String>() {
 * **subscribe()** （实现观察者与被观察者订阅关系的方法）
 
 
-### 1、Observable.create()源码分析
+### 1. Observable.create()源码分析
 
 首先我们来看看`Observable.create()`的实现:
 
@@ -97,7 +97,7 @@ public static <T> Observable.OnSubscribe<T> onCreate(Observable.OnSubscribe<T> o
 
 至此我们做下逻辑梳理：**`Observable.create()`方法构造了一个被观察者`Observable`对象，同时将new出来的`OnSubscribe`赋值给了该`Observable`的成员变量`onSubscribe`。**
 
-### 2、Subscriber源码分析
+### 2. Subscriber源码分析
 
 接着我们看下观察者`Subscriber`的源码，为了增加可读性，我去掉了源码中的注释和部分代码。
 
@@ -141,7 +141,7 @@ public interface Subscription {
 
 `Subscriber`实现了`Subscription`接口，从而对外提供`isUnsubscribed()`和`unsubscribe()`方法。前者用于判断是否已经取消订阅；后者用于将订阅事件列表(*也就是当前观察者的成员变量`subscriptions`*)中的所有`Subscription`取消订阅，并且不再接受观察者`Observable`发送的后续事件。
 
-### 3、subscribe()源码分析
+### 3. subscribe()源码分析
 前面我们分析了观察者和被观察者相关的源码，那么接下来便是整个订阅流程中最最关键的环节了。
 
 ```java
@@ -406,7 +406,7 @@ Observable.create(new Observable.OnSubscribe<String>() {
 });
 ```
 
-### 1、subscribeOn()源码分析
+### 1. subscribeOn()源码分析
 
 ```java
 public final Observable<T> subscribeOn(Scheduler scheduler) {
@@ -593,7 +593,7 @@ public ScheduledAction scheduleActual(final Action0 action, long delayTime, Time
 ```
 `scheduleActual()`中的`ScheduledAction`实现了`Runnable`接口，通过线程池`executor`最终实现了线程切换。上面便是`subscribeOn(Schedulers.io())`实现线程切换的全部过程。
 
-### 2、observeOn()源码分析
+### 2. observeOn()源码分析
 
 `observeOn()`切换线程是通过`lift`来实现的，相比`subscribeOn()`在实现原理上相对复杂些。不过本质上最终还是创建了一个新的`Observable`。
 

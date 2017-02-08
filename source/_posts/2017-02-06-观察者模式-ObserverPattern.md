@@ -10,14 +10,14 @@ tags:
 ## 场景
 我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。
 
+<!-- more -->
+
 ## 概况
 这套系统中主要包括三个部分：气象站（获取天气数据的物理设备）、WeatherData（追踪来自气象站的数据，并更新公告牌）、公告牌（用于展示天气数据）
 
 ![WeatherStation](http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/WeatherStation.png)
 
 WeatherData知道如何跟气象站联系，以获得天气数据。当天气数据有更新时，WeatherData会更新两个公告牌用于展示新的天气数据。
-
-<!-- more -->
 
 ## 错误示范
 
@@ -28,14 +28,14 @@ public class WeatherData {
 
     //实例变量声明
     ...
-    
+
     public void measurementsChanged() {
-    
+
         float temperature = getTemperature();
         float humidity = getHumidity();
         float pressure = getPressure();
         List<Float> forecastTemperatures = getForecastTemperatures();
-        
+
         //更新公告牌
         currentConditionsDisplay.update(temperature, humidity, pressure);
         forecastDisplay.update(forecastTemperatures);
@@ -77,7 +77,7 @@ public interface Subject {
     /**
      * 通知观察者
      */
-    void notifyObservers(); 
+    void notifyObservers();
 }
 ```
 
@@ -101,7 +101,7 @@ public interface DisplayElement {
     void display();
 }
 ```
-	
+
 __下面我们再来看看WeatherData是如何实现的__
 
 ```java
@@ -139,7 +139,7 @@ public class WeatherData implements Subject {
         notifyObservers();
     }
 
-    public void setMeasurements(float temperature, float humidity, 
+    public void setMeasurements(float temperature, float humidity,
     float pressure, List<Float> forecastTemperatures) {
         this.temperature = temperature;
         this.humidity = humidity;

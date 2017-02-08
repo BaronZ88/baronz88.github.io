@@ -2,7 +2,7 @@
 title: Android WebView那些坑之上传文件
 date: 2017-02-06 00:16:41
 categories: android
-tags: 
+tags:
 - Android
 - WebView
 ---
@@ -21,13 +21,13 @@ private void openImageChooserActivity() {
     Intent i = new Intent(Intent.ACTION_GET_CONTENT);
     i.addCategory(Intent.CATEGORY_OPENABLE);
     i.setType("image/*");
-    startActivityForResult(Intent.createChooser(i, 
+    startActivityForResult(Intent.createChooser(i,
     			"Image Chooser"), FILE_CHOOSER_RESULT_CODE);
 }
 ```
 
 <!-- more -->
-    
+
 最后我们在`onActivityResult()`中将选择的图片内容通过`ValueCallback`的`onReceiveValue`方法返回给`WebView`，然后通过js上传。代码如下：
 
 ```java
@@ -62,22 +62,22 @@ webview.setWebChromeClient(new WebChromeClient() {
         }
 
         //For Android  >= 4.1
-        public void openFileChooser(ValueCallback<Uri> valueCallback, 
+        public void openFileChooser(ValueCallback<Uri> valueCallback,
         		String acceptType, String capture) {
             ***
         }
 
         // For Android >= 5.0
         @Override
-        public boolean onShowFileChooser(WebView webView, 
-        		ValueCallback<Uri[]> filePathCallback, 
+        public boolean onShowFileChooser(WebView webView,
+        		ValueCallback<Uri[]> filePathCallback,
         		WebChromeClient.FileChooserParams fileChooserParams) {
             ***
             return true;
         }
     });
 ```
-     
+
 大家应该注意到`onShowFileChooser()`中的`ValueCallback`包含了一组`Uri(Uri[])`,所以针对5.0及以上系统，我们还需要对`onActivityResult()`做一点点处理。这里不做描述，最后我再贴上完整代码。
 
 当处理完这些后你以为就万事大吉了？！当初我也这样天真，但当我们打好release包测试的时候却又发现没法选择图片了！！！真是坑了个爹啊！！！无奈去翻`WebChromeClient`的源码，发现`openFileChooser()`是系统API，我们的release包是开启了混淆的，所以在打包的时候混淆了`openFileChooser()`，这就导致无法回调`openFileChooser()`了。
@@ -101,7 +101,7 @@ public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType, St
     uploadFile.onReceiveValue(null);
 }
 ```
-    
+
 解决方案也很简单，直接不混淆`openFileChooser()`就好了。
 
 ```groovy
