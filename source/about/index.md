@@ -1,21 +1,21 @@
 ---
-title: 
+title: 关于我
 date: 2017-02-07 11:51:54
 comments: false
 ---
 
-#### 基本信息
+### 基本信息
 
 7年Android开发经验，于2013年12月入职Anjuke Inc.
 资深软件开发工程师、Android Team Leader
 
-#### 联系方式
+### 联系方式
 
 * 手机：18621592432
 * 邮箱：baron.zhanglei@gmail.com
 * 微信/QQ：371711376
 
-#### 活跃平台
+### 活跃平台
 
 * 个人博客：[http://baronzhang.com/](http://baronzhang.com/)
 * 知乎专栏：[https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)
