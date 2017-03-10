@@ -6,8 +6,8 @@ comments: false
 
 ### 基本信息
 
-7年Android开发经验，于2013年12月入职Anjuke Inc.
-资深软件开发工程师、Android Team Leader
+* 7年Android开发经验，于2013年12月入职Anjuke Inc.
+* 资深软件开发工程师、Android Team Leader
 
 ### 联系方式
 
