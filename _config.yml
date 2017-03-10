@@ -84,6 +84,12 @@ theme: next
 #   # coding: https://coding.net/u/xxxxxx
 #   weibo: http://weibo.com/1832867270
 
+# Duoshuo ShortName
+duoshuo_shortname: baronzhang
+
+# Disqus
+# disqus_shortname: baronzhang
+
 # Analytics
 google_analytics: UA-91622756-1
 # baidu_analytics: //hm.baidu.com/hm.js?ee75cf111111aa99f8540efa2570970

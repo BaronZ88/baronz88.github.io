@@ -17,8 +17,11 @@ comments: false
 
 ### 活跃平台
 
-* 个人博客：[http://baronzhang.com/](http://baronzhang.com/)
-* 知乎专栏：[https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)
-* GitHub：[https://github.com/BaronZ88](https://github.com/BaronZ88)
-* 掘金：[https://gold.xitu.io/user/57c63a3d7db2a2006820ec31](https://gold.xitu.io/user/57c63a3d7db2a2006820ec31)
-* 简书：[http://www.jianshu.com/u/cfdc52ea3399](http://www.jianshu.com/u/cfdc52ea3399)
+* 个人博客: [http://baronzhang.com/](http://baronzhang.com/)
+* 知乎专栏: [https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)
+* GitHub: [https://github.com/BaronZ88](https://github.com/BaronZ88)
+* 掘金: [https://juejin.im/user/57c63a3d7db2a2006820ec31](https://juejin.im/user/57c63a3d7db2a2006820ec31)
+* 简书: [http://www.jianshu.com/u/cfdc52ea3399](http://www.jianshu.com/u/cfdc52ea3399)
+* CSDN: [http://blog.csdn.net/baron_leizhang](http://blog.csdn.net/baron_leizhang)
+* 博客园: [http://www.cnblogs.com/baronzhang/](http://www.cnblogs.com/baronzhang/)
+* SegmentFault: [https://segmentfault.com/blog/baron](https://segmentfault.com/blog/baron)
