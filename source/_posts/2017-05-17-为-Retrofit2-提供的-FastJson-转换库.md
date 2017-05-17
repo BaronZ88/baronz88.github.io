@@ -11,7 +11,7 @@ tags: Android
 
 Retrofit 是 Android 和 Java 平台上一款优秀且被广泛使用的 Http 客户端，GitHub 上 21K+ 的 Star 和 4.3K+ 的 Fork 充分证明了 Retrofit 的风靡程度。
 
-Retrofit 在 Android 平台如此流行与它及其简介的调用方式和优秀的可扩展、可配置性是分不开的。我们客户端在和服务端交互的时候通常采用 Json 格式来传递数据，客户端拿到服务端传递过来的 Json 格式的数据后需要对它进行解析；Retrofit2 并未提供 Json 解析功能，但可提供接口让客户端程序员配置 Json Converter以选择自己喜欢的 Json 解析库。
+Retrofit 在 Android 平台如此流行与它及其简洁的调用方式和优秀的可扩展、可配置性是分不开的。我们客户端在和服务端交互的时候通常采用 Json 格式来传递数据，客户端拿到服务端传递过来的 Json 格式的数据后需要对它进行解析；Retrofit2 并未提供 Json 解析功能，但可提供接口让客户端程序员配置 Json Converter以选择自己喜欢的 Json 解析库。
 
 <!-- more -->
 
