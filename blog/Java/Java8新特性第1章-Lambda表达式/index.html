@@ -107,7 +107,7 @@
 123public interface OnClickListener &amp;#123;	void onClick(View v);&amp;#125;
 我们是这样使用它的：
 123456button.setOnClickListener(new View.OnClickListener() &amp;#123;">
-<meta property="og:updated_time" content="2017-06-12T15:39:45.000Z">
+<meta property="og:updated_time" content="2017-12-26T06:47:04.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java8新特性第1章(Lambda表达式)">
 <meta name="twitter:description" content="在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
@@ -431,8 +431,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//编译器可以推导出s1和s2是String类型</span></div><div class="line">Comparator&lt;String&gt; c = (s1, s2) -&gt; s1.compareTo(s2);</div><div class="line"><span class="comment">//当表达式的参数只有一个时括号也是可以省略的</span></div><div class="line">button.setOnClickListener(v -&gt; v.setText(<span class="string">"lalala"</span>));</div></pre></td></tr></table></figure>
 <blockquote>
 <p>Java7中的泛型方法和&lt;&gt;构造器也是通过目标类型来进行类型推导的,如：</p>
-<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; 		List&lt;Integer&gt; intList = Collections.emptyList&lt;&gt;();</div><div class="line">&gt; 		List&lt;String&gt; strList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</code></pre></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;List&lt;Integer&gt; intList = Collections.emptyList&lt;&gt;();</div><div class="line">&gt;List&lt;String&gt; strList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
 <h2 id="三、作用域"><a href="#三、作用域" class="headerlink" title="三、作用域"></a>三、作用域</h2><p>在内部类中使用变量名和this非常容易出错。内部类通过继承得到的成员变量（包括来说object的）可能会把外部类的成员变量覆盖掉，未做限制的this引用会指向内部类自己而非外部类。</p>
 <p>而lambda表达式的语义就十分简单：它不会从父类中继承任何变量，也不用引入新的作用域。lambda表达式的参数及函数体里面的变量和它外部环境的变量具有相同的语义（this关键字也是一样）。</p>
 <p>下面我们举个栗子吧!</p>
