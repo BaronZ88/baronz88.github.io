@@ -72,15 +72,12 @@ Set<Box> hasBlueShape = shapes.stream()
 
 如果我们需要得到蓝色物体的总重量，我们可以这样表达：
 
-
 ```java
 int sum = shapes.stream()
         .filter(s -> s.getColor() == BLUE)
         .mapToInt(s -> s.getWeight())
         .sum();
-
 ```            
-
 
 
 ## 二、Stream vs Collection
@@ -94,7 +91,6 @@ int sum = shapes.stream()
 * 大多数Stream的操作(filter,map,sort等)都是以惰性的方式实现的。这使得我们可以使用一次遍历完成整个流水线操作,并可以用短路操作提供更高效的实现。
 
 
-
 ## 三、惰性求值 vs 急性求值
 
 `filter()`和`map()`这样的操作既可以被急性求值（以`filter()`为例，急性求值需要在方法返回前完成对所有元素的过滤），也可以被惰性求值（用`Stream`代表过滤结果，当且仅当需要时才进行过滤操作）在实际中进行惰性运算可以带来很多好处。比如说，如果我们进行惰性过滤，我们就可以把过滤和流水线里的其它操作混合在一起，从而不需要对数据进行多遍遍历。相类似的，如果我们在一个大型集合里搜索第一个满足某个条件的元素，我们可以在找到后直接停止，而不是继续处理整个集合。（这一点对无限数据源是很重要，惰性求值对于有限数据源起到的是优化作用，但对无限数据源起到的是决定作用，没有惰性求值，对无限数据源的操作将无法终止）
@@ -102,7 +98,6 @@ int sum = shapes.stream()
 对于`filter()`和`map()`这样的操作符，我们很自然的会把它当成是惰性求值操作，不过它们是否真的是惰性取决于它们的具体实现。另外，像`sum()`这样生成值的操作和`forEach()`这样产生副作用的操作都是__天然急性求值__，因为它们必须要产生具体的结果。
 
 我们拿下面这段代码举例：
-
 
 ```java
 int sum = shapes.stream()
@@ -144,8 +139,6 @@ for (Community community : communities) {
 
 
 如果使用Streams API:
-
-
 
 ```java
 return communities.stream()
