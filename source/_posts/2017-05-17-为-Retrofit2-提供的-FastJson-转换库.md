@@ -63,8 +63,11 @@ Retrofit retrofit = new Retrofit.Builder()
 
 **一直不满意各博客平台上的阅读体验，排版糟糕、布局混乱、字体丑陋、各种广告及杂七杂八的组件分散了读者宝贵的注意力；最最重要的是这年头竟然找不到一个优雅、简介、有美感的博客平台！！！我不能忍！为了赏脸阅读我文章的读者！为了我这仅剩的一点点审美！我采用 GitHub Pages + Hexo + NexT 搭建了个人博客 [http://baronzhang.com](http://baronzhang.com) ，不过身为拖延症晚期患者的我，直到最近才将博客系统的各项功能陆续完善起来。之前的文章均已同步，之后所有的文章也会第一时间在个人博客上发布，追求更好阅读体验的同学可以移步 [baronzhang.com](http://baronzhang.com) 。**
 
-> 如果你喜欢我的文章，就关注下我的**知乎专栏**或者在 GitHub 上添个 Star 吧！
+> 如果你喜欢我的文章，就关注下我的公众号 **BaronTalk** 、 [**知乎专栏**](https://zhuanlan.zhihu.com/baron) 或者在 [**GitHub**](https://github.com/BaronZ88) 上添个 Star 吧！
 >   
+> * 微信公众号：**BaronTalk**
 > * 知乎专栏：[https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)  
 > * GitHub：[https://github.com/BaronZ88](https://github.com/BaronZ88)
 > * 个人博客：[http://baronzhang.com](http://baronzhang.com)
+
+![](http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png)

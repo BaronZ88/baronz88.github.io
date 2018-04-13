@@ -108,7 +108,11 @@ Java8的新特性并不是本文的重点，对此有兴趣的同学可以去翻
 * [https://medium.com/@sergii/java-8-in-android-n-preview-76184e2ab7ad](https://medium.com/@sergii/java-8-in-android-n-preview-76184e2ab7ad)
 
 
-> 如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。
+> 如果你喜欢我的文章，就关注下我的公众号 **BaronTalk** 、 [**知乎专栏**](https://zhuanlan.zhihu.com/baron) 或者在 [**GitHub**](https://github.com/BaronZ88) 上添个 Star 吧！
 >   
+> * 微信公众号：**BaronTalk**
 > * 知乎专栏：[https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)  
 > * GitHub：[https://github.com/BaronZ88](https://github.com/BaronZ88)
+> * 个人博客：[http://baronzhang.com](http://baronzhang.com)
+
+![](http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png)
