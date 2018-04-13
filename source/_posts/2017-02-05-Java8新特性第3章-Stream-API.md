@@ -4,6 +4,7 @@ date: 2017-02-05 23:37:32
 categories: Java
 tags: Java
 ---
+> 微信公众号：**BaronTalk**
 
 Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。
 

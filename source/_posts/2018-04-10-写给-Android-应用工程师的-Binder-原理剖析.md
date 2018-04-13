@@ -10,6 +10,8 @@ tags:
 
 ![](http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg)
 
+> 微信公众号：**BaronTalk**
+
 ## 一. 前言
 
 这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。

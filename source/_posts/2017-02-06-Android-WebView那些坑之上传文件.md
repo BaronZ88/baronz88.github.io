@@ -7,6 +7,8 @@ tags:
 - WebView
 ---
 
+> 微信公众号：**BaronTalk**
+
 最近公司项目需要在`WebView`上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
 
 解决问题之前我们先来说说`WebView`上传文件的逻辑：当我们在Web页面上点击选择文件的控件(`<input type="file">`)时，会回调`WebChromeClient`下的`openFileChooser()`（5.0及以上系统回调`onShowFileChooser()`）。这个时候我们在`openFileChooser`方法中通过`Intent`打开系统相册或者支持该`Intent`的第三方应用来选择图片。like this：

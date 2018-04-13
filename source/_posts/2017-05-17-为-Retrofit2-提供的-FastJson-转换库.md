@@ -6,6 +6,8 @@ tags: Android
 ---
 
 > 为 Retrofit2 提供的 FastJson 转换器（Retrofit2-FastJson-Converter）
+>
+> 微信公众号：**BaronTalk**
 
 ## 前言
 

@@ -6,8 +6,8 @@ comments: false
 
 ### 基本信息
 
-* 7年Android开发经验，于2013年12月入职Anjuke Inc.
-* 资深软件开发工程师、Android Team Leader
+* 7年 Android 开发经验，于2013年12月入职 Anjuke Inc.
+* 资深软件开发工程师、软件开发经理
 
 ### 联系方式
 
@@ -17,6 +17,7 @@ comments: false
 
 ### 活跃平台
 
+* 微信公众号: **BaronTalk**
 * 个人博客: [http://baronzhang.com/](http://baronzhang.com/)
 * 知乎专栏: [https://zhuanlan.zhihu.com/baron](https://zhuanlan.zhihu.com/baron)
 * GitHub: [https://github.com/BaronZ88](https://github.com/BaronZ88)

@@ -7,6 +7,8 @@ tags:
 - Android
 ---
 
+> 微信公众号：**BaronTalk**
+
 之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：
 
 * [RxJava系列1(简介)](http://baronzhang.com/blog/RxJava/RxJava系列1-简介/)
