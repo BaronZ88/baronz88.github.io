@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baronzhang.com/"/>
-  <updated>2018-04-10T15:32:38.253Z</updated>
+  <updated>2018-04-13T11:04:10.935Z</updated>
   <id>http://baronzhang.com/</id>
   
   <author>
@@ -20,9 +20,12 @@
     <link href="http://baronzhang.com//blog/Android/%E5%86%99%E7%BB%99-Android-%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84-Binder-%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/"/>
     <id>http://baronzhang.com//blog/Android/写给-Android-应用工程师的-Binder-原理剖析/</id>
     <published>2018-04-10T15:11:37.000Z</published>
-    <updated>2018-04-10T15:32:38.253Z</updated>
+    <updated>2018-04-13T11:04:10.935Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg" alt=""></p>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。</p>
 <p>Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的同学来说，理解到本文这个程度也就差不多了。希望更加深入理解 Binder 实现机制的，可以阅读文末的参考资料以及相关源码。</p>
 <a id="more"></a>
@@ -233,6 +236,9 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&quot;一-前言&quot;&gt;&lt;a href=&quot;#一-前言&quot; class=&quot;headerlink&quot; title=&quot;一. 前言&quot;&gt;&lt;/a&gt;一. 前言&lt;/h2&gt;&lt;p&gt;这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。&lt;/p&gt;
 &lt;p&gt;Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的同学来说，理解到本文这个程度也就差不多了。希望更加深入理解 Binder 实现机制的，可以阅读文末的参考资料以及相关源码。&lt;/p&gt;
     
@@ -254,10 +260,11 @@
     <link href="http://baronzhang.com//blog/Android/%E4%B8%BA-Retrofit2-%E6%8F%90%E4%BE%9B%E7%9A%84-FastJson-%E8%BD%AC%E6%8D%A2%E5%BA%93/"/>
     <id>http://baronzhang.com//blog/Android/为-Retrofit2-提供的-FastJson-转换库/</id>
     <published>2017-05-17T05:15:49.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:04:06.251Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>为 Retrofit2 提供的 FastJson 转换器（Retrofit2-FastJson-Converter）</p>
+<p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Retrofit 是 Android 和 Java 平台上一款优秀且被广泛使用的 Http 客户端，GitHub 上 21K+ 的 Star 和 4.3K+ 的 Fork 充分证明了 Retrofit 的风靡程度。</p>
 <p>Retrofit 在 Android 平台如此流行与它及其简洁的调用方式和优秀的可扩展、可配置性是分不开的。我们客户端在和服务端交互的时候通常采用 Json 格式来传递数据，客户端拿到服务端传递过来的 Json 格式的数据后需要对它进行解析；Retrofit2 并未提供 Json 解析功能，但可提供接口让客户端程序员配置 Json Converter以选择自己喜欢的 Json 解析库。</p>
@@ -286,6 +293,7 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;为 Retrofit2 提供的 FastJson 转换器（Retrofit2-FastJson-Converter）&lt;/p&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Retrofit 是 Android 和 Java 平台上一款优秀且被广泛使用的 Http 客户端，GitHub 上 21K+ 的 Star 和 4.3K+ 的 Fork 充分证明了 Retrofit 的风靡程度。&lt;/p&gt;
 &lt;p&gt;Retrofit 在 Android 平台如此流行与它及其简洁的调用方式和优秀的可扩展、可配置性是分不开的。我们客户端在和服务端交互的时候通常采用 Json 格式来传递数据，客户端拿到服务端传递过来的 Json 格式的数据后需要对它进行解析；Retrofit2 并未提供 Json 解析功能，但可提供接口让客户端程序员配置 Json Converter以选择自己喜欢的 Json 解析库。&lt;/p&gt;
@@ -304,11 +312,12 @@
     <link href="http://baronzhang.com//blog/Framework/Android-%E6%A8%A1%E5%9D%97%E5%8C%96%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
     <id>http://baronzhang.com//blog/Framework/Android-模块化探索与实践/</id>
     <published>2017-05-08T06:04:12.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:03:54.349Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/2/header.jpg" alt=""></p>
 <blockquote>
 <p>首发于《程序员》杂志五月刊</p>
+<p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>万维网发明人 Tim Berners-Lee 谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。” 由此可见模块化之于软件工程领域的重要性。</p>
 <p>从 2016 年开始，模块化在 Android 社区越来越多的被提及。随着移动平台的不断发展，移动平台上的软件慢慢走向复杂化，体积也变得臃肿庞大；为了降低大型软件复杂性和耦合度，同时也为了适应模块重用、多团队并行开发测试等等需求，模块化在 Android 平台上变得势在必行。阿里 Android 团队在年初开源了他们的容器化框架 Atlas 就很大程度说明了当前 Android 平台开发大型商业项目所面临的问题。</p>
@@ -431,6 +440,7 @@
       &lt;p&gt;&lt;img src=&quot;http://ocjtywvav.bkt.clouddn.com/blog/framework/android/2/header.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;首发于《程序员》杂志五月刊&lt;/p&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;万维网发明人 Tim Berners-Lee 谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。” 由此可见模块化之于软件工程领域的重要性。&lt;/p&gt;
 &lt;p&gt;从 2016 年开始，模块化在 Android 社区越来越多的被提及。随着移动平台的不断发展，移动平台上的软件慢慢走向复杂化，体积也变得臃肿庞大；为了降低大型软件复杂性和耦合度，同时也为了适应模块重用、多团队并行开发测试等等需求，模块化在 Android 平台上变得势在必行。阿里 Android 团队在年初开源了他们的容器化框架 Atlas 就很大程度说明了当前 Android 平台开发大型商业项目所面临的问题。&lt;/p&gt;
@@ -451,11 +461,12 @@
     <link href="http://baronzhang.com//blog/Framework/%E5%AE%89%E5%B1%85%E5%AE%A2Android%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/"/>
     <id>http://baronzhang.com//blog/Framework/安居客Android项目架构演进/</id>
     <published>2017-02-24T09:59:16.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:03:43.161Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ocjtywvav.bkt.clouddn.com/Blog/Framework/Android/header.jpg" alt=""></p>
 <blockquote>
 <p>本文已授权微信公众号 AndroidDeveloper 独家发布。</p>
+<p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <p>入职安居客三年从工程师到 Team Leader，见证了 Android 团队一路走来的发展历程。因此有心将这些记录下来与大家分享，也算是对自己三年来一部分工作的总结。希望对大家有所帮助，更希望能得到大家宝贵的建议。<br><a id="more"></a></p>
 <h2 id="三网合并"><a href="#三网合并" class="headerlink" title="三网合并"></a>三网合并</h2><p>三年前入职时安居客在业务上刚完成了三网合并（新房、二手房、好租和商业地产多个平台多个网站合成现在的 anjuke.com，这在公司的历史上称之为三网合并）,因此移动端也将原先的新房、二手房、好租和商业地产多个 App 合并成为了现在的安居客 App。所谓的合并也差不多就是将多个项目的代码拷贝到了一起组成了新的 Anjuke Project。下面这张图能更加直观的呈现当时的状况：<div align="center"><img src="http://ocjtywvav.bkt.clouddn.com/Blog/Framework/Android/merge1.1.png" width="70%" alt="图片名称" align="center"></div></p>
@@ -556,6 +567,7 @@
       &lt;p&gt;&lt;img src=&quot;http://ocjtywvav.bkt.clouddn.com/Blog/Framework/Android/header.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本文已授权微信公众号 AndroidDeveloper 独家发布。&lt;/p&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;入职安居客三年从工程师到 Team Leader，见证了 Android 团队一路走来的发展历程。因此有心将这些记录下来与大家分享，也算是对自己三年来一部分工作的总结。希望对大家有所帮助，更希望能得到大家宝贵的建议。&lt;br&gt;
     
@@ -575,9 +587,12 @@
     <link href="http://baronzhang.com//blog/OpenSource/Java/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8Dagger2/"/>
     <id>http://baronzhang.com//blog/OpenSource/Java/神兵利器Dagger2/</id>
     <published>2017-02-06T10:58:18.000Z</published>
-    <updated>2017-12-26T06:53:29.801Z</updated>
+    <updated>2018-04-13T11:03:45.171Z</updated>
     
-    <content type="html"><![CDATA[<p>Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。</p>
 <p>Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮我们完成依赖注入的工作。</p>
 <p>起初Square公司受到Guice的启发而开发了Dagger，但是Dagger这种半静态半运行时的框架还是有些性能问题（虽说依赖注入是完全静态的，但是其有向无环图(Directed Acyclic Graph)还是基于反射来生成的，这无论在大型的服务端应用还是在Android应用上都不是最优方案）。因此Google工程师Fork了Dagger项目，对它进行了改造。于是变演变出了今天我们要讨论的Dagger2，所以说Dagger2其实就是高配版的Dagger。</p>
 <a id="more"></a>
@@ -698,7 +713,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。&lt;/p&gt;
 &lt;p&gt;Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮我们完成依赖注入的工作。&lt;/p&gt;
 &lt;p&gt;起初Square公司受到Guice的启发而开发了Dagger，但是Dagger这种半静态半运行时的框架还是有些性能问题（虽说依赖注入是完全静态的，但是其有向无环图(Directed Acyclic Graph)还是基于反射来生成的，这无论在大型的服务端应用还是在Android应用上都不是最优方案）。因此Google工程师Fork了Dagger项目，对它进行了改造。于是变演变出了今天我们要讨论的Dagger2，所以说Dagger2其实就是高配版的Dagger。&lt;/p&gt;
     
@@ -724,9 +742,12 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%97%E7%95%AA%E5%A4%96%E7%AF%87%EF%BC%9A%E4%B8%80%E4%B8%AARxJava%E8%A7%A3%E5%86%B3%E5%A4%8D%E6%9D%82%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E7%9A%84%E6%A1%88%E4%BE%8B/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/</id>
     <published>2017-02-05T16:30:27.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:03:19.118Z</updated>
     
-    <content type="html"><![CDATA[<p>之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：</p>
 <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -771,7 +792,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列1-简介/&quot;&gt;RxJava系列1(简介)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/&quot;&gt;RxJava系列2(基本概念及使用介绍)&lt;/a&gt;&lt;/li&gt;
@@ -799,7 +823,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%977-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列7-最佳实践/</id>
     <published>2017-02-05T16:22:03.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:03:11.890Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -811,6 +835,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
 <hr>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有点标题党了，其实谈不上什么最佳实践。前段时间公司实行996，所以也没什么时间和精力来更新博客（好吧~我承认是我懒~）。因此这篇文章只是简单的通过两个例子介绍了RxJava在生产环境中的使用。不过本篇中的每个例子我都配上了完整的代码。</p>
 <blockquote>
 <p>按照计划这一期是要介绍RxJava框架结构和设计思想的，但是考虑到Netflix将在十月底发布RxJava2.0正式版；因此决定将RxJava框架结构和设计思想分析放到2.0正式版发布后再做。后续我也会有一系列的文章来介绍RxJava1.x和2.x的区别。</p>
@@ -870,6 +897,9 @@
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;有点标题党了，其实谈不上什么最佳实践。前段时间公司实行996，所以也没什么时间和精力来更新博客（好吧~我承认是我懒~）。因此这篇文章只是简单的通过两个例子介绍了RxJava在生产环境中的使用。不过本篇中的每个例子我都配上了完整的代码。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;按照计划这一期是要介绍RxJava框架结构和设计思想的，但是考虑到Netflix将在十月底发布RxJava2.0正式版；因此决定将RxJava框架结构和设计思想分析放到2.0正式版发布后再做。后续我也会有一系列的文章来介绍RxJava1.x和2.x的区别。&lt;/p&gt;
@@ -891,7 +921,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%976-%E4%BB%8E%E5%BE%AE%E8%A7%82%E8%A7%92%E5%BA%A6%E8%A7%A3%E8%AF%BBRxJava%E6%BA%90%E7%A0%81/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/</id>
     <published>2017-02-05T16:21:05.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:03:07.721Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -903,6 +933,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
 <hr>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过前面五个篇幅的介绍，相信大家对RxJava的基本使用以及操作符应该有了一定的认识。但是知其然还要知其所以然；所以从这一章开始我们聊聊源码，分析RxJava的实现原理。本文我们主要从三个方面来分析RxJava的实现：</p>
 <ul>
 <li>RxJava基本流程分析</li>
@@ -1020,6 +1053,9 @@
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;通过前面五个篇幅的介绍，相信大家对RxJava的基本使用以及操作符应该有了一定的认识。但是知其然还要知其所以然；所以从这一章开始我们聊聊源码，分析RxJava的实现原理。本文我们主要从三个方面来分析RxJava的实现：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;RxJava基本流程分析&lt;/li&gt;
@@ -1047,7 +1083,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%975-%E7%BB%84%E5%90%88%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列5-组合操作符/</id>
     <published>2017-02-05T16:20:46.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:02:59.640Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1058,6 +1094,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <p>这一章我们接着介绍组合操作符，这类operators可以同时处理多个Observable来创建我们所需要的Observable。组合操作符主要包含： <strong><code>Merge</code></strong> <strong><code>StartWith</code></strong> <strong><code>Concat</code></strong> <strong><code>Zip</code></strong> <strong><code>CombineLatest</code></strong>  <strong><code>SwitchOnNext</code></strong> <strong><code>Join</code></strong>等等。</p>
 <a id="more"></a>
@@ -1149,6 +1188,9 @@
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/&quot;&gt;RxJava系列6(从微观角度解读RxJava源码)&lt;/a&gt;   &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;   &lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;这一章我们接着介绍组合操作符，这类operators可以同时处理多个Observable来创建我们所需要的Observable。组合操作符主要包含： &lt;strong&gt;&lt;code&gt;Merge&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;StartWith&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Concat&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Zip&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;CombineLatest&lt;/code&gt;&lt;/strong&gt;  &lt;strong&gt;&lt;code&gt;SwitchOnNext&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Join&lt;/code&gt;&lt;/strong&gt;等等。&lt;/p&gt;
     
@@ -1168,7 +1210,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%974-%E8%BF%87%E6%BB%A4%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列4-过滤操作符/</id>
     <published>2017-02-05T16:20:33.000Z</published>
-    <updated>2017-12-26T06:47:56.765Z</updated>
+    <updated>2018-04-13T11:02:55.673Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1179,6 +1221,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <p>前面一篇文章中我们介绍了转换类操作符，那么这一章我们就来介绍下过滤类的操作符。顾名思义，这类operators主要用于对事件数据的筛选过滤，只返回满足我们条件的数据。过滤类操作符主要包含： <strong><code>Filter</code></strong> <strong><code>Take</code></strong> <strong><code>TakeLast</code></strong> <strong><code>TakeUntil</code></strong> <strong><code>Skip</code></strong> <strong><code>SkipLast</code></strong> <strong><code>ElementAt</code></strong> <strong><code>Debounce</code></strong> <strong><code>Distinct</code></strong> <strong><code>DistinctUntilChanged</code></strong> <strong><code>First</code></strong> <strong><code>Last</code></strong>等等。</p>
 <a id="more"></a>
@@ -1268,6 +1313,9 @@
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/&quot;&gt;RxJava系列6(从微观角度解读RxJava源码)&lt;/a&gt;   &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;  &lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;前面一篇文章中我们介绍了转换类操作符，那么这一章我们就来介绍下过滤类的操作符。顾名思义，这类operators主要用于对事件数据的筛选过滤，只返回满足我们条件的数据。过滤类操作符主要包含： &lt;strong&gt;&lt;code&gt;Filter&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Take&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;TakeLast&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;TakeUntil&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Skip&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;SkipLast&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;ElementAt&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Debounce&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Distinct&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;DistinctUntilChanged&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;First&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Last&lt;/code&gt;&lt;/strong&gt;等等。&lt;/p&gt;
     
@@ -1287,7 +1335,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%973-%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列3-转换操作符/</id>
     <published>2017-02-05T16:20:19.000Z</published>
-    <updated>2017-12-26T06:46:56.241Z</updated>
+    <updated>2018-04-13T11:02:51.908Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1298,6 +1346,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <p>前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开始，我们开始聊聊RxJava中的操作符Operators，后面我将用三章的篇幅来分别介绍：</p>
 <ol>
@@ -1356,6 +1407,9 @@
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/&quot;&gt;RxJava系列6(从微观角度解读RxJava源码)&lt;/a&gt;   &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;   &lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开始，我们开始聊聊RxJava中的操作符Operators，后面我将用三章的篇幅来分别介绍：&lt;/p&gt;
 &lt;ol&gt;
@@ -1381,7 +1435,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%972-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列2-基本概念及使用介绍/</id>
     <published>2017-02-05T16:20:04.000Z</published>
-    <updated>2017-12-26T06:47:00.123Z</updated>
+    <updated>2018-04-13T11:02:47.730Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1392,6 +1446,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇的示例代码中大家一定发现了Observable这个类。从纯Java的观点看，Observable类源自于经典的观察者模式。RxJava的异步实现正是基于观察者模式来实现的，而且是一种扩展的观察者模式。</p>
 <a id="more"></a>
@@ -1489,6 +1546,9 @@ onCompleted
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/&quot;&gt;RxJava系列6(从微观角度解读RxJava源码)&lt;/a&gt;   &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;   &lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一篇的示例代码中大家一定发现了Observable这个类。从纯Java的观点看，Observable类源自于经典的观察者模式。RxJava的异步实现正是基于观察者模式来实现的，而且是一种扩展的观察者模式。&lt;/p&gt;
     
@@ -1508,7 +1568,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%971-%E7%AE%80%E4%BB%8B/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列1-简介/</id>
     <published>2017-02-05T16:19:48.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:02:36.529Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1519,6 +1579,9 @@ onCompleted
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>提升开发效率，降低维护成本一直是开发团队永恒不变的宗旨。近一年来国内的技术圈子中越来越多的开始提及Rx，经过一段时间的学习和探索之后我也深深的感受到了RxJava的魅力。它能帮助我们简化代码逻辑，提升代码可读性。这对于开发效率的提升、后期维护成本的降低帮助都是巨大的。个人预测RxJava一定是2016年的一个大趋势，所以也有打算将它引入到公司现有的项目中来，写这一系列的文章主要也是为了团队内部做技术分享。</p>
 <blockquote>
@@ -1564,6 +1627,9 @@ onCompleted
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/&quot;&gt;RxJava系列6(从微观角度解读RxJava源码)&lt;/a&gt;   &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/&quot;&gt;RxJava系列7(最佳实践)&lt;/a&gt;  &lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;提升开发效率，降低维护成本一直是开发团队永恒不变的宗旨。近一年来国内的技术圈子中越来越多的开始提及Rx，经过一段时间的学习和探索之后我也深深的感受到了RxJava的魅力。它能帮助我们简化代码逻辑，提升代码可读性。这对于开发效率的提升、后期维护成本的降低帮助都是巨大的。个人预测RxJava一定是2016年的一个大趋势，所以也有打算将它引入到公司现有的项目中来，写这一系列的文章主要也是为了团队内部做技术分享。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1586,9 +1652,12 @@ onCompleted
     <link href="http://baronzhang.com//blog/Android/Android-WebView%E9%82%A3%E4%BA%9B%E5%9D%91%E4%B9%8B%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
     <id>http://baronzhang.com//blog/Android/Android-WebView那些坑之上传文件/</id>
     <published>2017-02-05T16:16:41.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:02:38.715Z</updated>
     
-    <content type="html"><![CDATA[<p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
 <p>解决问题之前我们先来说说<code>WebView</code>上传文件的逻辑：当我们在Web页面上点击选择文件的控件(<code>&lt;input type=&quot;file&quot;&gt;</code>)时，会回调<code>WebChromeClient</code>下的<code>openFileChooser()</code>（5.0及以上系统回调<code>onShowFileChooser()</code>）。这个时候我们在<code>openFileChooser</code>方法中通过<code>Intent</code>打开系统相册或者支持该<code>Intent</code>的第三方应用来选择图片。like this：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture)</span> </span>&#123;</div><div class="line">	uploadMessage = valueCallback;</div><div class="line">   	openImageChooserActivity();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openImageChooserActivity</span><span class="params">()</span> </span>&#123;</div><div class="line">    Intent i = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);</div><div class="line">    i.addCategory(Intent.CATEGORY_OPENABLE);</div><div class="line">    i.setType(<span class="string">"image/*"</span>);</div><div class="line">    startActivityForResult(Intent.createChooser(i,</div><div class="line">    			<span class="string">"Image Chooser"</span>), FILE_CHOOSER_RESULT_CODE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -1618,7 +1687,10 @@ onCompleted
     
     <summary type="html">
     
-      &lt;p&gt;最近公司项目需要在&lt;code&gt;WebView&lt;/code&gt;上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近公司项目需要在&lt;code&gt;WebView&lt;/code&gt;上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。&lt;/p&gt;
 &lt;p&gt;解决问题之前我们先来说说&lt;code&gt;WebView&lt;/code&gt;上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&lt;code&gt;&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;&lt;/code&gt;)时，会回调&lt;code&gt;WebChromeClient&lt;/code&gt;下的&lt;code&gt;openFileChooser()&lt;/code&gt;（5.0及以上系统回调&lt;code&gt;onShowFileChooser()&lt;/code&gt;）。这个时候我们在&lt;code&gt;openFileChooser&lt;/code&gt;方法中通过&lt;code&gt;Intent&lt;/code&gt;打开系统相册或者支持该&lt;code&gt;Intent&lt;/code&gt;的第三方应用来选择图片。like this：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;openFileChooser&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(ValueCallback&amp;lt;Uri&amp;gt; valueCallback, String acceptType, String capture)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	uploadMessage = valueCallback;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	openImageChooserActivity();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;openImageChooserActivity&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Intent i = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(Intent.ACTION_GET_CONTENT);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    i.addCategory(Intent.CATEGORY_OPENABLE);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    i.setType(&lt;span class=&quot;string&quot;&gt;&quot;image/*&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    startActivityForResult(Intent.createChooser(i,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    			&lt;span class=&quot;string&quot;&gt;&quot;Image Chooser&quot;&lt;/span&gt;), FILE_CHOOSER_RESULT_CODE);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
@@ -1638,9 +1710,12 @@ onCompleted
     <link href="http://baronzhang.com//blog/DesignPatterns/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F-ObserverPattern/"/>
     <id>http://baronzhang.com//blog/DesignPatterns/观察者模式-ObserverPattern/</id>
     <published>2017-02-05T16:16:14.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:03:27.809Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
 <a id="more"></a>
 <h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><p>这套系统中主要包括三个部分：气象站（获取天气数据的物理设备）、WeatherData（追踪来自气象站的数据，并更新公告牌）、公告牌（用于展示天气数据）</p>
 <p><img src="http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/WeatherStation.png" alt="WeatherStation"></p>
@@ -1691,7 +1766,10 @@ onCompleted
     
     <summary type="html">
     
-      &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。&lt;/p&gt;
     
     </summary>
     
@@ -1709,9 +1787,12 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/%E5%9C%A8Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8Java8/"/>
     <id>http://baronzhang.com//blog/Java/在Android项目中使用Java8/</id>
     <published>2017-02-05T15:37:48.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:02:40.007Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在过去的文章中我介绍过Java8的一些新特性，包括：</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在过去的文章中我介绍过Java8的一些新特性，包括：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/20540175" target="_blank" rel="external">Java8新特性第1章(Lambda表达式)</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/20540188" target="_blank" rel="external">Java8新特性第2章(接口默认方法)</a></li>
@@ -1761,7 +1842,10 @@ onCompleted
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在过去的文章中我介绍过Java8的一些新特性，包括：&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在过去的文章中我介绍过Java8的一些新特性，包括：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/20540175&quot;&gt;Java8新特性第1章(Lambda表达式)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/20540188&quot;&gt;Java8新特性第2章(接口默认方法)&lt;/a&gt;&lt;/li&gt;
@@ -1786,9 +1870,12 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E7%AC%AC3%E7%AB%A0-Stream-API/"/>
     <id>http://baronzhang.com//blog/Java/Java8新特性第3章-Stream-API/</id>
     <published>2017-02-05T15:37:32.000Z</published>
-    <updated>2017-12-26T06:47:02.449Z</updated>
+    <updated>2018-04-13T11:02:41.222Z</updated>
     
-    <content type="html"><![CDATA[<p>Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。</p>
 <p>假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这样写</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (Shape shape : shapes)&#123;</div><div class="line">	shape.setColor(RED)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果使用Java8扩展后的集合框架则可以这样写：</p>
@@ -1828,7 +1915,10 @@ onCompleted
     
     <summary type="html">
     
-      &lt;p&gt;Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。&lt;/p&gt;
 &lt;p&gt;假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这样写&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (Shape shape : shapes)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	shape.setColor(RED)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;如果使用Java8扩展后的集合框架则可以这样写：&lt;/p&gt;
@@ -1848,9 +1938,12 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E7%AC%AC2%E7%AB%A0-%E6%8E%A5%E5%8F%A3%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95/"/>
     <id>http://baronzhang.com//blog/Java/Java8新特性第2章-接口默认方法/</id>
     <published>2017-02-05T15:37:11.000Z</published>
-    <updated>2017-06-12T15:39:45.000Z</updated>
+    <updated>2018-04-13T11:02:42.461Z</updated>
     
-    <content type="html"><![CDATA[<p>在Java中一个接口一旦发布就已经被定型，除非我们能够一次性的更新所有该接口的实现，否者在接口的添加新方法将会破坏现有接口的实现。默认方法就是为了解决这一问题的，这样接口在发布之后依然能够继续演化。</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>在Java中一个接口一旦发布就已经被定型，除非我们能够一次性的更新所有该接口的实现，否者在接口的添加新方法将会破坏现有接口的实现。默认方法就是为了解决这一问题的，这样接口在发布之后依然能够继续演化。</p>
 <p>默认方法就是向接口增加新的行为。它是一种新的方法：接口方法可以是抽象的或者是默认的。默认方法拥有默认实现，接口实现类通过继承得到该默认实现。默认方法不是抽象的，所以我们可以放心的向函数式接口里增加默认方法，而不用担心函数式接口单抽象方法的限制。</p>
 <a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException(<span class="string">"remove"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemaining</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span> </span>&#123;</div><div class="line">        Objects.requireNonNull(action);</div><div class="line">        <span class="keyword">while</span> (hasNext())</div><div class="line">            action.accept(next());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -1868,7 +1961,10 @@ onCompleted
     
     <summary type="html">
     
-      &lt;p&gt;在Java中一个接口一旦发布就已经被定型，除非我们能够一次性的更新所有该接口的实现，否者在接口的添加新方法将会破坏现有接口的实现。默认方法就是为了解决这一问题的，这样接口在发布之后依然能够继续演化。&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在Java中一个接口一旦发布就已经被定型，除非我们能够一次性的更新所有该接口的实现，否者在接口的添加新方法将会破坏现有接口的实现。默认方法就是为了解决这一问题的，这样接口在发布之后依然能够继续演化。&lt;/p&gt;
 &lt;p&gt;默认方法就是向接口增加新的行为。它是一种新的方法：接口方法可以是抽象的或者是默认的。默认方法拥有默认实现，接口实现类通过继承得到该默认实现。默认方法不是抽象的，所以我们可以放心的向函数式接口里增加默认方法，而不用担心函数式接口单抽象方法的限制。&lt;/p&gt;
     
     </summary>
@@ -1885,9 +1981,12 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E7%AC%AC1%E7%AB%A0-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://baronzhang.com//blog/Java/Java8新特性第1章-Lambda表达式/</id>
     <published>2017-02-05T06:24:30.000Z</published>
-    <updated>2017-12-26T06:47:04.941Z</updated>
+    <updated>2018-04-13T11:02:43.715Z</updated>
     
-    <content type="html"><![CDATA[<p>在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：</p>
+    <content type="html"><![CDATA[<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnClickListener</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们是这样使用它的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">		v.setText(<span class="string">"lalala"</span>);</div><div class="line">   	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -1981,11 +2080,15 @@ onCompleted
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;微信公众号：&lt;strong&gt;BaronTalk&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;OnClickListener&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(View v)&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;我们是这样使用它的：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;button.setOnClickListener(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; View.OnClickListener() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(View v)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		v.setText(&lt;span class=&quot;string&quot;&gt;&quot;lalala&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

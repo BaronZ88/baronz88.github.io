@@ -95,20 +95,26 @@
 
 
 
-<meta name="description" content="Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
-Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮">
+<meta name="description" content="微信公众号：BaronTalk
+
+Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
+Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Ja">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神兵利器Dagger2">
 <meta property="og:url" content="http://baronzhang.com/blog/OpenSource/Java/神兵利器Dagger2/index.html">
 <meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
-Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮">
+<meta property="og:description" content="微信公众号：BaronTalk
+
+Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
+Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Ja">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/Blog/OpenSource/Android/Dagger2/generated_code.png">
-<meta property="og:updated_time" content="2017-12-26T06:53:29.801Z">
+<meta property="og:updated_time" content="2018-04-13T11:03:45.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神兵利器Dagger2">
-<meta name="twitter:description" content="Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
-Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮">
+<meta name="twitter:description" content="微信公众号：BaronTalk
+
+Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
+Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Ja">
 <meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/Blog/OpenSource/Android/Dagger2/generated_code.png">
 
 
@@ -389,7 +395,10 @@ Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶
       
 
       
-        <p>Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。</p>
+        <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。</p>
 <p>Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮我们完成依赖注入的工作。</p>
 <p>起初Square公司受到Guice的启发而开发了Dagger，但是Dagger这种半静态半运行时的框架还是有些性能问题（虽说依赖注入是完全静态的，但是其有向无环图(Directed Acyclic Graph)还是基于反射来生成的，这无论在大型的服务端应用还是在Android应用上都不是最优方案）。因此Google工程师Fork了Dagger项目，对它进行了改造。于是变演变出了今天我们要讨论的Dagger2，所以说Dagger2其实就是高配版的Dagger。</p>
 <a id="more"></a>

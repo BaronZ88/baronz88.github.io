@@ -95,19 +95,25 @@
 
 
 
-<meta name="description" content="场景我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。">
+<meta name="description" content="微信公众号：BaronTalk
+
+场景我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="观察者模式(ObserverPattern)">
 <meta property="og:url" content="http://baronzhang.com/blog/DesignPatterns/观察者模式-ObserverPattern/index.html">
 <meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="场景我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。">
+<meta property="og:description" content="微信公众号：BaronTalk
+
+场景我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/WeatherStation.png">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/Observer.png">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/ObserverForWeatherStation.png">
-<meta property="og:updated_time" content="2017-06-12T15:39:45.000Z">
+<meta property="og:updated_time" content="2018-04-13T11:03:27.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="观察者模式(ObserverPattern)">
-<meta name="twitter:description" content="场景我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。">
+<meta name="twitter:description" content="微信公众号：BaronTalk
+
+场景我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。">
 <meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/WeatherStation.png">
 
 
@@ -377,7 +383,10 @@
       
 
       
-        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
+        <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
 <a id="more"></a>
 <h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><p>这套系统中主要包括三个部分：气象站（获取天气数据的物理设备）、WeatherData（追踪来自气象站的数据，并更新公告牌）、公告牌（用于展示天气数据）</p>
 <p><img src="http://ocjtywvav.bkt.clouddn.com/DesignPatterns/ObserverPattern/WeatherStation.png" alt="WeatherStation"></p>

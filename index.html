@@ -378,6 +378,9 @@
       
         
           <p><img src="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg" alt=""></p>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。</p>
 <p>Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的同学来说，理解到本文这个程度也就差不多了。希望更加深入理解 Binder 实现机制的，可以阅读文末的参考资料以及相关源码。</p>
           <!--noindex-->
@@ -530,6 +533,7 @@
         
           <blockquote>
 <p>为 Retrofit2 提供的 FastJson 转换器（Retrofit2-FastJson-Converter）</p>
+<p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Retrofit 是 Android 和 Java 平台上一款优秀且被广泛使用的 Http 客户端，GitHub 上 21K+ 的 Star 和 4.3K+ 的 Fork 充分证明了 Retrofit 的风靡程度。</p>
 <p>Retrofit 在 Android 平台如此流行与它及其简洁的调用方式和优秀的可扩展、可配置性是分不开的。我们客户端在和服务端交互的时候通常采用 Json 格式来传递数据，客户端拿到服务端传递过来的 Json 格式的数据后需要对它进行解析；Retrofit2 并未提供 Json 解析功能，但可提供接口让客户端程序员配置 Json Converter以选择自己喜欢的 Json 解析库。</p>
@@ -684,6 +688,7 @@
           <p><img src="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/2/header.jpg" alt=""></p>
 <blockquote>
 <p>首发于《程序员》杂志五月刊</p>
+<p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>万维网发明人 Tim Berners-Lee 谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。” 由此可见模块化之于软件工程领域的重要性。</p>
 <p>从 2016 年开始，模块化在 Android 社区越来越多的被提及。随着移动平台的不断发展，移动平台上的软件慢慢走向复杂化，体积也变得臃肿庞大；为了降低大型软件复杂性和耦合度，同时也为了适应模块重用、多团队并行开发测试等等需求，模块化在 Android 平台上变得势在必行。阿里 Android 团队在年初开源了他们的容器化框架 Atlas 就很大程度说明了当前 Android 平台开发大型商业项目所面临的问题。</p>
@@ -838,6 +843,7 @@
           <p><img src="http://ocjtywvav.bkt.clouddn.com/Blog/Framework/Android/header.jpg" alt=""></p>
 <blockquote>
 <p>本文已授权微信公众号 AndroidDeveloper 独家发布。</p>
+<p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <p>入职安居客三年从工程师到 Team Leader，见证了 Android 团队一路走来的发展历程。因此有心将这些记录下来与大家分享，也算是对自己三年来一部分工作的总结。希望对大家有所帮助，更希望能得到大家宝贵的建议。<br>
           <!--noindex-->
@@ -999,7 +1005,10 @@
 
       
         
-          <p>Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。</p>
 <p>Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮我们完成依赖注入的工作。</p>
 <p>起初Square公司受到Guice的启发而开发了Dagger，但是Dagger这种半静态半运行时的框架还是有些性能问题（虽说依赖注入是完全静态的，但是其有向无环图(Directed Acyclic Graph)还是基于反射来生成的，这无论在大型的服务端应用还是在Android应用上都不是最优方案）。因此Google工程师Fork了Dagger项目，对它进行了改造。于是变演变出了今天我们要讨论的Dagger2，所以说Dagger2其实就是高配版的Dagger。</p>
           <!--noindex-->
@@ -1150,7 +1159,10 @@
 
       
         
-          <p>之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：</p>
 <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -1319,6 +1331,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
 <hr>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有点标题党了，其实谈不上什么最佳实践。前段时间公司实行996，所以也没什么时间和精力来更新博客（好吧~我承认是我懒~）。因此这篇文章只是简单的通过两个例子介绍了RxJava在生产环境中的使用。不过本篇中的每个例子我都配上了完整的代码。</p>
 <blockquote>
 <p>按照计划这一期是要介绍RxJava框架结构和设计思想的，但是考虑到Netflix将在十月底发布RxJava2.0正式版；因此决定将RxJava框架结构和设计思想分析放到2.0正式版发布后再做。后续我也会有一系列的文章来介绍RxJava1.x和2.x的区别。</p>
@@ -1481,6 +1496,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
 <hr>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过前面五个篇幅的介绍，相信大家对RxJava的基本使用以及操作符应该有了一定的认识。但是知其然还要知其所以然；所以从这一章开始我们聊聊源码，分析RxJava的实现原理。本文我们主要从三个方面来分析RxJava的实现：</p>
 <ul>
 <li>RxJava基本流程分析</li>
@@ -1648,6 +1666,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <p>这一章我们接着介绍组合操作符，这类operators可以同时处理多个Observable来创建我们所需要的Observable。组合操作符主要包含： <strong><code>Merge</code></strong> <strong><code>StartWith</code></strong> <strong><code>Concat</code></strong> <strong><code>Zip</code></strong> <strong><code>CombineLatest</code></strong>  <strong><code>SwitchOnNext</code></strong> <strong><code>Join</code></strong>等等。</p>
           <!--noindex-->
@@ -1807,6 +1828,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <p>前面一篇文章中我们介绍了转换类操作符，那么这一章我们就来介绍下过滤类的操作符。顾名思义，这类operators主要用于对事件数据的筛选过滤，只返回满足我们条件的数据。过滤类操作符主要包含： <strong><code>Filter</code></strong> <strong><code>Take</code></strong> <strong><code>TakeLast</code></strong> <strong><code>TakeUntil</code></strong> <strong><code>Skip</code></strong> <strong><code>SkipLast</code></strong> <strong><code>ElementAt</code></strong> <strong><code>Debounce</code></strong> <strong><code>Distinct</code></strong> <strong><code>DistinctUntilChanged</code></strong> <strong><code>First</code></strong> <strong><code>Last</code></strong>等等。</p>
           <!--noindex-->
@@ -1966,6 +1990,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <p>前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开始，我们开始聊聊RxJava中的操作符Operators，后面我将用三章的篇幅来分别介绍：</p>
 <ol>
@@ -2131,6 +2158,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇的示例代码中大家一定发现了Observable这个类。从纯Java的观点看，Observable类源自于经典的观察者模式。RxJava的异步实现正是基于观察者模式来实现的，而且是一种扩展的观察者模式。</p>
           <!--noindex-->
@@ -2290,6 +2320,9 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>提升开发效率，降低维护成本一直是开发团队永恒不变的宗旨。近一年来国内的技术圈子中越来越多的开始提及Rx，经过一段时间的学习和探索之后我也深深的感受到了RxJava的魅力。它能帮助我们简化代码逻辑，提升代码可读性。这对于开发效率的提升、后期维护成本的降低帮助都是巨大的。个人预测RxJava一定是2016年的一个大趋势，所以也有打算将它引入到公司现有的项目中来，写这一系列的文章主要也是为了团队内部做技术分享。</p>
 <blockquote>
@@ -2443,7 +2476,10 @@
 
       
         
-          <p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
 <p>解决问题之前我们先来说说<code>WebView</code>上传文件的逻辑：当我们在Web页面上点击选择文件的控件(<code>&lt;input type=&quot;file&quot;&gt;</code>)时，会回调<code>WebChromeClient</code>下的<code>openFileChooser()</code>（5.0及以上系统回调<code>onShowFileChooser()</code>）。这个时候我们在<code>openFileChooser</code>方法中通过<code>Intent</code>打开系统相册或者支持该<code>Intent</code>的第三方应用来选择图片。like this：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture)</span> </span>&#123;</div><div class="line">	uploadMessage = valueCallback;</div><div class="line">   	openImageChooserActivity();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openImageChooserActivity</span><span class="params">()</span> </span>&#123;</div><div class="line">    Intent i = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);</div><div class="line">    i.addCategory(Intent.CATEGORY_OPENABLE);</div><div class="line">    i.setType(<span class="string">"image/*"</span>);</div><div class="line">    startActivityForResult(Intent.createChooser(i,</div><div class="line">    			<span class="string">"Image Chooser"</span>), FILE_CHOOSER_RESULT_CODE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <!--noindex-->
@@ -2594,7 +2630,10 @@
 
       
         
-          <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/DesignPatterns/观察者模式-ObserverPattern/#more" rel="contents">
@@ -2743,7 +2782,10 @@
 
       
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在过去的文章中我介绍过Java8的一些新特性，包括：</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在过去的文章中我介绍过Java8的一些新特性，包括：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/20540175">Java8新特性第1章(Lambda表达式)</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/20540188">Java8新特性第2章(接口默认方法)</a></li>
@@ -2899,7 +2941,10 @@
 
       
         
-          <p>Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。</p>
 <p>假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这样写</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (Shape shape : shapes)&#123;</div><div class="line">	shape.setColor(RED)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果使用Java8扩展后的集合框架则可以这样写：</p>
@@ -3052,7 +3097,10 @@
 
       
         
-          <p>在Java中一个接口一旦发布就已经被定型，除非我们能够一次性的更新所有该接口的实现，否者在接口的添加新方法将会破坏现有接口的实现。默认方法就是为了解决这一问题的，这样接口在发布之后依然能够继续演化。</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>在Java中一个接口一旦发布就已经被定型，除非我们能够一次性的更新所有该接口的实现，否者在接口的添加新方法将会破坏现有接口的实现。默认方法就是为了解决这一问题的，这样接口在发布之后依然能够继续演化。</p>
 <p>默认方法就是向接口增加新的行为。它是一种新的方法：接口方法可以是抽象的或者是默认的。默认方法拥有默认实现，接口实现类通过继承得到该默认实现。默认方法不是抽象的，所以我们可以放心的向函数式接口里增加默认方法，而不用担心函数式接口单抽象方法的限制。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -3202,7 +3250,10 @@
 
       
         
-          <p>在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：</p>
+          <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnClickListener</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们是这样使用它的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">		v.setText(<span class="string">"lalala"</span>);</div><div class="line">   	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>

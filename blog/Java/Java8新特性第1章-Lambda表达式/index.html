@@ -95,25 +95,33 @@
 
 
 
-<meta name="description" content="在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
+<meta name="description" content="微信公众号：BaronTalk
+
+在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
 123public interface OnClickListener &amp;#123;	void onClick(View v);&amp;#125;
 我们是这样使用它的：
-123456button.setOnClickListener(new View.OnClickListener() &amp;#123;">
+123456button.setOnClickListener(new View.OnClickL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java8新特性第1章(Lambda表达式)">
 <meta property="og:url" content="http://baronzhang.com/blog/Java/Java8新特性第1章-Lambda表达式/index.html">
 <meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
+<meta property="og:description" content="微信公众号：BaronTalk
+
+在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
 123public interface OnClickListener &amp;#123;	void onClick(View v);&amp;#125;
 我们是这样使用它的：
-123456button.setOnClickListener(new View.OnClickListener() &amp;#123;">
-<meta property="og:updated_time" content="2017-12-26T06:47:04.941Z">
+123456button.setOnClickListener(new View.OnClickL">
+<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
+<meta property="og:updated_time" content="2018-04-13T11:02:43.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java8新特性第1章(Lambda表达式)">
-<meta name="twitter:description" content="在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
+<meta name="twitter:description" content="微信公众号：BaronTalk
+
+在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：
 123public interface OnClickListener &amp;#123;	void onClick(View v);&amp;#125;
 我们是这样使用它的：
-123456button.setOnClickListener(new View.OnClickListener() &amp;#123;">
+123456button.setOnClickListener(new View.OnClickL">
+<meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
 
 
 
@@ -382,7 +390,10 @@
       
 
       
-        <p>在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：</p>
+        <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>在介绍Lambda表达式之前，我们先来看只有单个方法的Interface（通常我们称之为回调接口）：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnClickListener</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们是这样使用它的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">		v.setText(<span class="string">"lalala"</span>);</div><div class="line">   	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -476,6 +487,7 @@
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 
       
     </div>

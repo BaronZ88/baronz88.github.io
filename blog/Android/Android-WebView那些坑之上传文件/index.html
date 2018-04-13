@@ -95,19 +95,25 @@
 
 
 
-<meta name="description" content="最近公司项目需要在WebView上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
-解决问题之前我们先来说说WebView上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;)时，会回调WebChromeClient下的openFileChooser()（5.0及以上系统回调onShow">
+<meta name="description" content="微信公众号：BaronTalk
+
+最近公司项目需要在WebView上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
+解决问题之前我们先来说说WebView上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;)时，会回调WebChromeClient下的openFileChooser(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android WebView那些坑之上传文件">
 <meta property="og:url" content="http://baronzhang.com/blog/Android/Android-WebView那些坑之上传文件/index.html">
 <meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="最近公司项目需要在WebView上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
-解决问题之前我们先来说说WebView上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;)时，会回调WebChromeClient下的openFileChooser()（5.0及以上系统回调onShow">
-<meta property="og:updated_time" content="2017-06-12T15:39:45.000Z">
+<meta property="og:description" content="微信公众号：BaronTalk
+
+最近公司项目需要在WebView上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
+解决问题之前我们先来说说WebView上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;)时，会回调WebChromeClient下的openFileChooser(">
+<meta property="og:updated_time" content="2018-04-13T11:02:38.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android WebView那些坑之上传文件">
-<meta name="twitter:description" content="最近公司项目需要在WebView上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
-解决问题之前我们先来说说WebView上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;)时，会回调WebChromeClient下的openFileChooser()（5.0及以上系统回调onShow">
+<meta name="twitter:description" content="微信公众号：BaronTalk
+
+最近公司项目需要在WebView上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。
+解决问题之前我们先来说说WebView上传文件的逻辑：当我们在Web页面上点击选择文件的控件(&amp;lt;input type=&amp;quot;file&amp;quot;&amp;gt;)时，会回调WebChromeClient下的openFileChooser(">
 
 
 
@@ -376,7 +382,10 @@
       
 
       
-        <p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
+        <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
 <p>解决问题之前我们先来说说<code>WebView</code>上传文件的逻辑：当我们在Web页面上点击选择文件的控件(<code>&lt;input type=&quot;file&quot;&gt;</code>)时，会回调<code>WebChromeClient</code>下的<code>openFileChooser()</code>（5.0及以上系统回调<code>onShowFileChooser()</code>）。这个时候我们在<code>openFileChooser</code>方法中通过<code>Intent</code>打开系统相册或者支持该<code>Intent</code>的第三方应用来选择图片。like this：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture)</span> </span>&#123;</div><div class="line">	uploadMessage = valueCallback;</div><div class="line">   	openImageChooserActivity();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openImageChooserActivity</span><span class="params">()</span> </span>&#123;</div><div class="line">    Intent i = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);</div><div class="line">    i.addCategory(Intent.CATEGORY_OPENABLE);</div><div class="line">    i.setType(<span class="string">"image/*"</span>);</div><div class="line">    startActivityForResult(Intent.createChooser(i,</div><div class="line">    			<span class="string">"Image Chooser"</span>), FILE_CHOOSER_RESULT_CODE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>

@@ -95,14 +95,18 @@
 
 
 
-<meta name="description" content="一. 前言这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。
-Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的">
+<meta name="description" content="微信公众号：BaronTalk
+
+一. 前言这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。
+Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家">
 <meta property="og:type" content="article">
 <meta property="og:title" content="写给 Android 应用工程师的 Binder 原理剖析">
 <meta property="og:url" content="http://baronzhang.com/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/index.html">
 <meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="一. 前言这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。
-Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的">
+<meta property="og:description" content="微信公众号：BaronTalk
+
+一. 前言这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。
+Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/linux_ipc_1.png">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/process_space.png">
@@ -114,11 +118,13 @@ Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一�
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/binder_ipc_5.png">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/ipc_1.png">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode500.png">
-<meta property="og:updated_time" content="2018-04-10T15:32:38.253Z">
+<meta property="og:updated_time" content="2018-04-13T11:04:10.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写给 Android 应用工程师的 Binder 原理剖析">
-<meta name="twitter:description" content="一. 前言这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。
-Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的">
+<meta name="twitter:description" content="微信公众号：BaronTalk
+
+一. 前言这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。
+Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家">
 <meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg">
 
 
@@ -389,6 +395,9 @@ Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一�
 
       
         <p><img src="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg" alt=""></p>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
 <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。</p>
 <p>Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的同学来说，理解到本文这个程度也就差不多了。希望更加深入理解 Binder 实现机制的，可以阅读文末的参考资料以及相关源码。</p>
 <a id="more"></a>
