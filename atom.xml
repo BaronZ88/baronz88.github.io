@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baronzhang.com/"/>
-  <updated>2018-04-13T11:04:10.935Z</updated>
+  <updated>2018-04-13T11:07:28.442Z</updated>
   <id>http://baronzhang.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://baronzhang.com//blog/Android/%E5%86%99%E7%BB%99-Android-%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84-Binder-%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/"/>
     <id>http://baronzhang.com//blog/Android/写给-Android-应用工程师的-Binder-原理剖析/</id>
     <published>2018-04-10T15:11:37.000Z</published>
-    <updated>2018-04-13T11:04:10.935Z</updated>
+    <updated>2018-04-13T11:07:28.442Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/android/binder/header.jpg" alt=""></p>
 <blockquote>
@@ -230,7 +230,7 @@
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode500.png" alt=""></p>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -260,7 +260,7 @@
     <link href="http://baronzhang.com//blog/Android/%E4%B8%BA-Retrofit2-%E6%8F%90%E4%BE%9B%E7%9A%84-FastJson-%E8%BD%AC%E6%8D%A2%E5%BA%93/"/>
     <id>http://baronzhang.com//blog/Android/为-Retrofit2-提供的-FastJson-转换库/</id>
     <published>2017-05-17T05:15:49.000Z</published>
-    <updated>2018-04-13T11:04:06.251Z</updated>
+    <updated>2018-04-13T11:12:01.401Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>为 Retrofit2 提供的 FastJson 转换器（Retrofit2-FastJson-Converter）</p>
@@ -280,13 +280,15 @@
 <p>最后贴上 Retrofit2-FastJson-Converter 源码地址 ：<a href="https://github.com/BaronZ88/Retrofit2-FastJson-Converter" target="_blank" rel="external">https://github.com/BaronZ88/Retrofit2-FastJson-Converter</a></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><strong>一直不满意各博客平台上的阅读体验，排版糟糕、布局混乱、字体丑陋、各种广告及杂七杂八的组件分散了读者宝贵的注意力；最最重要的是这年头竟然找不到一个优雅、简介、有美感的博客平台！！！我不能忍！为了赏脸阅读我文章的读者！为了我这仅剩的一点点审美！我采用 GitHub Pages + Hexo + NexT 搭建了个人博客 <a href="http://baronzhang.com">http://baronzhang.com</a> ，不过身为拖延症晚期患者的我，直到最近才将博客系统的各项功能陆续完善起来。之前的文章均已同步，之后所有的文章也会第一时间在个人博客上发布，追求更好阅读体验的同学可以移步 <a href="http://baronzhang.com">baronzhang.com</a> 。</strong></p>
 <blockquote>
-<p>如果你喜欢我的文章，就关注下我的<strong>知乎专栏</strong>或者在 GitHub 上添个 Star 吧！</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -312,7 +314,7 @@
     <link href="http://baronzhang.com//blog/Framework/Android-%E6%A8%A1%E5%9D%97%E5%8C%96%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
     <id>http://baronzhang.com//blog/Framework/Android-模块化探索与实践/</id>
     <published>2017-05-08T06:04:12.000Z</published>
-    <updated>2018-04-13T11:03:54.349Z</updated>
+    <updated>2018-04-13T11:11:54.113Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/2/header.jpg" alt=""></p>
 <blockquote>
@@ -426,13 +428,15 @@
 <li>路由框架 <a href="https://github.com/BaronZ88/Router" target="_blank" rel="external">Router</a> 源码地址：<a href="https://github.com/BaronZ88/Router" target="_blank" rel="external">https://github.com/BaronZ88/Router</a></li>
 </ul>
 <blockquote>
-<p>如果你喜欢我的文章，就关注下我的 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -461,7 +465,7 @@
     <link href="http://baronzhang.com//blog/Framework/%E5%AE%89%E5%B1%85%E5%AE%A2Android%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/"/>
     <id>http://baronzhang.com//blog/Framework/安居客Android项目架构演进/</id>
     <published>2017-02-24T09:59:16.000Z</published>
-    <updated>2018-04-13T11:03:43.161Z</updated>
+    <updated>2018-04-13T11:11:46.325Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ocjtywvav.bkt.clouddn.com/Blog/Framework/Android/header.jpg" alt=""></p>
 <blockquote>
@@ -554,12 +558,15 @@
 <li><a href="https://github.com/MDCC2016/Android-Session-Slides/blob/master/02-From.Containerization.To.Modularity.pdf" target="_blank" rel="external">https://github.com/MDCC2016/Android-Session-Slides/blob/master/02-From.Containerization.To.Modularity.pdf</a></li>
 </ul>
 <blockquote>
-<p>如果你喜欢我的文章，就关注下我的<strong>知乎专栏</strong>或者在 GitHub 上添个 Star 吧！</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -587,7 +594,7 @@
     <link href="http://baronzhang.com//blog/OpenSource/Java/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8Dagger2/"/>
     <id>http://baronzhang.com//blog/OpenSource/Java/神兵利器Dagger2/</id>
     <published>2017-02-06T10:58:18.000Z</published>
-    <updated>2018-04-13T11:03:45.171Z</updated>
+    <updated>2018-04-13T11:11:26.405Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -708,7 +715,15 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章只是通过一些简单的例子介绍了Dagger2的相关概念及使用，实际项目中的应用远比这里的例子要复杂。关于Dagger2在实际项目中的应用可以参照这个开源项目 <a href="https://github.com/BaronZ88/MinimalistWeather" target="_blank" rel="external">https://github.com/BaronZ88/MinimalistWeather</a>（项目采用MVP架构，其中View层和Presenter层的解耦就是通过Dagger2来实现的）。</p>
 <blockquote>
 <p><a href="https://github.com/BaronZ88/MinimalistWeather" target="_blank" rel="external">MinimalistWeather</a>是一款开源天气App，开发此项目主要是为展示各种开源库的使用方式以及Android项目的架构方案，并作为团队开发规范的一部分。项目中每一个字母、每一个命名、每一行代码都是经过仔细考究的；但是由于时间精力有限，项目UI未做严格要求。本着精益求精、提供更好开源项目和更美天气应用的原则，因此期望有兴趣的开发和UED同学可以一起来完成这个项目。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
+<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
+<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
+</ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -742,7 +757,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%97%E7%95%AA%E5%A4%96%E7%AF%87%EF%BC%9A%E4%B8%80%E4%B8%AARxJava%E8%A7%A3%E5%86%B3%E5%A4%8D%E6%9D%82%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E7%9A%84%E6%A1%88%E4%BE%8B/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/</id>
     <published>2017-02-05T16:30:27.000Z</published>
-    <updated>2018-04-13T11:03:19.118Z</updated>
+    <updated>2018-04-13T11:11:13.957Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -782,12 +797,15 @@
 <p>欢迎大家留言讨论。</p>
 <blockquote>
 <p>本文中的代码在<a href="https://github.com/BaronZ88/MinimalistWeather" target="_blank" rel="external">MinimalistWeather</a>中的<code>WeatherDataRepository</code>类中有同样的实现，文章中为了更完整的将整个实现过程呈现出来，对代码做了部分改动。</p>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -823,7 +841,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%977-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列7-最佳实践/</id>
     <published>2017-02-05T16:22:03.000Z</published>
-    <updated>2018-04-13T11:03:11.890Z</updated>
+    <updated>2018-04-13T11:11:04.942Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -877,12 +895,15 @@
 <p>好啦，我们RxJava2见！~</p>
 <hr>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -921,7 +942,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%976-%E4%BB%8E%E5%BE%AE%E8%A7%82%E8%A7%92%E5%BA%A6%E8%A7%A3%E8%AF%BBRxJava%E6%BA%90%E7%A0%81/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/</id>
     <published>2017-02-05T16:21:05.000Z</published>
-    <updated>2018-04-13T11:03:07.721Z</updated>
+    <updated>2018-04-13T11:10:51.542Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1033,12 +1054,15 @@
 <p><img src="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess.jpg" alt="RxJava执行流程"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这一章以<strong>执行流程</strong>、<strong>操作符实现</strong>以及<strong>线程调度</strong>三个方面为切入点剖析了RxJava源码。下一章将站在更宏观的角度来分析整个RxJava的框架结构、设计思想等等。敬请期待~~ :)</p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1083,7 +1107,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%975-%E7%BB%84%E5%90%88%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列5-组合操作符/</id>
     <published>2017-02-05T16:20:46.000Z</published>
-    <updated>2018-04-13T11:02:59.640Z</updated>
+    <updated>2018-04-13T11:09:41.830Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1169,12 +1193,15 @@
 </code></pre><p>通过<a href="http://www.jianshu.com/p/5970280703b9" target="_blank" rel="external">转换操作符</a>、<a href="http://www.jianshu.com/p/3a188b995daa" target="_blank" rel="external">过滤操作符</a>、<a href="http://www.jianshu.com/p/546fe44a6e22" target="_blank" rel="external">组合操作符</a>三个篇幅将RxJava主要的操作符也介绍的七七八八了。更多操作符的介绍建议大家去查阅官方文档，并自己动手实践一下。这一系列的文章也会持续更新，欢迎大家保持关注！:)</p>
 <p>Demo源码地址：<a href="https://github.com/BaronZ88/HelloRxJava" target="_blank" rel="external">https://github.com/BaronZ88/HelloRxJava</a></p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1210,7 +1237,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%974-%E8%BF%87%E6%BB%A4%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列4-过滤操作符/</id>
     <published>2017-02-05T16:20:33.000Z</published>
-    <updated>2018-04-13T11:02:55.673Z</updated>
+    <updated>2018-04-13T11:09:33.794Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1294,12 +1321,15 @@
 <pre><code>小区:竹园新村; 房源描述:顶层户型，两室一厅
 </code></pre><p>这一章我们就先聊到这，更多的过滤类操作符的介绍大家可以去查阅官方文档和源码；在下一章我们将继续介绍组合类操作符。</p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1335,7 +1365,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%973-%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列3-转换操作符/</id>
     <published>2017-02-05T16:20:19.000Z</published>
-    <updated>2018-04-13T11:02:51.908Z</updated>
+    <updated>2018-04-13T11:09:26.420Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1388,12 +1418,15 @@
 小区:竹园新村; 房源描述:顶层户型，两室一厅
 </code></pre><p>转换类的操作符就先介绍到这，后续还会继续介绍组合、过滤类的操作符及源码分析，敬请期待！</p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1435,7 +1468,7 @@
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%972-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列2-基本概念及使用介绍/</id>
     <published>2017-02-05T16:20:04.000Z</published>
-    <updated>2018-04-13T11:02:47.730Z</updated>
+    <updated>2018-04-13T11:09:17.639Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1527,12 +1560,15 @@ onCompleted
 <p>上面这段代码大家应该有印象吧，没错正是我们上一篇文章中的例子。<code>subscribeOn(Schedulers.io())</code>指定了获取小区列表、处理房源信息等一系列事件都是在IO线程中运行，<code>observeOn(AndroidSchedulers.mainThread())</code>指定了在屏幕上展示房源的操作在UI线程执行。这就做到了在子线程获取房源，主线程展示房源。</p>
 <p>好了，RxJava系列的入门内容我们就聊到这。下一篇我们再继续介绍更多的API以及它们内部的原理。</p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1568,7 +1604,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/RxJava/RxJava%E7%B3%BB%E5%88%971-%E7%AE%80%E4%BB%8B/"/>
     <id>http://baronzhang.com//blog/RxJava/RxJava系列1-简介/</id>
     <published>2017-02-05T16:19:48.000Z</published>
-    <updated>2018-04-13T11:02:36.529Z</updated>
+    <updated>2018-04-13T11:09:10.091Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
@@ -1608,12 +1644,15 @@ onCompleted
 <p>简洁！有美感！这才是一个有情怀的程序员应该写出来的代码。</p>
 <p>看完这篇文章大家应该能够理解RxJava为什么会越来越火了。它能极大的提高我们的开发效率和代码的可读性！当然了RxJava的学习曲线也是比较陡的，在后面的文章我会对主要的知识点做详细的介绍，敬请关注！</p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1652,7 +1691,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/Android/Android-WebView%E9%82%A3%E4%BA%9B%E5%9D%91%E4%B9%8B%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
     <id>http://baronzhang.com//blog/Android/Android-WebView那些坑之上传文件/</id>
     <published>2017-02-05T16:16:41.000Z</published>
-    <updated>2018-04-13T11:02:38.715Z</updated>
+    <updated>2018-04-13T11:09:03.918Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -1677,12 +1716,15 @@ onCompleted
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ValueCallback&lt;Uri&gt; uploadMessage;</div><div class="line">    <span class="keyword">private</span> ValueCallback&lt;Uri[]&gt; uploadMessageAboveL;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> FILE_CHOOSER_RESULT_CODE = <span class="number">10000</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">        WebView webview = (WebView) findViewById(R.id.web_view);</div><div class="line">        <span class="keyword">assert</span> webview != <span class="keyword">null</span>;</div><div class="line">        WebSettings settings = webview.getSettings();</div><div class="line">        settings.setUseWideViewPort(<span class="keyword">true</span>);</div><div class="line">        settings.setLoadWithOverviewMode(<span class="keyword">true</span>);</div><div class="line">        settings.setJavaScriptEnabled(<span class="keyword">true</span>);</div><div class="line">        webview.setWebChromeClient(<span class="keyword">new</span> WebChromeClient() &#123;</div><div class="line"></div><div class="line">            <span class="comment">// For Android &lt; 3.0</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback)</span> </span>&#123;</div><div class="line">                uploadMessage = valueCallback;</div><div class="line">                openImageChooserActivity();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// For Android  &gt;= 3.0</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback valueCallback, String acceptType)</span> </span>&#123;</div><div class="line">                uploadMessage = valueCallback;</div><div class="line">                openImageChooserActivity();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//For Android  &gt;= 4.1</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture)</span> </span>&#123;</div><div class="line">                uploadMessage = valueCallback;</div><div class="line">                openImageChooserActivity();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// For Android &gt;= 5.0</span></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onShowFileChooser</span><span class="params">(WebView webView, ValueCallback&lt;Uri[]&gt; filePathCallback, WebChromeClient.FileChooserParams fileChooserParams)</span> </span>&#123;</div><div class="line">                uploadMessageAboveL = filePathCallback;</div><div class="line">                openImageChooserActivity();</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        String targetUrl = <span class="string">"file:///android_asset/up.html"</span>;</div><div class="line">        webview.loadUrl(targetUrl);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openImageChooserActivity</span><span class="params">()</span> </span>&#123;</div><div class="line">        Intent i = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);</div><div class="line">        i.addCategory(Intent.CATEGORY_OPENABLE);</div><div class="line">        i.setType(<span class="string">"image/*"</span>);</div><div class="line">        startActivityForResult(Intent.createChooser(i, <span class="string">"Image Chooser"</span>), FILE_CHOOSER_RESULT_CODE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onActivityResult(requestCode, resultCode, data);</div><div class="line">        <span class="keyword">if</span> (requestCode == FILE_CHOOSER_RESULT_CODE) &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">null</span> == uploadMessage &amp;&amp; <span class="keyword">null</span> == uploadMessageAboveL) <span class="keyword">return</span>;</div><div class="line">            Uri result = data == <span class="keyword">null</span> || resultCode != RESULT_OK ? <span class="keyword">null</span> : data.getData();</div><div class="line">            <span class="keyword">if</span> (uploadMessageAboveL != <span class="keyword">null</span>) &#123;</div><div class="line">                onActivityResultAboveL(requestCode, resultCode, data);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (uploadMessage != <span class="keyword">null</span>) &#123;</div><div class="line">                uploadMessage.onReceiveValue(result);</div><div class="line">                uploadMessage = <span class="keyword">null</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@TargetApi</span>(Build.VERSION_CODES.LOLLIPOP)</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">onActivityResultAboveL</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (requestCode != FILE_CHOOSER_RESULT_CODE || uploadMessageAboveL == <span class="keyword">null</span>)</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        Uri[] results = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">if</span> (resultCode == Activity.RESULT_OK) &#123;</div><div class="line">            <span class="keyword">if</span> (intent != <span class="keyword">null</span>) &#123;</div><div class="line">                String dataString = intent.getDataString();</div><div class="line">                ClipData clipData = intent.getClipData();</div><div class="line">                <span class="keyword">if</span> (clipData != <span class="keyword">null</span>) &#123;</div><div class="line">                    results = <span class="keyword">new</span> Uri[clipData.getItemCount()];</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; clipData.getItemCount(); i++) &#123;</div><div class="line">                        ClipData.Item item = clipData.getItemAt(i);</div><div class="line">                        results[i] = item.getUri();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (dataString != <span class="keyword">null</span>)</div><div class="line">                    results = <span class="keyword">new</span> Uri[]&#123;Uri.parse(dataString)&#125;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        uploadMessageAboveL.onReceiveValue(results);</div><div class="line">        uploadMessageAboveL = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>源码地址:<a href="https://github.com/BaronZ88/WebViewSample" target="_blank" rel="external">https://github.com/BaronZ88/WebViewSample</a></p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1710,7 +1752,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/DesignPatterns/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F-ObserverPattern/"/>
     <id>http://baronzhang.com//blog/DesignPatterns/观察者模式-ObserverPattern/</id>
     <published>2017-02-05T16:16:14.000Z</published>
-    <updated>2018-04-13T11:03:27.809Z</updated>
+    <updated>2018-04-13T11:11:33.825Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -1756,12 +1798,15 @@ onCompleted
 第6天:10.0℃
 </code></pre><blockquote>
 <p>源码地址：<a href="https://github.com/BaronZ88/DesignPatterns/tree/master/src/com/baron/patterns/observer" target="_blank" rel="external">https://github.com/BaronZ88/DesignPatterns/tree/master/src/com/baron/patterns/observer</a></p>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1787,7 +1832,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/%E5%9C%A8Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8Java8/"/>
     <id>http://baronzhang.com//blog/Java/在Android项目中使用Java8/</id>
     <published>2017-02-05T15:37:48.000Z</published>
-    <updated>2018-04-13T11:02:40.007Z</updated>
+    <updated>2018-04-13T11:08:54.824Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -1832,12 +1877,15 @@ onCompleted
 <li><a href="https://medium.com/@sergii/java-8-in-android-n-preview-76184e2ab7ad" target="_blank" rel="external">https://medium.com/@sergii/java-8-in-android-n-preview-76184e2ab7ad</a></li>
 </ul>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1870,7 +1918,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E7%AC%AC3%E7%AB%A0-Stream-API/"/>
     <id>http://baronzhang.com//blog/Java/Java8新特性第3章-Stream-API/</id>
     <published>2017-02-05T15:37:32.000Z</published>
-    <updated>2018-04-13T11:02:41.222Z</updated>
+    <updated>2018-04-13T11:08:44.922Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -1905,12 +1953,15 @@ onCompleted
 <p>如果使用Streams API:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> communities.stream()</div><div class="line">          .filter(c -&gt; c.houses.stream().anyMatch(h -&gt; h.area&gt;<span class="number">100</span>))</div><div class="line">          .sorted(Comparator.comparing(c -&gt; c.name))</div><div class="line">          .collect(Collectors.toList());</div></pre></td></tr></table></figure>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1938,7 +1989,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E7%AC%AC2%E7%AB%A0-%E6%8E%A5%E5%8F%A3%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95/"/>
     <id>http://baronzhang.com//blog/Java/Java8新特性第2章-接口默认方法/</id>
     <published>2017-02-05T15:37:11.000Z</published>
-    <updated>2018-04-13T11:02:42.461Z</updated>
+    <updated>2018-04-13T11:08:47.322Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -1951,12 +2002,15 @@ onCompleted
 <p>除了上面看到的默认方法，Java8中还允许我们在接口中定义静态方法。这使得我们可以从接口中直接调用它相关的辅助方法，而不是从其它的辅助类中调用（如Collections）。在做集合中元素比较的时候，我们一般需要使用静态辅助方法生成实现Comparator的比较器，在Java8中我们可以直接把该静态方法定义在Comparator接口中：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T, U extends Comparable&lt;? <span class="keyword">super</span> U&gt;&gt;</div><div class="line">    <span class="function">Comparator&lt;T&gt; <span class="title">comparing</span><span class="params">(Function&lt;T, U&gt; keyExtractor)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> (c1, c2) -&gt; keyExtractor.apply(c1).compareTo(keyExtractor.apply(c2));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1981,7 +2035,7 @@ onCompleted
     <link href="http://baronzhang.com//blog/Java/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E7%AC%AC1%E7%AB%A0-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://baronzhang.com//blog/Java/Java8新特性第1章-Lambda表达式/</id>
     <published>2017-02-05T06:24:30.000Z</published>
-    <updated>2018-04-13T11:02:43.715Z</updated>
+    <updated>2018-04-13T11:07:43.282Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -2074,10 +2128,12 @@ onCompleted
 <li>数组构造方法引用：TypeName[]::new</li>
 </ul>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
 <p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>

@@ -127,7 +127,8 @@ RxJava系列7(最佳实践)
 前言上一篇的示例代码中大家一定发现了Observable这个类。从纯Java的观点看，O">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/2/Observer.png">
 <meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/2/subscribe1.png">
-<meta property="og:updated_time" content="2018-04-13T11:02:47.730Z">
+<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
+<meta property="og:updated_time" content="2018-04-13T11:09:17.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJava系列2(基本概念及使用介绍)">
 <meta name="twitter:description" content="RxJava系列1(简介)
@@ -502,12 +503,15 @@ onCompleted
 <p>上面这段代码大家应该有印象吧，没错正是我们上一篇文章中的例子。<code>subscribeOn(Schedulers.io())</code>指定了获取小区列表、处理房源信息等一系列事件都是在IO线程中运行，<code>observeOn(AndroidSchedulers.mainThread())</code>指定了在屏幕上展示房源的操作在UI线程执行。这就做到了在子线程获取房源，主线程展示房源。</p>
 <p>好了，RxJava系列的入门内容我们就聊到这。下一篇我们再继续介绍更多的API以及它们内部的原理。</p>
 <blockquote>
-<p>如果大家喜欢这一系列的文章，欢迎关注我的知乎专栏和GitHub。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
 <li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
+<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
 
       
     </div>
