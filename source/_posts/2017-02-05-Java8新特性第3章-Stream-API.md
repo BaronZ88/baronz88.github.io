@@ -155,4 +155,4 @@ return communities.stream()
 > * GitHub：[https://github.com/BaronZ88](https://github.com/BaronZ88)
 > * 个人博客：[http://baronzhang.com](http://baronzhang.com)
 
-![](http://resources.baronzhang.com/blog/common/qrcode1.png)
+<div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"/></div>
