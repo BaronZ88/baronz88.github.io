@@ -107,7 +107,7 @@
 之前在阅读 ASM 文档时，对于已编译类的结构、方法描述符、访问标志、ACC_PUBLIC、ACC_PRIVATE、各种字节码指令等等许多概念听起来都是云山雾罩、一知半解，原因就在于对类文件结构和类加载机制不够了解。直到后来细读了《深入理解 Java 虚拟机》中虚拟机执行子系统的相关内容，才建立了清晰的认知。如果你也和我一样，不了解类结构和类加">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/2/语言无关性.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-19T16:29:54.879Z">
+<meta property="og:updated_time" content="2019-08-19T16:54:34.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系列 | 深入理解Java虚拟机二（类文件结构）">
 <meta name="twitter:description" content="首发于微信公众号：BaronTalk，欢迎关注！
@@ -467,9 +467,9 @@
 </tbody>
 </table>
 <p>Class 文件中存储的字节严格按照上表中的顺序紧凑的排列在一起。哪个字节代表什么含义，长度是多少，先后顺序如何都是被严格限制的，不允许有任何改变。</p>
-<h4 id="2-1-魔数与-Class-文件版本"><a href="#2-1-魔数与-Class-文件版本" class="headerlink" title="2.1 魔数与 Class 文件版本"></a>2.1 魔数与 Class 文件版本</h4><p>每个 Class 文件的头 4 个字节称为魔数（Magic Number），它的唯一作用是确定这个文件是否为一个能被虚拟机接收的 Calss 文件。之所以使用魔数而不是文件后缀名来进行识别主要是基于安全性的考虑，因为文件后缀名是可以随意更改的。Class 文件的魔数值为「0xCAFEBABE」。</p>
+<h3 id="2-1-魔数与-Class-文件版本"><a href="#2-1-魔数与-Class-文件版本" class="headerlink" title="2.1 魔数与 Class 文件版本"></a>2.1 魔数与 Class 文件版本</h3><p>每个 Class 文件的头 4 个字节称为魔数（Magic Number），它的唯一作用是确定这个文件是否为一个能被虚拟机接收的 Calss 文件。之所以使用魔数而不是文件后缀名来进行识别主要是基于安全性的考虑，因为文件后缀名是可以随意更改的。Class 文件的魔数值为「0xCAFEBABE」。</p>
 <p>紧接着魔数的 4 个字节存储的是 Class 文件的版本号：第 5 和第 6 两个字节是次版本号（Minor Version），第 7 和第 8 个字节是主版本号（Major Version）。高版本的 JDK 能够向下兼容低版本的 Class 文件，虚拟机会拒绝执行超过其版本号的 Class 文件。</p>
-<h4 id="2-2-常量池"><a href="#2-2-常量池" class="headerlink" title="2.2 常量池"></a>2.2 常量池</h4><p>主版本号之后是常量池入口，常量池可以理解为 Class 文件之中的资源仓库，它是 Class 文件结构中与其他项目关联最多的数据类型，也是占用 Class 文件空间最大的数据项目之一，同是它还是 Class 文件中第一个出现的表类型数据项目。</p>
+<h3 id="2-2-常量池"><a href="#2-2-常量池" class="headerlink" title="2.2 常量池"></a>2.2 常量池</h3><p>主版本号之后是常量池入口，常量池可以理解为 Class 文件之中的资源仓库，它是 Class 文件结构中与其他项目关联最多的数据类型，也是占用 Class 文件空间最大的数据项目之一，同是它还是 Class 文件中第一个出现的表类型数据项目。</p>
 <p>因为常量池中常量的数量是不固定的，所以在常量池入口需要放置一个 u2 类型的数据来表示常量池的容量「constant_pool_count」，和计算机科学中计数的方法不一样，这个容量是从 1 开始而不是从 0 开始计数。之所以将第 0 项常量空出来是为了满足后面某些指向常量池的索引值的数据在特定情况下需要表达「不引用任何一个常量池项目」的含义，这种情况可以把索引值置为 0 来表示。</p>
 <blockquote>
 <p>Class 文件结构中只有常量池的容量计数是从 1 开始的，其它集合类型，包括接口索引集合、字段表集合、方法表集合等容量计数都是从 0 开始。</p>
@@ -484,26 +484,26 @@
 </ul>
 </li>
 </ul>
-<h4 id="2-3-访问标志"><a href="#2-3-访问标志" class="headerlink" title="2.3 访问标志"></a>2.3 访问标志</h4><p>紧接着常量池之后的两个字节代表访问标志（access_flag），这个标志用于识别一些类或者接口层次的访问信息，包括这个 Class 是类还是接口；是否定义为 public 类型；是否定义为 abstract 类型；如果是类的话，是否被申明为 final 等。具体的标志位以及标志的含义见下表：</p>
+<h3 id="2-3-访问标志"><a href="#2-3-访问标志" class="headerlink" title="2.3 访问标志"></a>2.3 访问标志</h3><p>紧接着常量池之后的两个字节代表访问标志（access_flag），这个标志用于识别一些类或者接口层次的访问信息，包括这个 Class 是类还是接口；是否定义为 public 类型；是否定义为 abstract 类型；如果是类的话，是否被申明为 final 等。具体的标志位以及标志的含义见下表：</p>
 <table class="table table-striped" style="width:100%"><br>  <tr><br>    <th>标志名称</th><br>    <th>标志值</th><br>    <th>含义</th><br>  </tr><br>  <tr><br>    <td>ACC_PUBLIC</td><br>    <td>0x0001</td><br>    <td>是否为 public 类型</td><br>  </tr><br>  <tr><br>    <td>ACC_FINAL</td><br>    <td>0x0010</td><br>    <td>是否被声明为 final，只有类可设置</td><br>  </tr><br>  <tr><br>    <td>ACC_SUPER</td><br>    <td>0x0020</td><br>    <td>是否允许使用 invokespecial 字节码指令的新语意，invokespecial 指令的语意在 JKD 1.0.2 中发生过改变，微聊区别这条指令使用哪种语意，JDK 1.0.2 编译出来的类的这个标志都必须为真</td><br>  </tr><br>  <tr><br>    <td>ACC_INTERFACE</td><br>    <td>0x0200</td><br>    <td>标识这是一个接口</td><br>  </tr><br>  <tr><br>    <td>ACC_ABSTRACT</td><br>    <td>0x0400</td><br>    <td>是否为 abstract 类型，对于接口或者抽象类来说，此标志值为真，其它类值为假</td><br>  </tr><br>  <tr><br>    <td>ACC_SYNTHETIC</td><br>    <td>0x1000</td><br>    <td>标识这个类并非由用户代码产生</td><br>  </tr><br>  <tr><br>    <td>ACC_ANNOTATION</td><br>    <td>0x2000</td><br>    <td>标识这是一个注解</td><br>  </tr><br>  <tr><br>    <td>ACC_ENUM</td><br>    <td>0x4000</td><br>    <td>标识这是一个枚举</td><br>  </tr><br></table>
 
 <p>access_flags 中一共有 16 个标志位可以使用，当前只定义了其中的 8 个，没有使用到的标志位要求一律为 0。</p>
-<h4 id="2-4-类索引、父类索引与接口索引集合"><a href="#2-4-类索引、父类索引与接口索引集合" class="headerlink" title="2.4 类索引、父类索引与接口索引集合"></a>2.4 类索引、父类索引与接口索引集合</h4><p>类索引（this_class）和父类索引（super_class）都是一个 u2 类型的数据，而接口索引集合（interfaces）是一组 u2 类型的数据集合，Class 文件中由这三项数据来确定这个类的继承关系。</p>
+<h3 id="2-4-类索引、父类索引与接口索引集合"><a href="#2-4-类索引、父类索引与接口索引集合" class="headerlink" title="2.4 类索引、父类索引与接口索引集合"></a>2.4 类索引、父类索引与接口索引集合</h3><p>类索引（this_class）和父类索引（super_class）都是一个 u2 类型的数据，而接口索引集合（interfaces）是一组 u2 类型的数据集合，Class 文件中由这三项数据来确定这个类的继承关系。</p>
 <ul>
 <li>类索引用于确定这个类的全限定名</li>
 <li>父类索引用于确定这个类的父类的全限定名</li>
 <li>接口索引集合用于描述这个类实现了哪些接口</li>
 </ul>
-<h4 id="2-5-字段表集合"><a href="#2-5-字段表集合" class="headerlink" title="2.5 字段表集合"></a>2.5 字段表集合</h4><p>字段表集合（field_info）用于描述接口或者类中声明的变量。字段（field）包括类变量和实例变量，但不包括方法内部声明的局部变量。下面我们看看字段表的结构：</p>
+<h3 id="2-5-字段表集合"><a href="#2-5-字段表集合" class="headerlink" title="2.5 字段表集合"></a>2.5 字段表集合</h3><p>字段表集合（field_info）用于描述接口或者类中声明的变量。字段（field）包括类变量和实例变量，但不包括方法内部声明的局部变量。下面我们看看字段表的结构：</p>
 <table class="table table-striped" style="width:100%"><br>  <tr><br>    <th>类型</th><br>    <th>名称</th><br>    <th>数量</th><br>  </tr><br>  <tr><br>    <td>u2</td><br>    <td>access_flag</td><br>    <td>1</td><br>  </tr><br>  <tr><br>    <td>u2</td><br>    <td>name_index</td><br>    <td>1</td><br>  </tr><br>  <tr><br>    <td>u2</td><br>    <td>descriptor_index</td><br>    <td>1</td><br>  </tr><br>  <tr><br>    <td>u2</td><br>    <td>attributes_count</td><br>    <td>1</td><br>  </tr><br>  <tr><br>    <td>attribute_info</td><br>    <td>attributes</td><br>    <td>attributes_count</td><br>  </tr><br></table>
 
 <p>字段修饰符放在 access_flags 中，它与类中的 access_flag 非常相似，都是一个 u2 的数据类型。</p>
 <table class="table table-striped" style="width:100%"><br>   <tr><br>    <th>标志名称</th><br>    <th>标志值</th><br>    <th>含义</th><br>  </tr><br>  <tr><br>    <td>ACC_PUBLIC</td><br>    <td>0x0001</td><br>    <td>字段是否为 public</td><br>  </tr><br>  <tr><br>    <td>ACC_PRIVATE</td><br>    <td>0x0002</td><br>    <td>字段是否为 private</td><br>  </tr><br>  <tr><br>    <td>ACC_PROTECTED</td><br>    <td>0x0004</td><br>    <td>字段是否为 protected</td><br>  </tr><br>  <tr><br>    <td>ACC_STATIC</td><br>    <td>0x0008</td><br>    <td>字段是否为 static</td><br>  </tr><br>  <tr><br>    <td>ACC_FINAL</td><br>    <td>0x0010</td><br>    <td>字段是否为 final</td><br>  </tr><br>  <tr><br>    <td>ACC_VOLATILE</td><br>    <td>0x0040</td><br>    <td>字段是否为 volatile</td><br>  </tr><br>  <tr><br>    <td>ACC_TRANSIENT</td><br>    <td>0x0080</td><br>    <td>字段是否为 transient</td><br>  </tr><br>  <tr><br>    <td>ACC_SYNTHETIC</td><br>    <td>0x1000</td><br>    <td>字段是否由编译器自动生成</td><br>  </tr><br>  <tr><br>    <td>ACC_ENUM</td><br>    <td>0x4000</td><br>    <td>字段是否为 enum</td><br>  </tr><br></table>
 
-<h4 id="2-6-方法表集合"><a href="#2-6-方法表集合" class="headerlink" title="2.6 方法表集合"></a>2.6 方法表集合</h4><p>Class 文件中对方法的描述和对字段的描述是完全一致的，方法表中的结构和字段表的结构一样。</p>
+<h3 id="2-6-方法表集合"><a href="#2-6-方法表集合" class="headerlink" title="2.6 方法表集合"></a>2.6 方法表集合</h3><p>Class 文件中对方法的描述和对字段的描述是完全一致的，方法表中的结构和字段表的结构一样。</p>
 <p>因为 volatile 关键字和 transient 关键字不能修饰方法，所以方法表的访问标志中没有 ACC_VOLATILE 和 ACC_TRANSIENT。与之相对的，synchronizes、native、strictfp 和 abstract 关键字可以修饰方法，所以方法表的访问标志中增加了 ACC_SYNCHRONIZED、ACC_NATIVE、ACC_STRICTFP 和 ACC_ABSTRACT 标志。</p>
 <p>对于方法里的代码，经过编译器编译成字节码指令后，存放在方法属性表中一个名为「Code」的属性里面。</p>
-<h4 id="2-7-属性表集合"><a href="#2-7-属性表集合" class="headerlink" title="2.7 属性表集合"></a>2.7 属性表集合</h4><p>在 Class 文件、字段表、方法表中都可以携带自己的属性表（attribute_info）集合，用于描述某些场景专有的信息。</p>
+<h3 id="2-7-属性表集合"><a href="#2-7-属性表集合" class="headerlink" title="2.7 属性表集合"></a>2.7 属性表集合</h3><p>在 Class 文件、字段表、方法表中都可以携带自己的属性表（attribute_info）集合，用于描述某些场景专有的信息。</p>
 <p>属性表集合不像 Class 文件中的其它数据项要求这么严格，不强制要求各属性表的顺序，并且只要不与已有属性名重复，任何人实现的编译器都可以向属性表中写入自己定义的属性信息，Java 虚拟机在运行时会略掉它不认识的属性。</p>
 <h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>为了控制篇幅，这篇文章里丢弃了很多细节，比如常量池的项目类型、方法表、属性表的具体内容等等。建议想要深入了解的同学可以自己动手将 Java 类编译成二进制字节码文件，根据文章里介绍的类文件结构逐个字符去对照和实验，有助于加深理解。</p>
 <p>关于「类文件结构」我们就介绍到这里，下一篇我们来聊聊「虚拟机的类加载机制」。</p>
@@ -641,7 +641,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -743,7 +743,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-语言无关性"><span class="nav-number">1.</span> <span class="nav-text">一. 语言无关性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Class-文件结构"><span class="nav-number">2.</span> <span class="nav-text">二. Class 文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-魔数与-Class-文件版本"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 魔数与 Class 文件版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-常量池"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 常量池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-访问标志"><span class="nav-number">2.0.3.</span> <span class="nav-text">2.3 访问标志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-类索引、父类索引与接口索引集合"><span class="nav-number">2.0.4.</span> <span class="nav-text">2.4 类索引、父类索引与接口索引集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-字段表集合"><span class="nav-number">2.0.5.</span> <span class="nav-text">2.5 字段表集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-方法表集合"><span class="nav-number">2.0.6.</span> <span class="nav-text">2.6 方法表集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-属性表集合"><span class="nav-number">2.0.7.</span> <span class="nav-text">2.7 属性表集合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">3.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-语言无关性"><span class="nav-number">1.</span> <span class="nav-text">一. 语言无关性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Class-文件结构"><span class="nav-number">2.</span> <span class="nav-text">二. Class 文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-魔数与-Class-文件版本"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 魔数与 Class 文件版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-常量池"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-访问标志"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 访问标志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-类索引、父类索引与接口索引集合"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 类索引、父类索引与接口索引集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-字段表集合"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 字段表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-方法表集合"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 方法表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-属性表集合"><span class="nav-number">2.7.</span> <span class="nav-text">2.7 属性表集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">3.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
