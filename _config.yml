@@ -4,7 +4,7 @@
 
 # Site
 title: 技术男的后花园
-subtitle: 专注技术分享
+subtitle: 公众号：BaronTalk
 description: 专注 Android Java 技术分享
 author: 张磊
 language: zh-Hans
@@ -98,7 +98,9 @@ google_analytics: UA-91622756-1
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:BaronZ88/baronz88.github.io.git
+  repo: 
+    github: git@github.com:BaronZ88/baronz88.github.io.git
+    hexo: git@47.103.142.22:/home/git/hexo.git,master
   branch: master
 
 # hexo sitemap网站地图
