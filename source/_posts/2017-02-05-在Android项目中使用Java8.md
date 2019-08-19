@@ -115,4 +115,4 @@ Java8的新特性并不是本文的重点，对此有兴趣的同学可以去翻
 > * GitHub：[https://github.com/BaronZ88](https://github.com/BaronZ88)
 > * 个人博客：[http://baronzhang.com](http://baronzhang.com)
 
-![](http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png)
+![](http://resources.baronzhang.com/blog/common/qrcode1.png)

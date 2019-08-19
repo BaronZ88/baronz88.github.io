@@ -208,4 +208,4 @@ observableForGetWeatherData.subscribeOn(Schedulers.io())
 > * GitHub：[https://github.com/BaronZ88](https://github.com/BaronZ88)
 > * 个人博客：[http://baronzhang.com](http://baronzhang.com)
 
-![](http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png)
+![](http://resources.baronzhang.com/blog/common/qrcode1.png)
