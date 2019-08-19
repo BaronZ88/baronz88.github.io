@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="BaronZhang, baronzhang, Baron, Android, Java" />
+  <meta name="keywords" content="JVM," />
 
 
 
@@ -100,14 +100,14 @@
 之前在阅读 ASM 文档时，对于已编译类的结构、方法描述符、访问标志、ACC_PUBLIC、ACC_PRIVATE、各种字节码指令等等许多概念听起来都是云山雾罩、一知半解，原因就在于对类文件结构和类加载机制不够了解。直到后来细读了《深入理解 Java 虚拟机》中虚拟机执行子系统的相关内容，才建立了清晰的认知。如果你也和我一样，不了解类结构和类加">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系列 | 深入理解Java虚拟机二（类文件结构）">
-<meta property="og:url" content="http://baronzhang.com/blog/uncategorized/系列-深入理解Java虚拟机二（类文件结构）/index.html">
+<meta property="og:url" content="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/index.html">
 <meta property="og:site_name" content="技术男的后花园">
 <meta property="og:description" content="首发于微信公众号：BaronTalk，欢迎关注！
 
 之前在阅读 ASM 文档时，对于已编译类的结构、方法描述符、访问标志、ACC_PUBLIC、ACC_PRIVATE、各种字节码指令等等许多概念听起来都是云山雾罩、一知半解，原因就在于对类文件结构和类加载机制不够了解。直到后来细读了《深入理解 Java 虚拟机》中虚拟机执行子系统的相关内容，才建立了清晰的认知。如果你也和我一样，不了解类结构和类加">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/2/语言无关性.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-19T16:54:34.820Z">
+<meta property="og:updated_time" content="2019-08-19T17:00:14.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系列 | 深入理解Java虚拟机二（类文件结构）">
 <meta name="twitter:description" content="首发于微信公众号：BaronTalk，欢迎关注！
@@ -141,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="http://baronzhang.com/blog/uncategorized/系列-深入理解Java虚拟机二（类文件结构）/"/>
+  <link rel="canonical" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/"/>
 
 
 
@@ -285,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/uncategorized/系列-深入理解Java虚拟机二（类文件结构）/">
+    <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
@@ -325,6 +325,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -332,7 +354,7 @@
 
           
           
-             <span id="/blog/uncategorized/系列-深入理解Java虚拟机二（类文件结构）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机二（类文件结构）">
+             <span id="/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机二（类文件结构）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -547,6 +569,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
+          
+        </div>
+      
 
       
       
@@ -556,7 +584,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/uncategorized/系列-深入理解Java虚拟机一（自动内存管理机制）/" rel="next" title="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
+              <a href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/" rel="next" title="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
                 <i class="fa fa-chevron-left"></i> 系列 | 深入理解Java虚拟机一（自动内存管理机制）
               </a>
             
@@ -566,7 +594,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/uncategorized/系列-深入理解Java虚拟机三（类加载机制）/" rel="prev" title="系列 | 深入理解Java虚拟机三（类加载机制）">
+              <a href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/" rel="prev" title="系列 | 深入理解Java虚拟机三（类加载机制）">
                 系列 | 深入理解Java虚拟机三（类加载机制） <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -652,7 +680,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -663,7 +691,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

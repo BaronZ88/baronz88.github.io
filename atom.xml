@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baronzhang.com/"/>
-  <updated>2019-08-19T16:56:08.776Z</updated>
+  <updated>2019-08-19T16:59:35.559Z</updated>
   <id>http://baronzhang.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://baronzhang.com//blog/uncategorized/%E9%82%AE%E4%BB%B6%E8%BF%99%E6%A0%B7%E5%86%99%EF%BC%8CPK-%E6%8E%89-99-%E7%9A%84%E5%90%8C%E4%BA%8B/"/>
     <id>http://baronzhang.com//blog/uncategorized/邮件这样写，PK-掉-99-的同事/</id>
     <published>2019-08-19T16:55:25.000Z</published>
-    <updated>2019-08-19T16:56:08.776Z</updated>
+    <updated>2019-08-19T16:59:35.559Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -110,10 +110,10 @@
   
   <entry>
     <title>系列 | 深入理解Java虚拟机六（高效并发）</title>
-    <link href="http://baronzhang.com//blog/uncategorized/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%AD%EF%BC%88%E9%AB%98%E6%95%88%E5%B9%B6%E5%8F%91%EF%BC%89/"/>
-    <id>http://baronzhang.com//blog/uncategorized/系列-深入理解Java虚拟机六（高效并发）/</id>
+    <link href="http://baronzhang.com//blog/JVM/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%AD%EF%BC%88%E9%AB%98%E6%95%88%E5%B9%B6%E5%8F%91%EF%BC%89/"/>
+    <id>http://baronzhang.com//blog/JVM/系列-深入理解Java虚拟机六（高效并发）/</id>
     <published>2019-08-19T16:27:27.000Z</published>
-    <updated>2019-08-19T16:33:47.716Z</updated>
+    <updated>2019-08-19T17:00:26.019Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -268,15 +268,19 @@
     
     </summary>
     
+      <category term="JVM" scheme="http://baronzhang.com/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://baronzhang.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>系列 | 深入理解Java虚拟机五（程序编译与代码优化）</title>
-    <link href="http://baronzhang.com//blog/uncategorized/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BA%94%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96%EF%BC%89/"/>
-    <id>http://baronzhang.com//blog/uncategorized/系列-深入理解Java虚拟机五（程序编译与代码优化）/</id>
+    <link href="http://baronzhang.com//blog/JVM/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BA%94%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96%EF%BC%89/"/>
+    <id>http://baronzhang.com//blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/</id>
     <published>2019-08-19T16:27:07.000Z</published>
-    <updated>2019-08-19T16:33:18.805Z</updated>
+    <updated>2019-08-19T17:00:44.305Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -415,15 +419,19 @@
     
     </summary>
     
+      <category term="JVM" scheme="http://baronzhang.com/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://baronzhang.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>系列 | 深入理解Java虚拟机四（字节码执行引擎）</title>
-    <link href="http://baronzhang.com//blog/uncategorized/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9B%9B%EF%BC%88%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E%EF%BC%89/"/>
-    <id>http://baronzhang.com//blog/uncategorized/系列-深入理解Java虚拟机四（字节码执行引擎）/</id>
+    <link href="http://baronzhang.com//blog/JVM/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9B%9B%EF%BC%88%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E%EF%BC%89/"/>
+    <id>http://baronzhang.com//blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/</id>
     <published>2019-08-19T16:26:41.000Z</published>
-    <updated>2019-08-19T16:31:28.316Z</updated>
+    <updated>2019-08-19T17:00:38.054Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -546,15 +554,19 @@
     
     </summary>
     
+      <category term="JVM" scheme="http://baronzhang.com/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://baronzhang.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>系列 | 深入理解Java虚拟机三（类加载机制）</title>
-    <link href="http://baronzhang.com//blog/uncategorized/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%EF%BC%88%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6%EF%BC%89/"/>
-    <id>http://baronzhang.com//blog/uncategorized/系列-深入理解Java虚拟机三（类加载机制）/</id>
+    <link href="http://baronzhang.com//blog/JVM/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%EF%BC%88%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6%EF%BC%89/"/>
+    <id>http://baronzhang.com//blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/</id>
     <published>2019-08-19T16:25:48.000Z</published>
-    <updated>2019-08-19T16:30:35.895Z</updated>
+    <updated>2019-08-19T17:00:31.720Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -653,15 +665,19 @@
     
     </summary>
     
+      <category term="JVM" scheme="http://baronzhang.com/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://baronzhang.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>系列 | 深入理解Java虚拟机二（类文件结构）</title>
-    <link href="http://baronzhang.com//blog/uncategorized/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BA%8C%EF%BC%88%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%89/"/>
-    <id>http://baronzhang.com//blog/uncategorized/系列-深入理解Java虚拟机二（类文件结构）/</id>
+    <link href="http://baronzhang.com//blog/JVM/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BA%8C%EF%BC%88%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%89/"/>
+    <id>http://baronzhang.com//blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/</id>
     <published>2019-08-19T16:25:01.000Z</published>
-    <updated>2019-08-19T16:54:34.820Z</updated>
+    <updated>2019-08-19T17:00:14.760Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -836,15 +852,19 @@
     
     </summary>
     
+      <category term="JVM" scheme="http://baronzhang.com/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://baronzhang.com/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>系列 | 深入理解Java虚拟机一（自动内存管理机制）</title>
-    <link href="http://baronzhang.com//blog/uncategorized/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%80%EF%BC%88%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%EF%BC%89/"/>
-    <id>http://baronzhang.com//blog/uncategorized/系列-深入理解Java虚拟机一（自动内存管理机制）/</id>
+    <link href="http://baronzhang.com//blog/JVM/%E7%B3%BB%E5%88%97-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%80%EF%BC%88%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%EF%BC%89/"/>
+    <id>http://baronzhang.com//blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/</id>
     <published>2019-08-19T16:17:35.000Z</published>
-    <updated>2019-08-19T16:22:34.797Z</updated>
+    <updated>2019-08-19T17:01:44.761Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
@@ -855,14 +875,14 @@
 <a id="more"></a>
 <div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/运行时数据区.png" width="60%"></div>
 
-<h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p>程序计数器是一块较小的内存区域，可以看做是当前线程所执行的字节码的行号指示器。在虚拟机的概念模型里，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。「属于线程私有的内存区域」</p>
-<h4 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h4><p>就是我们平时所说的栈，每个方法被执行时，都会创建一个栈帧（Stack Frame）用于存储局部变量表、操作栈、动态链接、方法出口等信息。<strong>每个方法从被调用到执行完成的过程，就对应着一个栈帧在虚拟机栈中从出栈到入栈的过程。</strong>「属于线程私有的内存区域」</p>
+<h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>程序计数器是一块较小的内存区域，可以看做是当前线程所执行的字节码的行号指示器。在虚拟机的概念模型里，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。「属于线程私有的内存区域」</p>
+<h3 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h3><p>就是我们平时所说的栈，每个方法被执行时，都会创建一个栈帧（Stack Frame）用于存储局部变量表、操作栈、动态链接、方法出口等信息。<strong>每个方法从被调用到执行完成的过程，就对应着一个栈帧在虚拟机栈中从出栈到入栈的过程。</strong>「属于线程私有的内存区域」</p>
 <blockquote>
 <p><strong>局部变量表</strong>：局部变量表是 Java 虚拟机栈的一部分，存放了编译器可知的基本数据类型（boolean、byte、char、short、int、float、long、double）、对象引用（reference 类型，不等同于对象本身，根据不同的虚拟机实现，它可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或者其他与此对象相关的位置）和 returnAddress 类型（指向了一条字节码指令的地址）。</p>
 </blockquote>
-<h4 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h4><p>和虚拟机栈类似，只不过虚拟机栈为虚拟机执行的 Java 方法服务，本地方法栈为虚拟机使用的 Native 方法服务。「属于线程私有的内存区域」</p>
-<h4 id="Java-堆"><a href="#Java-堆" class="headerlink" title="Java 堆"></a>Java 堆</h4><p>对大多数应用而言，Java 堆是虚拟机所管理的内存中最大的一块，是被所有线程共享的一块内存区域，在虚拟机启动时创建。此内存区域的唯一作用就是存放对象实例，几乎所有的对象实例都是在这里分配的（不绝对，在虚拟机的优化策略下，也会存在栈上分配、标量替换的情况，后面的章节会详细介绍）。Java 堆是 GC 回收的主要区域，因此很多时候也被称为 GC 堆。从内存回收的角度看，Java 堆还可以被细分为新生代和老年代；再细一点新生代还可以被划分为 Eden Space、From Survivor Space、To Survivor Space。从内存回收的角度看，线程共享的 Java 堆可能划分出多个线程私有的分配缓冲区（Thread Local Allocation Buffer，TLAB）。「属于线程共享的内存区域」</p>
-<h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><p>用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。「属于线程共享的内存区域」</p>
+<h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>和虚拟机栈类似，只不过虚拟机栈为虚拟机执行的 Java 方法服务，本地方法栈为虚拟机使用的 Native 方法服务。「属于线程私有的内存区域」</p>
+<h3 id="Java-堆"><a href="#Java-堆" class="headerlink" title="Java 堆"></a>Java 堆</h3><p>对大多数应用而言，Java 堆是虚拟机所管理的内存中最大的一块，是被所有线程共享的一块内存区域，在虚拟机启动时创建。此内存区域的唯一作用就是存放对象实例，几乎所有的对象实例都是在这里分配的（不绝对，在虚拟机的优化策略下，也会存在栈上分配、标量替换的情况，后面的章节会详细介绍）。Java 堆是 GC 回收的主要区域，因此很多时候也被称为 GC 堆。从内存回收的角度看，Java 堆还可以被细分为新生代和老年代；再细一点新生代还可以被划分为 Eden Space、From Survivor Space、To Survivor Space。从内存回收的角度看，线程共享的 Java 堆可能划分出多个线程私有的分配缓冲区（Thread Local Allocation Buffer，TLAB）。「属于线程共享的内存区域」</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。「属于线程共享的内存区域」</p>
 <blockquote>
 <p><strong>运行时常量池</strong>: 运行时常量池是方法区的一部分，Class 文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息就是常量池（Constant Pool Table），用于存放在编译期生成的各种字面量和符号引用。</p>
 <p><strong>直接内存</strong>：直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是 Java 虚拟机规范中定义的内存区域。Java 中的 NIO 可以使用 Native 函数直接分配堆外内存，然后通过一个存储在 Java 堆中的 DiectByteBuffer 对象作为这块内存的引用进行操作。这样能在一些场景显著提高性能，因为避免了在 Java 堆和 Native 堆中来回复制数据。直接内存不受 Java 堆大小的限制。</p>
@@ -997,6 +1017,10 @@
     
     </summary>
     
+      <category term="JVM" scheme="http://baronzhang.com/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://baronzhang.com/tags/JVM/"/>
     
   </entry>
   
