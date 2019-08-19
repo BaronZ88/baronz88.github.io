@@ -105,17 +105,17 @@
 <meta property="og:description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！
 
 一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apm1/header.jpg">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apm.png">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apk-build.png">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
-<meta property="og:updated_time" content="2018-06-06T03:03:58.428Z">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apm.png">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apk-build.png">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/common/qrcode1.png">
+<meta property="og:updated_time" content="2019-08-19T06:53:46.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 性能监控系列一（原理篇）">
 <meta name="twitter:description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！
 
 一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
-<meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apm1/header.jpg">
+<meta name="twitter:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg">
 
 
 
@@ -384,7 +384,7 @@
       
 
       
-        <p><img src="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apm1/header.jpg" alt="题图来自 https://unsplash.com"></p>
+        <p><img src="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg" alt="题图来自 https://unsplash.com"></p>
 <blockquote>
 <p>欢迎关注微信公众号：<strong>BaronTalk</strong>，获取更多精彩好文！</p>
 </blockquote>
@@ -412,7 +412,7 @@
 <li>接着将采集到的数据整理上报到服务器；</li>
 <li>服务器接收到数据后建模、存储、挖掘分析，让后将数据可视化，供用户使用。</li>
 </ol>
-<p>如下图：<br><img src="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apm.png" alt="APM 工作流程"></p>
+<p>如下图：<br><img src="http://resources.baronzhang.com/blog/framework/android/apm/apm.png" alt="APM 工作流程"></p>
 <p>我们介绍的 Android APM 框架其实就是在 Android 平台上应用的一个数据采集上报 SDK。主要包含三大模块：</p>
 <ol>
 <li>数据采集</li>
@@ -421,7 +421,7 @@
 </ol>
 <p>其中数据采集是整个 APM 框架的核心。</p>
 <p>数据采集我们可以通过手动埋点的方式，但这种方式工作量巨大、不灵活，而且无法覆盖到所有场景；因此只能通过自动化的方式来采集数据。在应用构建期间，通过修改字节码的方式来进行字节码插桩就是实现自动化的方案之一。</p>
-<h2 id="三-Android-打包流程及字节码插桩原理"><a href="#三-Android-打包流程及字节码插桩原理" class="headerlink" title="三. Android 打包流程及字节码插桩原理"></a>三. Android 打包流程及字节码插桩原理</h2><p>在谈字节码插桩的原理之前，首先我们看看 Android 的打包流程，如下图：<br><img src="http://ocjtywvav.bkt.clouddn.com/blog/framework/android/apm/apk-build.png" alt="Android 打包流程"></p>
+<h2 id="三-Android-打包流程及字节码插桩原理"><a href="#三-Android-打包流程及字节码插桩原理" class="headerlink" title="三. Android 打包流程及字节码插桩原理"></a>三. Android 打包流程及字节码插桩原理</h2><p>在谈字节码插桩的原理之前，首先我们看看 Android 的打包流程，如下图：<br><img src="http://resources.baronzhang.com/blog/framework/android/apm/apk-build.png" alt="Android 打包流程"></p>
 <p>从上面这张打包流程图我们可以看到，一个 App 的所有 class 文件，包括第三方的 class 文件都会经过 dex 的过程打包成一个或者多个 dex 文件。</p>
 <p>这其中涉及到两个很关键的环节：</p>
 <ol>
@@ -456,7 +456,7 @@
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
+<p><img src="http://resources.baronzhang.com/blog/common/qrcode1.png" alt=""></p>
 
       
     </div>
@@ -709,7 +709,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

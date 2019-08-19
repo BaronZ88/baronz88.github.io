@@ -125,9 +125,9 @@ RxJava系列7(最佳实践)
 微信公众号：BaronTalk
 
 前言有点标题党了，其实谈不上什么最佳实践。前段时间公司实行996，所以也没什么时间和精力来">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/7/pic1.png">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
-<meta property="og:updated_time" content="2018-04-13T11:11:04.942Z">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/7/pic1.png">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/common/qrcode1.png">
+<meta property="og:updated_time" content="2019-08-19T06:53:46.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJava系列7(最佳实践)">
 <meta name="twitter:description" content="RxJava系列1(简介)
@@ -143,7 +143,7 @@ RxJava系列7(最佳实践)
 微信公众号：BaronTalk
 
 前言有点标题党了，其实谈不上什么最佳实践。前段时间公司实行996，所以也没什么时间和精力来">
-<meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/7/pic1.png">
+<meta name="twitter:image" content="http://resources.baronzhang.com/rxjava/7/pic1.png">
 
 
 
@@ -441,7 +441,7 @@ RxJava系列7(最佳实践)
 <p>下面是核心代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> PackageManager pm = MainActivity.<span class="keyword">this</span>.getPackageManager();</div><div class="line">Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;ApplicationInfo&gt;() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> ApplicationInfo&gt; subscriber)</span> </span>&#123;</div><div class="line">            List&lt;ApplicationInfo&gt; infoList = getApplicationInfoList(pm);</div><div class="line">            <span class="keyword">for</span> (ApplicationInfo info : infoList) &#123;</div><div class="line">                subscriber.onNext(info);</div><div class="line">            &#125;</div><div class="line">            subscriber.onCompleted();</div><div class="line">        &#125;</div><div class="line">    &#125;).filter(<span class="keyword">new</span> Func1&lt;ApplicationInfo, Boolean&gt;() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Boolean <span class="title">call</span><span class="params">(ApplicationInfo applicationInfo)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> (applicationInfo.flags &amp; ApplicationInfo.FLAG_SYSTEM) &lt;= <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;).map(<span class="keyword">new</span> Func1&lt;ApplicationInfo, AppInfo&gt;() &#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> AppInfo <span class="title">call</span><span class="params">(ApplicationInfo applicationInfo)</span> </span>&#123;</div><div class="line">            AppInfo info = <span class="keyword">new</span> AppInfo();</div><div class="line">            info.setAppIcon(applicationInfo.loadIcon(pm));</div><div class="line">            info.setAppName(applicationInfo.loadLabel(pm).toString());</div><div class="line">            <span class="keyword">return</span> info;</div><div class="line">        &#125;</div><div class="line">    &#125;).subscribeOn(Schedulers.io())</div><div class="line">    .observeOn(AndroidSchedulers.mainThread())</div><div class="line">    .subscribe(<span class="keyword">new</span> Subscriber&lt;AppInfo&gt;() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</div><div class="line">            mAppListAdapter.notifyDataSetChanged();</div><div class="line">            mPullDownSRL.setRefreshing(<span class="keyword">false</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</div><div class="line">            mPullDownSRL.setRefreshing(<span class="keyword">false</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(AppInfo appInfo)</span> </span>&#123;</div><div class="line">            mAppInfoList.add(appInfo);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
 <p>程序执行效果图：</p>
-<div align="left"><img src="http://ocjtywvav.bkt.clouddn.com/rxjava/7/pic1.png" width="38%" alt="图片名称" align="center"></div>
+<div align="left"><img src="http://resources.baronzhang.com/rxjava/7/pic1.png" width="38%" alt="图片名称" align="center"></div>
 
 <p>完整的代码我放到了GitHub上，有兴趣大家可以去clone下来自己运行看看。</p>
 <p>源码地址：<a href="https://github.com/BaronZ88/HelloRxAndroid" target="_blank" rel="external">https://github.com/BaronZ88/HelloRxAndroid</a></p>
@@ -472,7 +472,7 @@ RxJava系列7(最佳实践)
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
+<p><img src="http://resources.baronzhang.com/blog/common/qrcode1.png" alt=""></p>
 
       
     </div>
@@ -727,7 +727,7 @@ RxJava系列7(最佳实践)
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

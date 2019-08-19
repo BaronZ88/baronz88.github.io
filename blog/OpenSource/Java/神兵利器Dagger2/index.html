@@ -107,16 +107,16 @@ Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶
 
 Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
 Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Ja">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/Blog/OpenSource/Android/Dagger2/generated_code.png">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
-<meta property="og:updated_time" content="2018-04-13T11:11:26.405Z">
+<meta property="og:image" content="http://resources.baronzhang.com/Blog/OpenSource/Android/Dagger2/generated_code.png">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/common/qrcode1.png">
+<meta property="og:updated_time" content="2019-08-19T06:53:46.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神兵利器Dagger2">
 <meta name="twitter:description" content="微信公众号：BaronTalk
 
 Dagger-匕首，鼎鼎大名的Square公司旗下又一把利刃（没错！还有一把黄油刀，唤作ButterKnife）；故此给本篇取名神兵利器Dagger2。
 Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Ja">
-<meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/Blog/OpenSource/Android/Dagger2/generated_code.png">
+<meta name="twitter:image" content="http://resources.baronzhang.com/Blog/OpenSource/Android/Dagger2/generated_code.png">
 
 
 
@@ -503,7 +503,7 @@ Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Create Engine</div></pre></td></tr></table></figure>
 <p>bingo！我们确实通过@Scope实现了局部的单例。</p>
 <h2 id="Dagger2原理分析"><a href="#Dagger2原理分析" class="headerlink" title="Dagger2原理分析"></a>Dagger2原理分析</h2><p>前面啰里啰嗦的介绍了Dagger2的基本使用，接下来我们再分析分析实现原理。这里不会分析Dagger2根据注解生成各种代码的原理，关于Java注解以后有机会再写一篇文章来介绍。后面主要分析的是Dagger2生成的各种类如何帮我们实现依赖注入，为了便于理解我这里选了前面相对简单的<strong>案例B</strong>来做分析。</p>
-<p>Dagger2编译期生成的代码位于<code>build/generated/source/apt/debug/your package name/</code>下面:<br><img src="http://ocjtywvav.bkt.clouddn.com/Blog/OpenSource/Android/Dagger2/generated_code.png" alt="Generated Code"></p>
+<p>Dagger2编译期生成的代码位于<code>build/generated/source/apt/debug/your package name/</code>下面:<br><img src="http://resources.baronzhang.com/Blog/OpenSource/Android/Dagger2/generated_code.png" alt="Generated Code"></p>
 <p>首先我们看看Dagger2依据依赖提供方<code>MarkCarModule</code>生成的对应工厂类<code>MarkCarModule_ProvideEngineFactory</code>。为了方便大家理解对比，后面我一律会把自己写的类和Dagger2生成的类一并放出来。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 我们自己的类</div><div class="line">*/</div><div class="line"><span class="meta">@Module</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MarkCarModule</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarkCarModule</span><span class="params">()</span></span>&#123; &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Provides</span> <span class="function">Engine <span class="title">provideEngine</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Engine(<span class="string">"gear"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* Dagger2生成的工厂类</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MarkCarModule_ProvideEngineFactory</span> <span class="keyword">implements</span> <span class="title">Factory</span>&lt;<span class="title">Engine</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> MarkCarModule <span class="keyword">module</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">MarkCarModule_ProvideEngineFactory</span><span class="params">(MarkCarModule <span class="keyword">module</span>)</span> </span>&#123;</div><div class="line">    <span class="keyword">assert</span> <span class="keyword">module</span> != <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">this</span>.<span class="keyword">module</span> = <span class="keyword">module</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> Engine <span class="title">get</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> Preconditions.checkNotNull(</div><div class="line">        <span class="keyword">module</span>.provideEngine(), <span class="string">"Cannot return null from a non-@Nullable @Provides method"</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Factory&lt;Engine&gt; <span class="title">create</span><span class="params">(MarkCarModule <span class="keyword">module</span>)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MarkCarModule_ProvideEngineFactory(<span class="keyword">module</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/** Proxies &#123;<span class="doctag">@link</span> MarkCarModule#provideEngine()&#125;. */</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Engine <span class="title">proxyProvideEngine</span><span class="params">(MarkCarModule instance)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> instance.provideEngine();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们可以看到<code>MarkCarModule_ProvideEngineFactory</code>中的get()调用了<code>MarkCarModule</code>的<code>provideEngine()</code>方法来获取我们需要的依赖<code>Engine</code>，<code>MarkCarModule_ProvideEngineFactory</code>的实例化有<code>crate()</code>创建，并且<code>MarkCarModule</code>的实例也是通过<code>create()</code>方法传进来的。那么这个<code>create()</code>一定会在哪里调用的，我们接着往下看。</p>
@@ -523,7 +523,7 @@ Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
+<p><img src="http://resources.baronzhang.com/blog/common/qrcode1.png" alt=""></p>
 
       
     </div>
@@ -782,7 +782,7 @@ Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

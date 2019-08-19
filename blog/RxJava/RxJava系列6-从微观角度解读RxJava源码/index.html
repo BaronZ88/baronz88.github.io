@@ -125,11 +125,11 @@ RxJava系列7(最佳实践)
 微信公众号：BaronTalk
 
 前言通过前面五个篇幅的介绍，相信大家对RxJava的基本使用以及操作符应该有了一定的认识。">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess1.jpg">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess3.jpg">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess.jpg">
-<meta property="og:image" content="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png">
-<meta property="og:updated_time" content="2018-04-13T11:10:51.542Z">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/6/OperatorProcess1.jpg">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/6/OperatorProcess3.jpg">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/6/OperatorProcess.jpg">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/common/qrcode1.png">
+<meta property="og:updated_time" content="2019-08-19T06:53:46.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJava系列6(从微观角度解读RxJava源码)">
 <meta name="twitter:description" content="RxJava系列1(简介)
@@ -145,7 +145,7 @@ RxJava系列7(最佳实践)
 微信公众号：BaronTalk
 
 前言通过前面五个篇幅的介绍，相信大家对RxJava的基本使用以及操作符应该有了一定的认识。">
-<meta name="twitter:image" content="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess1.jpg">
+<meta name="twitter:image" content="http://resources.baronzhang.com/rxjava/6/OperatorProcess1.jpg">
 
 
 
@@ -466,7 +466,7 @@ RxJava系列7(最佳实践)
 <p>上述代码中最关键的就是<code>RxJavaHooks.onObservableStart(observable, observable.onSubscribe).call(subscriber)</code>。这里的RxJavaHooks和之前提到的一样，<code>RxJavaHooks.onObservableStart(observable, observable.onSubscribe)</code>返回的正是他的第二个入参<code>observable.onSubscribe</code>，也就是当前<code>observable</code>的成员变量<code>onSubscribe</code>。而这个成员变量我们前面提到过，它是我们在<code>Observable.create()</code>的时候new出来的。所以这段代码可以简化为<code>onSubscribe.call(subscriber)</code>。这也印证了我在<a href="http://www.jianshu.com/p/ba61c047c230" target="_blank" rel="external">RxJava系列2(基本概念及使用介绍)</a>中说的，<code>onSubscribe.call(subscriber)</code>中的<code>subscriber</code>正是我们在<code>subscribe()</code>方法中new出来的观察者。</p>
 <p>到这里，我们对RxJava的执行流程做个总结：首先我们调用<code>crate()</code>创建一个观察者，同时创建一个<code>OnSubscribe</code>作为该方法的入参；接着调用<code>subscribe()</code>来订阅我们自己创建的观察者<code>Subscriber</code>。<br>一旦调用<code>subscribe()</code>方法后就会触发执行<code>OnSubscribe.call()</code>。然后我们就可以在call方法调用观察者<code>subscriber</code>的<code>onNext()</code>,<code>onCompleted()</code>,<code>onError()</code>。</p>
 <p>最后我用张图来总结下之前的分析结果：</p>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess1.jpg" alt="RxJava基本流程分析"></p>
+<p><img src="http://resources.baronzhang.com/rxjava/6/OperatorProcess1.jpg" alt="RxJava基本流程分析"></p>
 <h2 id="二、操作符原理分析"><a href="#二、操作符原理分析" class="headerlink" title="二、操作符原理分析"></a>二、操作符原理分析</h2><p>之前我们介绍过几十个操作符，要一一分析它们的源码显然不太现实。在这里我抛砖引玉，选取一个相对简单且常用的<code>map</code>操作符来分析。</p>
 <p>我们先来看一个<code>map</code>操作符的简单应用：</p>
 <p><strong>示例B</strong></p>
@@ -486,7 +486,7 @@ RxJava系列7(最佳实践)
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(T t)</span> </span>&#123;</div><div class="line">    R result;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        result = mapper.call(t);</div><div class="line">    &#125; <span class="keyword">catch</span> (Throwable ex) &#123;</div><div class="line">        ...</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    actual.onNext(result);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>onNext(T t)</code>方法中的的<code>mapper</code>就是变换函数，<code>actual</code>就是我们在调用<code>subscribe()</code>时创建的观察者<code>subscriberOne</code>。这个<code>T</code>就是我们例子中的<code>Integer</code>，<code>R</code>就是<code>String</code>。在<code>onNext()</code>中首先调用变换函数<code>mapper.call()</code>将<code>T</code>转换成<code>R</code>(在我们的例子中就是将<code>Integer</code>类型的<strong>1</strong>转换成了<code>String</code>类型的<strong>“This is 1”</strong>)；接着调用<code>subscriberOne.onNext(String result)</code>。同样在调用<code>MapSubscriber.onCompleted()</code>时会执行<code>subscriberOne.onCompleted()</code>。这样就完成了一直完成的调用流程。</p>
 <p>我承认太啰嗦了，花费了这么大的篇幅才将<code>map()</code>的转换原理解释清楚。我也是希望尽量的将每个细节都呈现出来方便大家理解，如果看我啰嗦了这么久还是没能理解，请看下面我画的这张执行流程图。</p>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess3.jpg" alt="加入Map操作符后的执行流程"></p>
+<p><img src="http://resources.baronzhang.com/rxjava/6/OperatorProcess3.jpg" alt="加入Map操作符后的执行流程"></p>
 <h2 id="三、线程调度原理分析"><a href="#三、线程调度原理分析" class="headerlink" title="三、线程调度原理分析"></a>三、线程调度原理分析</h2><p>在前面的文章中我介绍过RxJava可以很方便的通过<code>subscribeOn()</code>和<code>observeOn()</code>来指定数据流的每一部分运行在哪个线程。其中<code>subscribeOn()</code>指定了处理<code>Observable</code>的全部的过程(包括发射数据和通知)的线程；<code>observeOn()</code>指定了观察者的<code>onNext()</code>, <code>onError()</code>和<code>onCompleted()</code>执行的线程。接下来我们就分析分析源码，看看线程调度是如何实现的。</p>
 <p>在分析源码前我们先看看一段常见的通过RxJava实现的线程调度代码：</p>
 <p><strong>示例C</strong></p>
@@ -521,7 +521,7 @@ RxJava系列7(最佳实践)
 <p><code>ObserveOnSubscriber</code>继承自<code>Subscriber</code>，并实现了<code>Action0</code>接口。我们看到<code>ObserveOnSubscriber</code>的<code>onNext()</code>、<code>onCompleted()</code>、<code>onError()</code>都有个<code>schedule()</code>，这个方法就是我们线程调度的关键；通过<code>schedule()</code>将新观察者<code>ObserveOnSubscriber</code>发送给<code>subscriberOne</code>的所有事件都切换到了<code>recursiveScheduler</code>所对应的线程，简单的说就是把<code>subscriberOne</code>的<code>onNext()</code>、<code>onCompleted()</code>、<code>onError()</code>方法丢到了<code>recursiveScheduler</code>对应的线程中来执行。</p>
 <p>那么<code>schedule()</code>又是如何做到这一点的呢？他内部调用了<code>recursiveScheduler.schedule(this)</code>，<code>recursiveScheduler</code>其实就是一个<code>Worker</code>，和我们在介绍<code>subscribeOn()</code>时提到的<code>worker</code>一样，执行<code>schedule()</code>实际上最终是创建了一个<code>runable</code>，然后把这个<code>runnable</code>丢到了特定的线程池中去执行。在<code>runnable</code>的<code>run()</code>方法中调用了<code>ObserveOnSubscriber.call()</code>，看上面的代码大家就会发现在<code>call()</code>方法中最终调用了<code>subscriberOne</code>的<code>onNext()</code>、<code>onCompleted()</code>、<code>onError()</code>方法。这便是它实现线程切换的原理。</p>
 <p>好了，我们最后再看看<strong>示例C</strong>对应的执行流程图，帮助大家加深理解。</p>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/rxjava/6/OperatorProcess.jpg" alt="RxJava执行流程"></p>
+<p><img src="http://resources.baronzhang.com/rxjava/6/OperatorProcess.jpg" alt="RxJava执行流程"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这一章以<strong>执行流程</strong>、<strong>操作符实现</strong>以及<strong>线程调度</strong>三个方面为切入点剖析了RxJava源码。下一章将站在更宏观的角度来分析整个RxJava的框架结构、设计思想等等。敬请期待~~ :)</p>
 <blockquote>
 <p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
@@ -532,7 +532,7 @@ RxJava系列7(最佳实践)
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
-<p><img src="http://ocjtywvav.bkt.clouddn.com/blog/common/qrcode1.png" alt=""></p>
+<p><img src="http://resources.baronzhang.com/blog/common/qrcode1.png" alt=""></p>
 
       
     </div>
@@ -787,7 +787,7 @@ RxJava系列7(最佳实践)
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
