@@ -154,7 +154,7 @@ body {
   background: #f5f7f9;
   color: #555;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14em;
+  font-size: 0.95em;
   line-height: 2;
   position: relative;
 }
@@ -1739,7 +1739,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #affcb3;
+  background: #3e83ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
