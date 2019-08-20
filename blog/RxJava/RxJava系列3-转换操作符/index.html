@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,RxJava,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="RxJava系列1(简介) RxJava系列2(基本概念及使用介绍) RxJava系列3(转换操作符) RxJava系列4(过滤操作符) RxJava系列5(组合操作符) RxJava系列6(从微观角度解读RxJava源码)    RxJava系列7(最佳实践)      微信公众号：BaronTalk   前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开">
+<meta name="keywords" content="Android,RxJava">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxJava系列3(转换操作符)">
+<meta property="og:url" content="http://baronzhang.com/blog/RxJava/RxJava系列3-转换操作符/index.html">
+<meta property="og:site_name" content="技术男的后花园">
+<meta property="og:description" content="RxJava系列1(简介) RxJava系列2(基本概念及使用介绍) RxJava系列3(转换操作符) RxJava系列4(过滤操作符) RxJava系列5(组合操作符) RxJava系列6(从微观角度解读RxJava源码)    RxJava系列7(最佳实践)      微信公众号：BaronTalk   前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/operator/map/MapOperator.png">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/operator/map/SwitchMapOperator.png">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/operator/map/ScanOperator.png">
+<meta property="og:image" content="http://resources.baronzhang.com/rxjava/operator/map/GroupByOperator.png">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-08-19T12:56:35.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RxJava系列3(转换操作符)">
+<meta name="twitter:description" content="RxJava系列1(简介) RxJava系列2(基本概念及使用介绍) RxJava系列3(转换操作符) RxJava系列4(过滤操作符) RxJava系列5(组合操作符) RxJava系列6(从微观角度解读RxJava源码)    RxJava系列7(最佳实践)      微信公众号：BaronTalk   前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开">
+<meta name="twitter:image" content="http://resources.baronzhang.com/rxjava/operator/map/MapOperator.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://baronzhang.com/blog/RxJava/RxJava系列3-转换操作符/">
+
+
+
+
+
+  <title>RxJava系列3(转换操作符) | 技术男的后花园</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-91622756-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">技术男的后花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">公众号：BaronTalk</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列3-转换操作符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张磊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术男的后花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">RxJava系列3(转换操作符)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:19+08:00">
+                2017-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RxJava/" itemprop="url" rel="index">
+                    <span itemprop="name">RxJava</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/blog/RxJava/RxJava系列3-转换操作符/" class="leancloud_visitors" data-flag-title="RxJava系列3(转换操作符)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列3-转换操作符/">RxJava系列3(转换操作符)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列4-过滤操作符/">RxJava系列4(过滤操作符)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列5-组合操作符/">RxJava系列5(组合操作符)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>   </li>
+</ul>
+<blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<hr>
+<p>前面两篇文章中我们介绍了RxJava的一些基本概念和RxJava最简单的用法。从这一章开始，我们开始聊聊RxJava中的操作符Operators，后面我将用三章的篇幅来分别介绍：</p>
+<ol>
+<li><strong>转换类操作符</strong></li>
+<li><strong>过滤类操作符</strong></li>
+<li><strong>组合类操作符</strong></li>
+</ol>
+<p>这一章我们主要讲讲转换类操作符。所有这些Operators都作用于一个可观测序列，然后变换它发射的值，最后用一种新的形式返回它们。概念实在是不好理解，下面我们结合实际的例子一一介绍。</p>
+<a id="more"></a>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p><strong><code>map(Func1)</code></strong>函数接受一个Func1类型的参数(就像这样<code>map(Func1&lt;? super T, ? extends R&gt; func)</code>),然后吧这个Func1应用到每一个由Observable发射的值上，将发射的只转换为我们期望的值。这种狗屁定义我相信你也听不懂，我们来看一下官方给出的原理图：</p>
+<p><img src="http://resources.baronzhang.com/rxjava/operator/map/MapOperator.png" alt="map(Func1)"></p>
+<p>假设我们需要将一组数字装换成字符串，我们可以通过map这样实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">        .map(<span class="keyword">new</span> Func1&lt;Integer, String&gt;() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">(Integer i)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"This is "</span> + i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).subscribe(<span class="keyword">new</span> Action1&lt;String&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Func1构造函数中的两个参数分别是Observable发射值当前的类型和map转换后的类型，上面这个例子中发射值当前的类型是Integer,转换后的类型是String。</p>
+</blockquote>
+<h3 id="FlatMap"><a href="#FlatMap" class="headerlink" title="FlatMap"></a>FlatMap</h3><p><strong><code>flatMap(Func1)</code></strong>函数同样也是做转换的，但是作用却不一样。flatMap不太好理解，我们直接看例子（<em>我们公司是个房产平台，那我就拿房子举例</em>）：假设我们有一组小区数据<code>Community[] communites</code>,现在我们要输出每个小区的名字；我们可以这样实现:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Observable.from(communities)</span><br><span class="line">        .map(<span class="keyword">new</span> Func1&lt;Community, String&gt;() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">(Community community)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> community.name;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;String&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"Community name : "</span> + name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>现在我们需求有变化，需要打印出每个小区下面每一套房子的价格。于是我可以这样实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">Community[] communities = &#123;&#125;;</span><br><span class="line">Observable.from(communities)</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;Community&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Community community)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">for</span> (House house : community.houses) &#123;</span><br><span class="line">                    System.out.println(<span class="string">"House price : "</span> + house.price);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">```            </span><br><span class="line"></span><br><span class="line">如果我不想在Subscriber中使用<span class="keyword">for</span>循环，而是希望Subscriber中直接传入单个的House对象呢？用map()显然是不行的，因为map()是一对一的转化，而我现在的要求是一对多的转化。那么我们可以使用flatMap()把一个Community转化成多个House。</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">Observable.from(communities)</span><br><span class="line">        .flatMap(<span class="keyword">new</span> Func1&lt;Community, Observable&lt;House&gt;&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Observable&lt;House&gt; <span class="title">call</span><span class="params">(Community community)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> Observable.from(community.houses);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;House&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(House house)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"House price : "</span> + house.price);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">```            </span><br><span class="line"></span><br><span class="line">从前面的例子中我们发现，flatMap()和map()都是把传入的参数转化之后返回另一个对象。但和map()不同的是，flatMap()中返回的是Observable对象，并且这个Observable对象并不是被直接发送到 Subscriber的回调方法中。</span><br><span class="line"></span><br><span class="line">flatMap(Func1)的原理是这样的：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. 将传入的事件对象装换成一个Observable对象；</span><br><span class="line"><span class="number">2</span>. 这是不会直接发送这个Observable, 而是将这个Observable激活让它自己开始发送事件；</span><br><span class="line"><span class="number">3</span>. 每一个创建出来的Observable发送的事件，都被汇入同一个Observable，这个Observable负责将这些事件统一交给Subscriber的回调方法。</span><br><span class="line"></span><br><span class="line">这三个步骤，把事件拆成了两级，通过一组新创建的Observable将初始的对象『铺平』之后通过统一路径分发了下去。而这个『铺平』就是flatMap()所谓的flat。</span><br><span class="line"></span><br><span class="line">最后我们来看看flatMap的原理图：</span><br><span class="line">![flatMap(Func1)](http:<span class="comment">//resources.baronzhang.com/rxjava/operator/map/FlatMapOperator.png)</span></span><br><span class="line"></span><br><span class="line">### ConcatMap</span><br><span class="line">**`concatMap(Func1)`**解决了`flatMap()`的交叉问题，它能够把发射的值连续在一起，就像这样：</span><br><span class="line">![concatMap(Func1)](http:<span class="comment">//resources.baronzhang.com/rxjava/operator/map/ConcatMapOperator.png)</span></span><br><span class="line"></span><br><span class="line">### flatMapIterable</span><br><span class="line">**`flatMapIterable(Func1)`**和`flatMap()`几乎是一样的，不同的是`flatMapIterable()`它转化的多个Observable是使用Iterable作为源数据的。</span><br><span class="line">![flatMapIterable(Func1)](http:<span class="comment">//resources.baronzhang.com/rxjava/operator/map/FlatMapIterableOperator.png)</span></span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">Observable.from(communities)</span><br><span class="line">        .flatMapIterable(<span class="keyword">new</span> Func1&lt;Community, Iterable&lt;House&gt;&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Iterable&lt;House&gt; <span class="title">call</span><span class="params">(Community community)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> community.houses;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;House&gt;() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(House house)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="SwitchMap"><a href="#SwitchMap" class="headerlink" title="SwitchMap"></a>SwitchMap</h3><p><strong><code>switchMap(Func1)</code></strong>和<code>flatMap(Func1)</code>很像，除了一点：每当源<code>Observable</code>发射一个新的数据项（Observable）时，它将取消订阅并停止监视之前那个数据项产生的<code>Observable</code>，并开始监视当前发射的这一个。<br><img src="http://resources.baronzhang.com/rxjava/operator/map/SwitchMapOperator.png" alt="switchMap(Func1)"></p>
+<h3 id="Scan"><a href="#Scan" class="headerlink" title="Scan"></a>Scan</h3><p><strong><code>scan(Func2)</code></strong>对一个序列的数据应用一个函数，并将这个函数的结果发射出去作为下个数据应用合格函数时的第一个参数使用。<br><img src="http://resources.baronzhang.com/rxjava/operator/map/ScanOperator.png" alt="scan(Func2)"></p>
+<p>我们来看个简单的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">        .scan(<span class="keyword">new</span> Func2&lt;Integer, Integer, Integer&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">(Integer integer, Integer integer2)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> integer + integer2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).subscribe(<span class="keyword">new</span> Action1&lt;Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Integer integer)</span> </span>&#123;</span><br><span class="line">        System.out.print(integer+“ ”);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<pre><code>1 3 6 10 15  
+</code></pre><h3 id="GroupBy"><a href="#GroupBy" class="headerlink" title="GroupBy"></a>GroupBy</h3><p><strong><code>groupBy(Func1)</code></strong>将原始Observable发射的数据按照key来拆分成一些小的Observable，然后这些小Observable分别发射其所包含的的数据，和SQL中的groupBy类似。实际使用中，我们需要提供一个生成key的规则（也就是Func1中的call方法），所有key相同的数据会包含在同一个小的Observable中。另外我们还可以提供一个函数来对这些数据进行转化，有点类似于集成了flatMap。<br><img src="http://resources.baronzhang.com/rxjava/operator/map/GroupByOperator.png" alt="groupBy(Func1)"></p>
+<p>单纯的文字描述和图片解释可能难以理解，我们来看个例子：假设我现在有一组房源<code>List&lt;House&gt; houses</code>,每套房子都属于某一个小区，现在我们需要根据小区名来对房源进行分类，然后依次将房源信息输出。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">List&lt;House&gt; houses = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">houses.add(<span class="keyword">new</span> House(<span class="string">"中粮·海景壹号"</span>, <span class="string">"中粮海景壹号新出大平层！总价4500W起"</span>));</span><br><span class="line">houses.add(<span class="keyword">new</span> House(<span class="string">"竹园新村"</span>, <span class="string">"满五唯一，黄金地段"</span>));</span><br><span class="line">houses.add(<span class="keyword">new</span> House(<span class="string">"中粮·海景壹号"</span>, <span class="string">"毗邻汤臣一品"</span>));</span><br><span class="line">houses.add(<span class="keyword">new</span> House(<span class="string">"竹园新村"</span>, <span class="string">"顶层户型，两室一厅"</span>));</span><br><span class="line">houses.add(<span class="keyword">new</span> House(<span class="string">"中粮·海景壹号"</span>, <span class="string">"南北通透，豪华五房"</span>));</span><br><span class="line">Observable&lt;GroupedObservable&lt;String, House&gt;&gt; groupByCommunityNameObservable = Observable.from(houses)</span><br><span class="line">        .groupBy(<span class="keyword">new</span> Func1&lt;House, String&gt;() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">(House house)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> house.communityName;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>通过上面的代码我们创建了一个新的Observable:<code>groupByCommunityNameObservable</code>，它将会发送一个带有<code>GroupedObservable</code>的序列（也就是指发送的数据项的类型为GroupedObservable）。<code>GroupedObservable</code>是一个特殊的<code>Observable</code>，它基于一个分组的key，在这个例子中的key就是小区名。现在我们需要将分类后的房源依次输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Observable.concat(groupByCommunityNameObservable)</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;House&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(House house)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"小区:"</span>+house.communityName+<span class="string">"; 房源描述:"</span>+house.desc);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<pre><code>小区:中粮·海景壹号; 房源描述:中粮海景壹号新出大平层！总价4500W起
+小区:中粮·海景壹号; 房源描述:毗邻汤臣一品
+小区:中粮·海景壹号; 房源描述:南北通透，豪华五房
+小区:竹园新村; 房源描述:满五唯一，黄金地段
+小区:竹园新村; 房源描述:顶层户型，两室一厅
+</code></pre><p>转换类的操作符就先介绍到这，后续还会继续介绍组合、过滤类的操作符及源码分析，敬请期待！</p>
+<blockquote>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="noopener"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
+<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/baron</a>  </li>
+<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
+</ul>
+</blockquote>
+<div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/RxJava/" rel="tag"># RxJava</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/RxJava/RxJava系列2-基本概念及使用介绍/" rel="next" title="RxJava系列2(基本概念及使用介绍)">
+                <i class="fa fa-chevron-left"></i> RxJava系列2(基本概念及使用介绍)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/RxJava/RxJava系列4-过滤操作符/" rel="prev" title="RxJava系列4(过滤操作符)">
+                RxJava系列4(过滤操作符) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="张磊">
+          <p class="site-author-name" itemprop="name">张磊</p>
+           
+              <p class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BaronZ88" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/baron" target="_blank" title="知乎专栏">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎专栏
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1832867270" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/BaronZ88" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FlatMap"><span class="nav-number">2.</span> <span class="nav-text">FlatMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SwitchMap"><span class="nav-number">3.</span> <span class="nav-text">SwitchMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scan"><span class="nav-number">4.</span> <span class="nav-text">Scan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GroupBy"><span class="nav-number">5.</span> <span class="nav-text">GroupBy</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张磊</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("1jDir2impsrfrJPT6gBcvMYi-gzGzoHsz", "HJsYHtmlFK9j3k0tA8etOFYQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
