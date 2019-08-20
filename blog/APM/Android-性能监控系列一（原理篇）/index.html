@@ -2,109 +2,66 @@
 
 
 
-  
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Android,APM,性能," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=5.1.1" />
-
-
-
-
-
-
-<meta name="description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！
-
-一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
+  <meta name="description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！  一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
+<meta name="keywords" content="Android,APM,性能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 性能监控系列一（原理篇）">
 <meta property="og:url" content="http://baronzhang.com/blog/APM/Android-性能监控系列一（原理篇）/index.html">
 <meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！
-
-一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
+<meta property="og:description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！  一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apm.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apk-build.png">
@@ -112,99 +69,82 @@
 <meta property="og:updated_time" content="2019-08-19T11:26:51.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 性能监控系列一（原理篇）">
-<meta name="twitter:description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！
-
-一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
+<meta name="twitter:description" content="欢迎关注微信公众号：BaronTalk，获取更多精彩好文！  一. 前言性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。">
 <meta name="twitter:image" content="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg">
+  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml">
+  <link rel="canonical" href="http://baronzhang.com/blog/APM/Android-性能监控系列一（原理篇）/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://baronzhang.com/blog/APM/Android-性能监控系列一（原理篇）/"/>
-
-
-
-
-
   <title>Android 性能监控系列一（原理篇） | 技术男的后花园</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-91622756-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <div class="site-meta">
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">技术男的后花园</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">公众号：BaronTalk</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -212,137 +152,107 @@
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
+    
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
-  
+  </li>
+  </ul>
+
+    
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content page-post-detail">
             
 
   <div id="posts" class="posts-expand">
     
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/APM/Android-性能监控系列一（原理篇）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Android 性能监控系列一（原理篇）
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Android 性能监控系列一（原理篇）</h1>
-        
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-06T10:52:00+08:00">
-                2018-06-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2018-06-06 10:52:00" itemprop="dateCreated datePublished" datetime="2018-06-06T10:52:00+08:00">2018-06-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 19:26:51" itemprop="dateModified" datetime="2019-08-19T19:26:51+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/APM/" itemprop="url" rel="index">
-                    <span itemprop="name">APM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/APM/" itemprop="url" rel="index"><span itemprop="name">APM</span></a></span>
 
                 
                 
@@ -351,37 +261,14 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/APM/Android-性能监控系列一（原理篇）/" class="leancloud_visitors" data-flag-title="Android 性能监控系列一（原理篇）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
+
     
-
+    
+    
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <p><img src="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg" alt="题图来自 https://unsplash.com"></p>
@@ -390,7 +277,7 @@
 </blockquote>
 <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。</p>
 <a id="more"></a>
-<p>去年我们团队完成了整个项目架构方面的重构（有兴趣的同学可以参考我之前的文章<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483731&amp;idx=1&amp;sn=76bd5612ba723171b6ebac69aaf039f8&amp;chksm=fddca7d2caab2ec4eec8736cf4005615c401984e2218a0cfc71dddfe3a204495c4e8a7312b4a&amp;scene=38#wechat_redirect" target="_blank" rel="external">安居客 Android 项目架构演进 </a>与<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483732&amp;idx=1&amp;sn=b7ee1151b2c8ad2e997b8db39adf3267&amp;chksm=fddca7d5caab2ec33905cc3350f31c0c98794774b0d04a01845565e3989b1f20205c7f432cb9&amp;scene=38#wechat_redirect" target="_blank" rel="external">Android 模块化探索与实践 </a> ），目前已经能够很好的支撑我们的业务，并对团队的开发效率也有了一定的提升、项目质量也有了大幅的进步。</p>
+<p>去年我们团队完成了整个项目架构方面的重构（有兴趣的同学可以参考我之前的文章<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483731&amp;idx=1&amp;sn=76bd5612ba723171b6ebac69aaf039f8&amp;chksm=fddca7d2caab2ec4eec8736cf4005615c401984e2218a0cfc71dddfe3a204495c4e8a7312b4a&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">安居客 Android 项目架构演进 </a>与<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483732&amp;idx=1&amp;sn=b7ee1151b2c8ad2e997b8db39adf3267&amp;chksm=fddca7d5caab2ec33905cc3350f31c0c98794774b0d04a01845565e3989b1f20205c7f432cb9&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">Android 模块化探索与实践 </a> ），目前已经能够很好的支撑我们的业务，并对团队的开发效率也有了一定的提升、项目质量也有了大幅的进步。</p>
 <p>但是项目上线后，到底有没有性能问题？用户体验到底怎么样？在用户的使用场景中到底会遇到哪些性能问题？我们项目的性能短板又在哪里？这些问题的答案我们都不得而知，因此开发一套完善的性能监控体系势在必行。我们团队在今年开始着手开发自己的性能监控组件 APM，希望通过它来采集线上性能数据，找到性能短板，针对性的优化用户体验。</p>
 <blockquote>
 <p>APM 全称 Application Performance Management &amp; Monitoring (应用性能管理/监控)  </p>
@@ -404,7 +291,7 @@
 <li><strong>实现篇-数据存储及上报</strong>：介绍 APM 框架的存储上报机制及实现过程；</li>
 <li><strong>发布集成</strong>：最后会介绍如何将库发布到 jCenter() 以及如何在生产项目中集成。</li>
 </ul>
-<p>这里要向大家交代一点是，之前的文章为了极力做到将复杂的问题用通俗易懂的方式解释清楚，又要面面俱到，往往篇幅过长；诸如之前写过的<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483727&amp;idx=3&amp;sn=f3d0ccfee85c26d8e49cfd22fbccb7f6&amp;chksm=fddca7cecaab2ed8be6e34288bcec23a34289f09fd22e5a06ecc547020a3474978b73366d94b&amp;scene=38#wechat_redirect" target="_blank" rel="external">RxJava系列6(从微观角度解读RxJava源码) </a>、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483730&amp;idx=1&amp;sn=d308f7073182f8c48dd41e17f2fb7682&amp;chksm=fddca7d3caab2ec5c77884a3f8414d2668cd40627c9b3674dcbd3774deb31400ff34d5e6d11a&amp;scene=38#wechat_redirect" target="_blank" rel="external">神兵利器Dagger2 </a> 、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483731&amp;idx=1&amp;sn=76bd5612ba723171b6ebac69aaf039f8&amp;chksm=fddca7d2caab2ec4eec8736cf4005615c401984e2218a0cfc71dddfe3a204495c4e8a7312b4a&amp;scene=38#wechat_redirect" target="_blank" rel="external">安居客 Android 项目架构演进 </a>、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483732&amp;idx=1&amp;sn=b7ee1151b2c8ad2e997b8db39adf3267&amp;chksm=fddca7d5caab2ec33905cc3350f31c0c98794774b0d04a01845565e3989b1f20205c7f432cb9&amp;scene=38#wechat_redirect" target="_blank" rel="external">Android 模块化探索与实践 </a> 、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483735&amp;idx=1&amp;sn=202bcc94cc581d91e77728afe674fdfe&amp;chksm=fddca7d6caab2ec0c1a08e25dc1acf5aaf257365f64d5c50c37aae4ead919fdbc11062575f9f&amp;scene=38#wechat_redirect" target="_blank" rel="external">写给 Android 应用工程师的 Binder 原理剖析</a>等文章，篇幅通常都在 8000~10000字以上，通篇阅读下来可能需要近半个小时的时间，不太符合当下碎片化阅读的需求；因此在后面的写作上会控制篇幅，尽量控制在 10 分钟以内的长度。</p>
+<p>这里要向大家交代一点是，之前的文章为了极力做到将复杂的问题用通俗易懂的方式解释清楚，又要面面俱到，往往篇幅过长；诸如之前写过的<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483727&amp;idx=3&amp;sn=f3d0ccfee85c26d8e49cfd22fbccb7f6&amp;chksm=fddca7cecaab2ed8be6e34288bcec23a34289f09fd22e5a06ecc547020a3474978b73366d94b&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">RxJava系列6(从微观角度解读RxJava源码) </a>、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483730&amp;idx=1&amp;sn=d308f7073182f8c48dd41e17f2fb7682&amp;chksm=fddca7d3caab2ec5c77884a3f8414d2668cd40627c9b3674dcbd3774deb31400ff34d5e6d11a&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">神兵利器Dagger2 </a> 、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483731&amp;idx=1&amp;sn=76bd5612ba723171b6ebac69aaf039f8&amp;chksm=fddca7d2caab2ec4eec8736cf4005615c401984e2218a0cfc71dddfe3a204495c4e8a7312b4a&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">安居客 Android 项目架构演进 </a>、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483732&amp;idx=1&amp;sn=b7ee1151b2c8ad2e997b8db39adf3267&amp;chksm=fddca7d5caab2ec33905cc3350f31c0c98794774b0d04a01845565e3989b1f20205c7f432cb9&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">Android 模块化探索与实践 </a> 、<a href="https://mp.weixin.qq.com/s?__biz=MzU4ODM2MjczNA==&amp;mid=2247483735&amp;idx=1&amp;sn=202bcc94cc581d91e77728afe674fdfe&amp;chksm=fddca7d6caab2ec0c1a08e25dc1acf5aaf257365f64d5c50c37aae4ead919fdbc11062575f9f&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">写给 Android 应用工程师的 Binder 原理剖析</a>等文章，篇幅通常都在 8000~10000字以上，通篇阅读下来可能需要近半个小时的时间，不太符合当下碎片化阅读的需求；因此在后面的写作上会控制篇幅，尽量控制在 10 分钟以内的长度。</p>
 <p>这也是我为什么会将 APM 作为一个系列来介绍的原因，同时这也能保证后面在介绍 APM 的时候能够深入到实现细节，避免泛泛而谈。</p>
 <h2 id="二-Android-APM-的基本原理"><a href="#二-Android-APM-的基本原理" class="headerlink" title="二. Android APM 的基本原理"></a>二. Android APM 的基本原理</h2><p>市场上有很多商业化的 APM 平台，比如著名的 NewRelic，还有国内的 听云、OneAPM 等等。这些平台的工作流程基本都是一致的：</p>
 <ol>
@@ -448,105 +335,77 @@
 <p>其实 Android 上的无痕埋点也是同样的原理，区别只不过是我们 hook 的点不同，采集的数据不同，因此掌握了 APM 的实现原理同样可以实现无痕埋点系统。</p>
 <p>原理很简单，难的是实现细节。比如如何插桩采集到页面帧率、流量、耗电量等等。这些具体细节我们放到后面一一介绍。至于为什么放到后面……因为很多东西自己没做过我也不知道啊……🤣</p>
 <blockquote>
-<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="noopener"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
 <li>微信公众号：<strong>BaronTalk</strong></li>
-<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
-<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/baron</a>  </li>
+<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
 <div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
 
 
-      
     </div>
 
-    <div>
-      
+    
+    
+    
         
-
       
-    </div>
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
+      <footer class="post-footer">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-            <a href="/tags/APM/" rel="tag"># APM</a>
-          
-            <a href="/tags/性能/" rel="tag"># 性能</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/Other/我们和优秀工程师的差距在哪儿/" rel="next" title="我们和优秀工程师的差距在哪儿">
-                <i class="fa fa-chevron-left"></i> 我们和优秀工程师的差距在哪儿
-              </a>
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Android/" rel="tag"># Android</a>
+            
+              <a href="/tags/APM/" rel="tag"># APM</a>
+            
+              <a href="/tags/性能/" rel="tag"># 性能</a>
             
           </div>
+        
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/" rel="prev" title="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
-                系列 | 深入理解Java虚拟机一（自动内存管理机制） <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/Other/我们和优秀工程师的差距在哪儿/" rel="next" title="我们和优秀工程师的差距在哪儿">
+                  <i class="fa fa-chevron-left"></i> 我们和优秀工程师的差距在哪儿
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/" rel="prev" title="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
+                  系列 | 深入理解Java虚拟机一（自动内存管理机制） <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
           </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
+        
+      </footer>
     
   </div>
+  
+  
+  
+  </article>
 
+  </div>
+
+
+          </div>
+          
 
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -558,136 +417,133 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
-
-      
-
-      
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="张磊" />
-          <p class="site-author-name" itemprop="name">张磊</p>
-           
-              <p class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</p>
-          
-        </div>
-        <nav class="site-state motion-element">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
 
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张磊</p>
+  <div class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
         
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
+          <a href="/archives/">
         
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/BaronZ88" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://zhuanlan.zhihu.com/baron" target="_blank" title="知乎专栏">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎专栏
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/1832867270" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/BaronZ88" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
       
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+
+        </div>
+      </div>
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -695,73 +551,58 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
-      
-
       
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">张磊</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
-
-    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
+        <span>0%</span>
       </div>
+
     
 
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -778,196 +619,17 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
 
 
 
-  
 
 
 
 
 
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("1jDir2impsrfrJPT6gBcvMYi-gzGzoHsz", "HJsYHtmlFK9j3k0tA8etOFYQ");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
 
 
 
@@ -977,9 +639,10 @@
 
   
 
-  
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
 
 </body>
 </html>

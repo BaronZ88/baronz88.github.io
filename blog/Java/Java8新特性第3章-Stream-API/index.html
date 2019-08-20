@@ -2,209 +2,146 @@
 
 
 
-  
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Java," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=5.1.1" />
-
-
-
-
-
-
-<meta name="description" content="微信公众号：BaronTalk
-
-Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。
-假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java8新特性第3章(Stream API)">
-<meta property="og:url" content="http://baronzhang.com/blog/Java/Java8新特性第3章-Stream-API/index.html">
-<meta property="og:site_name" content="技术男的后花园">
-<meta property="og:description" content="微信公众号：BaronTalk
-
-Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。
-假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-19T12:56:35.810Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java8新特性第3章(Stream API)">
-<meta name="twitter:description" content="微信公众号：BaronTalk
-
-Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。
-假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这">
-<meta name="twitter:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     }
   };
 </script>
 
+  <meta name="description" content="微信公众号：BaronTalk  Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。 假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java8新特性第3章(Stream API)">
+<meta property="og:url" content="http://baronzhang.com/blog/Java/Java8新特性第3章-Stream-API/index.html">
+<meta property="og:site_name" content="技术男的后花园">
+<meta property="og:description" content="微信公众号：BaronTalk  Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。 假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-08-19T12:56:35.810Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java8新特性第3章(Stream API)">
+<meta name="twitter:description" content="微信公众号：BaronTalk  Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。 假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这">
+<meta name="twitter:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
+  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml">
+  <link rel="canonical" href="http://baronzhang.com/blog/Java/Java8新特性第3章-Stream-API/">
 
 
-  <link rel="canonical" href="http://baronzhang.com/blog/Java/Java8新特性第3章-Stream-API/"/>
-
-
-
-
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>Java8新特性第3章(Stream API) | 技术男的后花园</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-91622756-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <div class="site-meta">
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">技术男的后花园</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">公众号：BaronTalk</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -212,137 +149,107 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
+    
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
-  
+  </li>
+  </ul>
+
+    
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content page-post-detail">
             
 
   <div id="posts" class="posts-expand">
     
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Java/Java8新特性第3章-Stream-API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Java8新特性第3章(Stream API)
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Java8新特性第3章(Stream API)</h1>
-        
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-05T23:37:32+08:00">
-                2017-02-05
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-05 23:37:32" itemprop="dateCreated datePublished" datetime="2017-02-05T23:37:32+08:00">2017-02-05</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -351,37 +258,14 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Java/Java8新特性第3章-Stream-API/" class="leancloud_visitors" data-flag-title="Java8新特性第3章(Stream API)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
+
     
-
+    
+    
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <blockquote>
@@ -389,9 +273,9 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
 </blockquote>
 <p>Stream作为Java8的新特性之一，他与Java IO包中的InputStream和OutputStream完全不是一个概念。Java8中的Stream是对集合功能的一种增强，主要用于对集合对象进行各种非常便利高效的聚合和大批量数据的操作。结合Lambda表达式可以极大的提高开发效率和代码可读性。</p>
 <p>假设我们需要把一个集合中的所有形状设置成红色，那么我们可以这样写</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (Shape shape : shapes)&#123;</div><div class="line">	shape.setColor(RED)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Shape shape : shapes)&#123;</span><br><span class="line">	shape.setColor(RED)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果使用Java8扩展后的集合框架则可以这样写：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shapes.foreach(s -&gt; s.setColor(RED));</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shapes.foreach(s -&gt; s.setColor(RED));</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><strong>第一种</strong>写法我们叫外部迭代，for-each调用<code>shapes</code>的<code>iterator()</code>依次遍历集合中的元素。这种外部迭代有一些问题：</p>
 <ul>
@@ -404,113 +288,85 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
 <p><strong>第二种</strong>写法我们叫内部迭代，两段代码虽然看起来只是语法上的区别，但实际上他们内部的区别其实非常大。用户把对操作的控制权交还给类库，从而允许类库进行各种各样的优化（例如乱序执行、惰性求值和并行等等）。总的来说，内部迭代使得外部迭代中不可能实现的优化成为可能。</p>
 <p>外部迭代同时承担了做什么（把形状设为红色）和怎么做（得到Iterator实例然后依次遍历），而内部迭代只负责做什么，而把怎么做留给类库。这样代码会变得更加清晰，而集合类库则可以在内部进行各种优化。</p>
 <h2 id="一、什么是Stream"><a href="#一、什么是Stream" class="headerlink" title="一、什么是Stream"></a>一、什么是Stream</h2><p>Stream不是集合元素，它也不是数据结构、不能保存数据，它更像一个更高级的<code>Interator</code>。Stream提供了强大的数据集合操作功能，并被深入整合到现有的集合类和其它的JDK类型中。流的操作可以被组合成流水线（Pipeline）。拿前面的例子来说，如果我只想把蓝色改成红色：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">shapes.stream()</div><div class="line">      .filter(s -&gt; s.getColor() == BLUE)</div><div class="line">      .forEach(s -&gt; s.setColor(RED));</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shapes.stream()</span><br><span class="line">      .filter(s -&gt; s.getColor() == BLUE)</span><br><span class="line">      .forEach(s -&gt; s.setColor(RED));</span><br></pre></td></tr></table></figure>
 <p>在<code>Collection</code>上调用<code>stream()</code>会生成该集合元素的流，接下来<code>filter()</code>操作会产生只包含蓝色形状的流，最后，这些蓝色形状会被<code>forEach</code>操作设为红色。</p>
 <p>如果我们想把蓝色的形状提取到新的List里，则可以：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List&lt;Shape&gt; blue = shapes.stream()</div><div class="line">						  .filter(s -&gt; s.getColor() == BLUE)</div><div class="line">						  .collect(Collectors.toList());</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Shape&gt; blue = shapes.stream()</span><br><span class="line">						  .filter(s -&gt; s.getColor() == BLUE)</span><br><span class="line">						  .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
 <p><code>collect()</code>操作会把其接收的元素聚集到一起（这里是List），<code>collect()</code>方法的参数则被用来指定如何进行聚集操作。在这里我们使用<code>toList()</code>以把元素输出到List中。</p>
 <p>如果每个形状都被保存在<code>Box</code>里，然后我们想知道哪个盒子至少包含一个蓝色形状，我们可以这么写：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Set&lt;Box&gt; hasBlueShape = shapes.stream()</div><div class="line">        .filter(s -&gt; s.getColor() == BLUE)</div><div class="line">        .map(s -&gt; s.getContainingBox())</div><div class="line">        .collect(Collectors.toSet());</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Box&gt; hasBlueShape = shapes.stream()</span><br><span class="line">        .filter(s -&gt; s.getColor() == BLUE)</span><br><span class="line">        .map(s -&gt; s.getContainingBox())</span><br><span class="line">        .collect(Collectors.toSet());</span><br></pre></td></tr></table></figure>
 <p><code>map()</code>操作符通过映射函数（这里的映射函数接收一个形状，然后返回包含它的盒子）对输入流里面的元素进行依次转换，然后产生新流。</p>
 <p>如果我们需要得到蓝色物体的总重量，我们可以这样表达：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">int sum = shapes.stream()</div><div class="line">        .filter(s -&gt; s.getColor() == BLUE)</div><div class="line">        .mapToInt(s -&gt; s.getWeight())</div><div class="line">        .sum();</div><div class="line">```            </div><div class="line"></div><div class="line"></div><div class="line">## 二、Stream vs Collection</div><div class="line"></div><div class="line">流（Stream）和集合（Collection）的区别：</div><div class="line"></div><div class="line">* Collection主要用来对元素进行管理和访问；</div><div class="line">* Stream并不支持对其元素进行直接操作和直接访问，而只支持通过声明式操作在其之上进行运算后得到结果；</div><div class="line">* Stream不存储值</div><div class="line">* 对Stream的操作会产生一个结果，但是Stream并不会改变数据源；</div><div class="line">* 大多数Stream的操作(filter,map,sort等)都是以惰性的方式实现的。这使得我们可以使用一次遍历完成整个流水线操作,并可以用短路操作提供更高效的实现。</div><div class="line"></div><div class="line"></div><div class="line">## 三、惰性求值 vs 急性求值</div><div class="line"></div><div class="line">`filter()`和`map()`这样的操作既可以被急性求值（以`filter()`为例，急性求值需要在方法返回前完成对所有元素的过滤），也可以被惰性求值（用`Stream`代表过滤结果，当且仅当需要时才进行过滤操作）在实际中进行惰性运算可以带来很多好处。比如说，如果我们进行惰性过滤，我们就可以把过滤和流水线里的其它操作混合在一起，从而不需要对数据进行多遍遍历。相类似的，如果我们在一个大型集合里搜索第一个满足某个条件的元素，我们可以在找到后直接停止，而不是继续处理整个集合。（这一点对无限数据源是很重要，惰性求值对于有限数据源起到的是优化作用，但对无限数据源起到的是决定作用，没有惰性求值，对无限数据源的操作将无法终止）</div><div class="line"></div><div class="line">对于`filter()`和`map()`这样的操作符，我们很自然的会把它当成是惰性求值操作，不过它们是否真的是惰性取决于它们的具体实现。另外，像`sum()`这样生成值的操作和`forEach()`这样产生副作用的操作都是__天然急性求值__，因为它们必须要产生具体的结果。</div><div class="line"></div><div class="line">我们拿下面这段代码举例：</div><div class="line"></div><div class="line">```java</div><div class="line">int sum = shapes.stream()</div><div class="line">        .filter(s -&gt; s.getColor() == BLUE)</div><div class="line">        .mapToInt(s -&gt; s.getWeight())</div><div class="line">        .sum();</div><div class="line">```                </div><div class="line"></div><div class="line">这里的`filter()`和`map()`都是惰性的，这就意味着在调用`sum()`之前不会从数据源中提取任何元素。在`sum()`操作之后才会把`filter()`、`map()`和`sum()`放在对数据源一次遍历中。这样可以大大减少维持中间结果所带来的开销。</div><div class="line"></div><div class="line"></div><div class="line">## 四、举个栗子🌰</div><div class="line"></div><div class="line">前面长篇大论的介绍概念实在太枯燥，为了方便大家理解我们用Streams API来实现一个具体的业务场景。</div><div class="line"></div><div class="line">假设我们有一个房源库项目，这个房源库中有一系列的小区，每个小区都有小区名和房源列表，每套房子又有价格、面积等属性。现在我们需要筛选出含有100平米以上房源的小区，并按照小区名排序。</div><div class="line"></div><div class="line">我们先来看看不用Streams API如何实现：</div><div class="line"></div><div class="line"></div><div class="line">```java</div><div class="line">List&lt;Community&gt; result = new ArrayList&lt;&gt;();</div><div class="line">for (Community community : communities) &#123;</div><div class="line">        for (House house : community.houses) &#123;</div><div class="line">            if (house.area &gt; 100) &#123;</div><div class="line">                result.add(community);</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    Collections.sort(result, new Comparator&lt;Community&gt;() &#123;</div><div class="line">        @Override</div><div class="line">        public int compare(Community c1, Community c2) &#123;</div><div class="line">            return c1.name.compareTo(c2.name);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    return result;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = shapes.stream()</span><br><span class="line">        .filter(s -&gt; s.getColor() == BLUE)</span><br><span class="line">        .mapToInt(s -&gt; s.getWeight())</span><br><span class="line">        .sum();</span><br><span class="line">```            </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 二、Stream vs Collection</span><br><span class="line"></span><br><span class="line">流（Stream）和集合（Collection）的区别：</span><br><span class="line"></span><br><span class="line">* Collection主要用来对元素进行管理和访问；</span><br><span class="line">* Stream并不支持对其元素进行直接操作和直接访问，而只支持通过声明式操作在其之上进行运算后得到结果；</span><br><span class="line">* Stream不存储值</span><br><span class="line">* 对Stream的操作会产生一个结果，但是Stream并不会改变数据源；</span><br><span class="line">* 大多数Stream的操作(filter,map,sort等)都是以惰性的方式实现的。这使得我们可以使用一次遍历完成整个流水线操作,并可以用短路操作提供更高效的实现。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 三、惰性求值 vs 急性求值</span><br><span class="line"></span><br><span class="line">`filter()`和`map()`这样的操作既可以被急性求值（以`filter()`为例，急性求值需要在方法返回前完成对所有元素的过滤），也可以被惰性求值（用`Stream`代表过滤结果，当且仅当需要时才进行过滤操作）在实际中进行惰性运算可以带来很多好处。比如说，如果我们进行惰性过滤，我们就可以把过滤和流水线里的其它操作混合在一起，从而不需要对数据进行多遍遍历。相类似的，如果我们在一个大型集合里搜索第一个满足某个条件的元素，我们可以在找到后直接停止，而不是继续处理整个集合。（这一点对无限数据源是很重要，惰性求值对于有限数据源起到的是优化作用，但对无限数据源起到的是决定作用，没有惰性求值，对无限数据源的操作将无法终止）</span><br><span class="line"></span><br><span class="line">对于`filter()`和`map()`这样的操作符，我们很自然的会把它当成是惰性求值操作，不过它们是否真的是惰性取决于它们的具体实现。另外，像`sum()`这样生成值的操作和`forEach()`这样产生副作用的操作都是__天然急性求值__，因为它们必须要产生具体的结果。</span><br><span class="line"></span><br><span class="line">我们拿下面这段代码举例：</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line"><span class="keyword">int</span> sum = shapes.stream()</span><br><span class="line">        .filter(s -&gt; s.getColor() == BLUE)</span><br><span class="line">        .mapToInt(s -&gt; s.getWeight())</span><br><span class="line">        .sum();</span><br><span class="line">```                </span><br><span class="line"></span><br><span class="line">这里的`filter()`和`map()`都是惰性的，这就意味着在调用`sum()`之前不会从数据源中提取任何元素。在`sum()`操作之后才会把`filter()`、`map()`和`sum()`放在对数据源一次遍历中。这样可以大大减少维持中间结果所带来的开销。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 四、举个栗子🌰</span><br><span class="line"></span><br><span class="line">前面长篇大论的介绍概念实在太枯燥，为了方便大家理解我们用Streams API来实现一个具体的业务场景。</span><br><span class="line"></span><br><span class="line">假设我们有一个房源库项目，这个房源库中有一系列的小区，每个小区都有小区名和房源列表，每套房子又有价格、面积等属性。现在我们需要筛选出含有<span class="number">100</span>平米以上房源的小区，并按照小区名排序。</span><br><span class="line"></span><br><span class="line">我们先来看看不用Streams API如何实现：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">List&lt;Community&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (Community community : communities) &#123;</span><br><span class="line">        <span class="keyword">for</span> (House house : community.houses) &#123;</span><br><span class="line">            <span class="keyword">if</span> (house.area &gt; <span class="number">100</span>) &#123;</span><br><span class="line">                result.add(community);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Collections.sort(result, <span class="keyword">new</span> Comparator&lt;Community&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Community c1, Community c2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> c1.name.compareTo(c2.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br></pre></td></tr></table></figure>
 <p>如果使用Streams API:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> communities.stream()</div><div class="line">          .filter(c -&gt; c.houses.stream().anyMatch(h -&gt; h.area&gt;<span class="number">100</span>))</div><div class="line">          .sorted(Comparator.comparing(c -&gt; c.name))</div><div class="line">          .collect(Collectors.toList());</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> communities.stream()</span><br><span class="line">          .filter(c -&gt; c.houses.stream().anyMatch(h -&gt; h.area&gt;<span class="number">100</span>))</span><br><span class="line">          .sorted(Comparator.comparing(c -&gt; c.name))</span><br><span class="line">          .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="external"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="noopener"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
 <ul>
 <li>微信公众号：<strong>BaronTalk</strong></li>
-<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="external">https://zhuanlan.zhihu.com/baron</a>  </li>
-<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="external">https://github.com/BaronZ88</a></li>
+<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/baron</a>  </li>
+<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
 <div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
 
-      
     </div>
 
-    <div>
-      
+    
+    
+    
         
-
       
-    </div>
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
+      <footer class="post-footer">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/Java/Java8新特性第2章-接口默认方法/" rel="next" title="Java8新特性第2章(接口默认方法)">
-                <i class="fa fa-chevron-left"></i> Java8新特性第2章(接口默认方法)
-              </a>
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Java/" rel="tag"># Java</a>
             
           </div>
+        
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/Java/在Android项目中使用Java8/" rel="prev" title="在Android项目中使用Java8">
-                在Android项目中使用Java8 <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/Java/Java8新特性第2章-接口默认方法/" rel="next" title="Java8新特性第2章(接口默认方法)">
+                  <i class="fa fa-chevron-left"></i> Java8新特性第2章(接口默认方法)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/Java/在Android项目中使用Java8/" rel="prev" title="在Android项目中使用Java8">
+                  在Android项目中使用Java8 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
           </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
+        
+      </footer>
     
   </div>
+  
+  
+  
+  </article>
 
+  </div>
+
+
+          </div>
+          
 
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -522,136 +378,133 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
-
-      
-
-      
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="张磊" />
-          <p class="site-author-name" itemprop="name">张磊</p>
-           
-              <p class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</p>
-          
-        </div>
-        <nav class="site-state motion-element">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
 
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张磊</p>
+  <div class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
         
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
+          <a href="/archives/">
         
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/BaronZ88" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://zhuanlan.zhihu.com/baron" target="_blank" title="知乎专栏">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎专栏
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/1832867270" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/BaronZ88" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
       
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+
+        </div>
+      </div>
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -659,73 +512,58 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
-      
-
       
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">张磊</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
-
-    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
+        <span>0%</span>
       </div>
+
     
 
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -742,196 +580,17 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
 
 
 
-  
 
 
 
 
 
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("1jDir2impsrfrJPT6gBcvMYi-gzGzoHsz", "HJsYHtmlFK9j3k0tA8etOFYQ");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
 
 
 
@@ -941,9 +600,10 @@ Stream作为Java8的新特性之一，他与Java IO包中的InputStream和Output
 
   
 
-  
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
 
 </body>
 </html>

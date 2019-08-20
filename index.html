@@ -2,199 +2,142 @@
 
 
 
-  
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="BaronZhang, baronzhang, Baron, Android, Java" />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=5.1.1" />
-
-
-
-
-
-
-<meta name="description" content="专注 Android Java 技术分享">
+  <meta name="description" content="专注 Android Java 技术分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="技术男的后花园">
 <meta property="og:url" content="http://baronzhang.com/index.html">
 <meta property="og:site_name" content="技术男的后花园">
 <meta property="og:description" content="专注 Android Java 技术分享">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="技术男的后花园">
 <meta name="twitter:description" content="专注 Android Java 技术分享">
+  <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml">
+  <link rel="canonical" href="http://baronzhang.com/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://baronzhang.com/"/>
-
-
-
-
-
   <title>技术男的后花园</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-91622756-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <div class="site-meta">
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">技术男的后花园</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">公众号：BaronTalk</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -202,159 +145,104 @@
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
+    
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
-  
+  </li>
+  </ul>
+
+    
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content page-home">
             
   <section id="posts" class="posts-expand">
-    
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/uncategorized/邮件这样写，PK-掉-99-的同事/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/" itemprop="url">邮件这样写，PK 掉 99% 的同事</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/" class="post-title-link" itemprop="url">邮件这样写，PK 掉 99% 的同事</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:55:25+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2019-08-20 00:55:25 / Modified: 00:59:35" itemprop="dateCreated datePublished" datetime="2019-08-20T00:55:25+08:00">2019-08-20</time>
+            </span>
           
             
-          
 
-          
-          
-             <span id="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/" class="leancloud_visitors" data-flag-title="邮件这样写，PK 掉 99% 的同事">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
+            
           
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
@@ -363,111 +251,82 @@
 <h2 id="一-金字塔结构"><a href="#一-金字塔结构" class="headerlink" title="一. 金字塔结构"></a>一. 金字塔结构</h2><p>如果让我说邮件写作中最重要的是什么，那我首选「结构」。无论是写代码还是写文章，我都有一个习惯：先搭框架，再填充内容。写邮件也当如此，结构合理清晰了，读者才有代入感，才能顺着你的逻辑走下去。</p>
 <p>在这个每天被各种邮件狂轰乱炸的职场，没人有功夫看你抽丝剥茧、娓娓道来，而后再提炼精髓，总结主题。大家要的是开宗明义，两三句话概括邮件主旨。因此在绝大多数的职场邮件写作应遵循自上而下的「金字塔结构」。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/" itemprop="url">系列 | 深入理解Java虚拟机六（高效并发）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/" class="post-title-link" itemprop="url">系列 | 深入理解Java虚拟机六（高效并发）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:27:27+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2019-08-20 00:27:27 / Modified: 01:00:26" itemprop="dateCreated datePublished" datetime="2019-08-20T00:27:27+08:00">2019-08-20</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -476,40 +335,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机六（高效并发）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
@@ -518,111 +353,82 @@
 <h3 id="1-1-硬件的效率与一致性"><a href="#1-1-硬件的效率与一致性" class="headerlink" title="1.1 硬件的效率与一致性"></a>1.1 硬件的效率与一致性</h3><p>计算机中绝大多数的任务都不可能只靠处理器计算就能完成，处理器至少要和内存交互，如读取数据、存储结果等等，这个 I/O 操作是很难消除的。由于计算器的存储设备和处理器的运算速度有几个量级的差距，所以计算机不得不加入一层读写速度尽可能接近处理器运算速度的高速缓存来作为内存与处理器之间的缓冲：将运算需要用到的数据复制到缓存中，让运算能快速进行，当运算结束后再从缓存同步回内存中，这样处理器就无需等待缓慢的内存读写了。</p>
 <p>基于高速缓存的存储交互很好的解决了处理器与内存的速度矛盾，但是也为计算机系统带来更高的复杂度，因为它引入了一个新的问题：缓存一致性。在多处理器中，每个处理器都有自己的高速缓存，而它们又共享同一主内存。当多个处理器的运算任务都涉及同一块主内存区域时，将可能导致各自的缓存数据不一致。为了解决一致性的问题，需要各个处理器的访问缓存时都遵循一些协议，在读写时要根据协议来进行操作。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/" itemprop="url">系列 | 深入理解Java虚拟机五（程序编译与代码优化）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/" class="post-title-link" itemprop="url">系列 | 深入理解Java虚拟机五（程序编译与代码优化）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:27:07+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2019-08-20 00:27:07 / Modified: 01:00:44" itemprop="dateCreated datePublished" datetime="2019-08-20T00:27:07+08:00">2019-08-20</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -631,40 +437,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机五（程序编译与代码优化）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
@@ -673,111 +455,82 @@
 <p>Javac 这类编译器对代码的运行效率几乎没有任何优化措施，虚拟机设计团队把对性能的优化都放到了后端的即时编译器中，这样可以让那些不是由 Javac 产生的 class 文件（如 Groovy、Kotlin 等语言产生的 class 文件）也能享受到编译器优化带来的好处。但是 Javac 做了很多针对 Java 语言编码过程的优化措施来改善程序员的编码风格、提升编码效率。相当多新生的 Java 语法特性，都是靠编译器的「语法糖」来实现的，而不是依赖虚拟机的底层改进来支持。</p>
 <p>Java 中即时编译器在运行期的优化过程对于程序运行来说更重要，而前端编译器在编译期的优化过程对于程序编码来说更加密切。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/" itemprop="url">系列 | 深入理解Java虚拟机四（字节码执行引擎）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/" class="post-title-link" itemprop="url">系列 | 深入理解Java虚拟机四（字节码执行引擎）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:26:41+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2019-08-20 00:26:41 / Modified: 01:00:38" itemprop="dateCreated datePublished" datetime="2019-08-20T00:26:41+08:00">2019-08-20</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -786,40 +539,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机四（字节码执行引擎）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
@@ -827,111 +556,82 @@
 <p>在 Java 虚拟机规范中制定了虚拟机字节码执行引擎的概念模型，这个概念模型成为各种虚拟机执行引擎的统一外观（Facade）。在不同的虚拟机实现里，执行引擎在执行 Java 代码的时候可能会有解释执行（通过解释器执行）和编译执行（通过即时编译器产生本地代码执行）两种方式，也可能两者都有，甚至还可能会包含几个不同级别的编译器执行引擎。但从外观上来看，所有 Java 虚拟机的执行引擎是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。</p>
 <h2 id="一-运行时栈帧结构"><a href="#一-运行时栈帧结构" class="headerlink" title="一. 运行时栈帧结构"></a>一. 运行时栈帧结构</h2><p>栈帧（Stack Frame）是用于支持虚拟机进行方法调用和方法执行的数据结构，它是虚拟机运行时数据区中的虚拟机栈的栈元素。栈帧存储了方法的局部变量、操作数栈、动态链接和方法返回地址等信息。<strong>每一个方法从调用开始到执行完成的过程，都对应着一个栈帧在虚拟机栈里从入栈到出栈的过程。</strong></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/" itemprop="url">系列 | 深入理解Java虚拟机三（类加载机制）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/" class="post-title-link" itemprop="url">系列 | 深入理解Java虚拟机三（类加载机制）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:25:48+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2019-08-20 00:25:48 / Modified: 01:00:31" itemprop="dateCreated datePublished" datetime="2019-08-20T00:25:48+08:00">2019-08-20</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -940,154 +640,101 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机三（类加载机制）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
-<p>上一篇文章我们介绍了<a href="https://mp.weixin.qq.com/s/mSqiItrTAhlk0UY-0j5TpA">「类文件结构」</a>，这一篇我们来看看虚拟机是如何加载类的。</p>
+<p>上一篇文章我们介绍了<a href="https://mp.weixin.qq.com/s/mSqiItrTAhlk0UY-0j5TpA" target="_blank" rel="noopener">「类文件结构」</a>，这一篇我们来看看虚拟机是如何加载类的。</p>
 <p>我们的源代码经过编译器编译成字节码之后，最终都需要加载到虚拟机之后才能运行。虚拟机把描述类的数据从 Class 文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的 Java 类型，这就是虚拟机的<strong>类加载机制</strong>。</p>
 <p>与编译时需要进行连接工作的语言不同，Java 语言中类的加载、连接和初始化都是在程序运行期间完成的，这种策略虽然会让类加载时增加一些性能开销，但是会为 Java 应用程序提供高度的灵活性，Java 里天生可动态扩展的语言特性就是依赖运行期间动态加载和动态连接的特点实现的。</p>
 <p>例如，一个面向接口的应用程序，可以等到运行时再指定实际的实现类；用户可以通过 Java 预定义的和自定义的类加载器，让一个本地的应用程序运行从网络上或其它地方加载一个二进制流作为程序代码的一部分。</p>
 <h2 id="一-类加载时机"><a href="#一-类加载时机" class="headerlink" title="一. 类加载时机"></a>一. 类加载时机</h2><p>类从被虚拟机从加载到卸载，整个生命周期包含：加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）、卸载（Unloading）7 个阶段。其中验证、准备、解析 3 个部分统称为连接（Linking）。这 7 个阶段的发生顺序如下图：</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/" itemprop="url">系列 | 深入理解Java虚拟机二（类文件结构）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/" class="post-title-link" itemprop="url">系列 | 深入理解Java虚拟机二（类文件结构）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:25:01+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2019-08-20 00:25:01 / Modified: 01:00:14" itemprop="dateCreated datePublished" datetime="2019-08-20T00:25:01+08:00">2019-08-20</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -1096,40 +743,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机二（类文件结构）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
@@ -1137,111 +760,82 @@
 <p>我们所编写的每一行代码，要在机器上运行最终都需要编译成二进制的机器码 CPU 才能识别。但是由于虚拟机的存在，屏蔽了操作系统与 CPU 指令集的差异性，类似于 Java 这种建立在虚拟机之上的编程语言通常会编译成一种中间格式的文件来存储，比如我们今天要聊的字节码（ByteCode）文件。</p>
 <h2 id="一-语言无关性"><a href="#一-语言无关性" class="headerlink" title="一. 语言无关性"></a>一. 语言无关性</h2><p>Java 虚拟机的设计者在设计之初就考虑并实现了其它语言在 Java 虚拟机上运行的可能性。所以并不是只有 Java 语言能够跑在 Java 虚拟机上，时至今日诸如 Kotlin、Groovy、Jython、JRuby 等一大批 JVM 语言都能够在 Java 虚拟机上运行。它们和 Java 语言一样都会被编译器编译成字节码文件，然后由虚拟机来执行。所以说类文件（字节码文件）具有语言无关性。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机二（类文件结构）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/" itemprop="url">系列 | 深入理解Java虚拟机一（自动内存管理机制）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/" class="post-title-link" itemprop="url">系列 | 深入理解Java虚拟机一（自动内存管理机制）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:17:35+08:00">
-                2019-08-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2019-08-20 00:17:35 / Modified: 01:01:44" itemprop="dateCreated datePublished" datetime="2019-08-20T00:17:35+08:00">2019-08-20</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -1250,40 +844,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/" class="leancloud_visitors" data-flag-title="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
@@ -1291,111 +861,90 @@
 <p>原想着一篇文章就够了，但写着写着就发现篇幅大大超出了预期。看来还是功力不够，索性拆成了六篇文章，分别从<strong>自动内存管理机制</strong>、<strong>类文件结构</strong>、<strong>类加载机制</strong>、<strong>字节码执行引擎</strong>、<strong>程序编译与代码优化</strong>、<strong>高效并发</strong>六个方面来做更加细致的介绍。本文先说说 Java 虚拟机的自动内存管理机制。</p>
 <h2 id="一-运行时数据区"><a href="#一-运行时数据区" class="headerlink" title="一. 运行时数据区"></a>一. 运行时数据区</h2><p>Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存区域划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建和销毁的时间，有些区域随着虚拟机进程的启动而存在，有些区域则是依赖线程的启动和结束而建立和销毁。Java 虚拟机所管理的内存被划分为如下几个区域：</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/JVM/系列-深入理解Java虚拟机一（自动内存管理机制）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/APM/Android-性能监控系列一（原理篇）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/APM/Android-性能监控系列一（原理篇）/" itemprop="url">Android 性能监控系列一（原理篇）</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/APM/Android-性能监控系列一（原理篇）/" class="post-title-link" itemprop="url">Android 性能监控系列一（原理篇）</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-06T10:52:00+08:00">
-                2018-06-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2018-06-06 10:52:00" itemprop="dateCreated datePublished" datetime="2018-06-06T10:52:00+08:00">2018-06-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 19:26:51" itemprop="dateModified" datetime="2019-08-19T19:26:51+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/APM/" itemprop="url" rel="index">
-                    <span itemprop="name">APM</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/APM/" itemprop="url" rel="index"><span itemprop="name">APM</span></a></span>
 
                 
                 
@@ -1404,151 +953,106 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/APM/Android-性能监控系列一（原理篇）/" class="leancloud_visitors" data-flag-title="Android 性能监控系列一（原理篇）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><img src="http://resources.baronzhang.com/blog/framework/android/apm/apm1/header.jpg" alt="题图来自 https://unsplash.com"></p>
 <blockquote>
 <p>欢迎关注微信公众号：<strong>BaronTalk</strong>，获取更多精彩好文！</p>
 </blockquote>
 <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>性能问题是导致 App 用户流失的罪魁祸首之一，如果用户在使用我们 App 的时候遇到诸如页面卡顿、响应速度慢、发热严重、流量电量消耗大等问题的时候，很可能就会卸载掉我们的 App。而往往获取用户的成本是高昂的，因此因为性能问题导致用户流失的情况是我们要极力避免的，做不好这一点是我们开发人员的失职。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/APM/Android-性能监控系列一（原理篇）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/APM/Android-性能监控系列一（原理篇）/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Other/我们和优秀工程师的差距在哪儿/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Other/我们和优秀工程师的差距在哪儿/" itemprop="url">我们和优秀工程师的差距在哪儿</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Other/我们和优秀工程师的差距在哪儿/" class="post-title-link" itemprop="url">我们和优秀工程师的差距在哪儿</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T14:51:59+08:00">
-                2018-04-25
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2018-04-25 14:51:59" itemprop="dateCreated datePublished" datetime="2018-04-25T14:51:59+08:00">2018-04-25</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Other/" itemprop="url" rel="index">
-                    <span itemprop="name">Other</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a></span>
 
                 
                 
@@ -1557,152 +1061,107 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Other/我们和优秀工程师的差距在哪儿/" class="leancloud_visitors" data-flag-title="我们和优秀工程师的差距在哪儿">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="http://resources.baronzhang.com/blog/other/engineer/pic1.jpg" alt=""></p>
+          <p><img src="http://resources.baronzhang.com/blog/other/engineer/pic1.jpg" alt></p>
 <blockquote>
 <p>关注微信公众号：<strong>BaronTalk</strong>，获取更多精彩好文。</p>
 </blockquote>
 <p>我相信每个工程师都曾怀揣一个成为技术大牛的梦想，可是真正走向技术大牛这条路的少之又少。工作中我们常常会发现，有些同学工作没几年但成长迅速；很快就能走向团队核心岗位，成为一名优秀的工程师；而有些同学工作几年后却在公司里默默无闻，能力和职位上都没有太大提升，得过且过最终沦为一名普普通通的码农。所以我常常会有感慨，太多人（包括我自己）真的只不过是用一两年的经验在职场上混了五年十年甚至更久。</p>
 <p>那么普通工程师和优秀工程师到底差距在哪儿？那些优秀工程师是怎么一步一步成长起来了的呢？以下就我自己的观察和思考来谈一谈，看看能不能一探究竟，了解通向优秀工程师的法门；然后与大家共勉，一起朝着优秀工程师的方向去努力。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Other/我们和优秀工程师的差距在哪儿/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Other/我们和优秀工程师的差距在哪儿/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/" itemprop="url">写给 Android 应用工程师的 Binder 原理剖析</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/" class="post-title-link" itemprop="url">写给 Android 应用工程师的 Binder 原理剖析</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T23:11:37+08:00">
-                2018-04-10
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2018-04-10 23:11:37" itemprop="dateCreated datePublished" datetime="2018-04-10T23:11:37+08:00">2018-04-10</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 19:51:08" itemprop="dateModified" datetime="2019-08-19T19:51:08+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
@@ -1711,152 +1170,107 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/" class="leancloud_visitors" data-flag-title="写给 Android 应用工程师的 Binder 原理剖析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="http://resources.baronzhang.com/blog/android/binder/header.jpg" alt=""></p>
+          <p><img src="http://resources.baronzhang.com/blog/android/binder/header.jpg" alt></p>
 <blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h2><p>这篇文章我酝酿了很久，参考了很多资料，读了很多源码，却依旧不敢下笔。生怕自己理解上还有偏差，对大家造成误解，贻笑大方。又怕自己理解不够透彻，无法用清晰直白的文字准确的表达出 Binder 的设计精髓。直到今天提笔写作时还依旧战战兢兢。</p>
 <p>Binder 之复杂远远不是一篇文章就能说清楚的，本文想站在一个更高的维度来俯瞰 Binder 的设计，最终帮助大家形成一个完整的概念。对于应用层开发的同学来说，理解到本文这个程度也就差不多了。希望更加深入理解 Binder 实现机制的，可以阅读文末的参考资料以及相关源码。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Android/写给-Android-应用工程师的-Binder-原理剖析/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Android/为-Retrofit2-提供的-FastJson-转换库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Android/为-Retrofit2-提供的-FastJson-转换库/" itemprop="url">为 Retrofit2 提供的 FastJson 转换库</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Android/为-Retrofit2-提供的-FastJson-转换库/" class="post-title-link" itemprop="url">为 Retrofit2 提供的 FastJson 转换库</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T13:15:49+08:00">
-                2017-05-17
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-05-17 13:15:49" itemprop="dateCreated datePublished" datetime="2017-05-17T13:15:49+08:00">2017-05-17</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
@@ -1865,40 +1279,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Android/为-Retrofit2-提供的-FastJson-转换库/" class="leancloud_visitors" data-flag-title="为 Retrofit2 提供的 FastJson 转换库">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>为 Retrofit2 提供的 FastJson 转换器（Retrofit2-FastJson-Converter）</p>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -1906,111 +1296,90 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Retrofit 是 Android 和 Java 平台上一款优秀且被广泛使用的 Http 客户端，GitHub 上 21K+ 的 Star 和 4.3K+ 的 Fork 充分证明了 Retrofit 的风靡程度。</p>
 <p>Retrofit 在 Android 平台如此流行与它及其简洁的调用方式和优秀的可扩展、可配置性是分不开的。我们客户端在和服务端交互的时候通常采用 Json 格式来传递数据，客户端拿到服务端传递过来的 Json 格式的数据后需要对它进行解析；Retrofit2 并未提供 Json 解析功能，但可提供接口让客户端程序员配置 Json Converter以选择自己喜欢的 Json 解析库。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Android/为-Retrofit2-提供的-FastJson-转换库/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Android/为-Retrofit2-提供的-FastJson-转换库/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Framework/Android-模块化探索与实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Framework/Android-模块化探索与实践/" itemprop="url">Android 模块化探索与实践</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Framework/Android-模块化探索与实践/" class="post-title-link" itemprop="url">Android 模块化探索与实践</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T14:04:12+08:00">
-                2017-05-08
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-05-08 14:04:12" itemprop="dateCreated datePublished" datetime="2017-05-08T14:04:12+08:00">2017-05-08</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Framework/" itemprop="url" rel="index">
-                    <span itemprop="name">Framework</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Framework/" itemprop="url" rel="index"><span itemprop="name">Framework</span></a></span>
 
                 
                 
@@ -2019,41 +1388,17 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Framework/Android-模块化探索与实践/" class="leancloud_visitors" data-flag-title="Android 模块化探索与实践">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="http://resources.baronzhang.com/blog/framework/android/2/header.jpg" alt=""></p>
+          <p><img src="http://resources.baronzhang.com/blog/framework/android/2/header.jpg" alt></p>
 <blockquote>
 <p>首发于《程序员》杂志五月刊</p>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -2061,111 +1406,90 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>万维网发明人 Tim Berners-Lee 谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。” 由此可见模块化之于软件工程领域的重要性。</p>
 <p>从 2016 年开始，模块化在 Android 社区越来越多的被提及。随着移动平台的不断发展，移动平台上的软件慢慢走向复杂化，体积也变得臃肿庞大；为了降低大型软件复杂性和耦合度，同时也为了适应模块重用、多团队并行开发测试等等需求，模块化在 Android 平台上变得势在必行。阿里 Android 团队在年初开源了他们的容器化框架 Atlas 就很大程度说明了当前 Android 平台开发大型商业项目所面临的问题。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Framework/Android-模块化探索与实践/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Framework/Android-模块化探索与实践/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Framework/安居客Android项目架构演进/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Framework/安居客Android项目架构演进/" itemprop="url">安居客 Android 项目架构演进</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Framework/安居客Android项目架构演进/" class="post-title-link" itemprop="url">安居客 Android 项目架构演进</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-24T17:59:16+08:00">
-                2017-02-24
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-24 17:59:16" itemprop="dateCreated datePublished" datetime="2017-02-24T17:59:16+08:00">2017-02-24</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Framework/" itemprop="url" rel="index">
-                    <span itemprop="name">Framework</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Framework/" itemprop="url" rel="index"><span itemprop="name">Framework</span></a></span>
 
                 
                 
@@ -2174,163 +1498,114 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Framework/安居客Android项目架构演进/" class="leancloud_visitors" data-flag-title="安居客 Android 项目架构演进">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="http://resources.baronzhang.com/Blog/Framework/Android/header.jpg" alt=""></p>
+          <p><img src="http://resources.baronzhang.com/Blog/Framework/Android/header.jpg" alt></p>
 <blockquote>
 <p>本文已授权微信公众号 AndroidDeveloper 独家发布。</p>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <p>入职安居客三年从工程师到 Team Leader，见证了 Android 团队一路走来的发展历程。因此有心将这些记录下来与大家分享，也算是对自己三年来一部分工作的总结。希望对大家有所帮助，更希望能得到大家宝贵的建议。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Framework/安居客Android项目架构演进/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Framework/安居客Android项目架构演进/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/OpenSource/Java/神兵利器Dagger2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/OpenSource/Java/神兵利器Dagger2/" itemprop="url">神兵利器Dagger2</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/OpenSource/Java/神兵利器Dagger2/" class="post-title-link" itemprop="url">神兵利器Dagger2</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T18:58:18+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 18:58:18" itemprop="dateCreated datePublished" datetime="2017-02-06T18:58:18+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OpenSource/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenSource</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OpenSource/" itemprop="url" rel="index"><span itemprop="name">OpenSource</span></a></span>
 
                 
                 
-                  ， 
+                  , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OpenSource/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OpenSource/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -2339,40 +1614,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/OpenSource/Java/神兵利器Dagger2/" class="leancloud_visitors" data-flag-title="神兵利器Dagger2">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
@@ -2380,111 +1631,90 @@
 <p>Dagger2起源于Dagger，是一款基于Java注解来实现的完全在编译阶段完成依赖注入的开源库，主要用于模块间解耦、提高代码的健壮性和可维护性。Dagger2在编译阶段通过apt利用Java注解自动生成Java代码，然后结合手写的代码来自动帮我们完成依赖注入的工作。</p>
 <p>起初Square公司受到Guice的启发而开发了Dagger，但是Dagger这种半静态半运行时的框架还是有些性能问题（虽说依赖注入是完全静态的，但是其有向无环图(Directed Acyclic Graph)还是基于反射来生成的，这无论在大型的服务端应用还是在Android应用上都不是最优方案）。因此Google工程师Fork了Dagger项目，对它进行了改造。于是变演变出了今天我们要讨论的Dagger2，所以说Dagger2其实就是高配版的Dagger。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/OpenSource/Java/神兵利器Dagger2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/OpenSource/Java/神兵利器Dagger2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/" itemprop="url">RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/" class="post-title-link" itemprop="url">RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:30:27+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:30:27" itemprop="dateCreated datePublished" datetime="2017-02-06T00:30:27+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -2493,40 +1723,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/" class="leancloud_visitors" data-flag-title="RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
@@ -2540,113 +1746,92 @@
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
 </ul>
-<h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>拿<a href="https://github.com/BaronZ88/MinimalistWeather">MinimalistWeather</a>这个开源的天气App来举例：</p>
+<h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>拿<a href="https://github.com/BaronZ88/MinimalistWeather" target="_blank" rel="noopener">MinimalistWeather</a>这个开源的天气App来举例：</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列7-最佳实践/" itemprop="url">RxJava系列7(最佳实践)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列7-最佳实践/" class="post-title-link" itemprop="url">RxJava系列7(最佳实践)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:22:03+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:22:03" itemprop="dateCreated datePublished" datetime="2017-02-06T00:22:03+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -2655,40 +1840,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列7-最佳实践/" class="leancloud_visitors" data-flag-title="RxJava系列7(最佳实践)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -2707,111 +1868,90 @@
 <p>按照计划这一期是要介绍RxJava框架结构和设计思想的，但是考虑到Netflix将在十月底发布RxJava2.0正式版；因此决定将RxJava框架结构和设计思想分析放到2.0正式版发布后再做。后续我也会有一系列的文章来介绍RxJava1.x和2.x的区别。</p>
 </blockquote>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列7-最佳实践/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列7-最佳实践/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/" itemprop="url">RxJava系列6(从微观角度解读RxJava源码)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/" class="post-title-link" itemprop="url">RxJava系列6(从微观角度解读RxJava源码)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:21:05+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:21:05" itemprop="dateCreated datePublished" datetime="2017-02-06T00:21:05+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -2820,40 +1960,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/" class="leancloud_visitors" data-flag-title="RxJava系列6(从微观角度解读RxJava源码)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -2876,113 +1992,92 @@
 <blockquote>
 <p>本章节基于<strong>RxJava1.1.9</strong>版本的源码</p>
 </blockquote>
-<h2 id="一、RxJava执行流程分析"><a href="#一、RxJava执行流程分析" class="headerlink" title="一、RxJava执行流程分析"></a>一、RxJava执行流程分析</h2><p>在<a href="http://www.jianshu.com/p/ba61c047c230">RxJava系列2(基本概念及使用介绍)</a>中我们介绍过，一个最基本的RxJava调用是这样的：</p>
+<h2 id="一、RxJava执行流程分析"><a href="#一、RxJava执行流程分析" class="headerlink" title="一、RxJava执行流程分析"></a>一、RxJava执行流程分析</h2><p>在<a href="http://www.jianshu.com/p/ba61c047c230" target="_blank" rel="noopener">RxJava系列2(基本概念及使用介绍)</a>中我们介绍过，一个最基本的RxJava调用是这样的：</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列5-组合操作符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列5-组合操作符/" itemprop="url">RxJava系列5(组合操作符)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列5-组合操作符/" class="post-title-link" itemprop="url">RxJava系列5(组合操作符)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:46+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:20:46" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:46+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -2991,40 +2086,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列5-组合操作符/" class="leancloud_visitors" data-flag-title="RxJava系列5(组合操作符)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -3040,111 +2111,90 @@
 <hr>
 <p>这一章我们接着介绍组合操作符，这类operators可以同时处理多个Observable来创建我们所需要的Observable。组合操作符主要包含： <strong><code>Merge</code></strong> <strong><code>StartWith</code></strong> <strong><code>Concat</code></strong> <strong><code>Zip</code></strong> <strong><code>CombineLatest</code></strong>  <strong><code>SwitchOnNext</code></strong> <strong><code>Join</code></strong>等等。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列5-组合操作符/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列5-组合操作符/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列4-过滤操作符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列4-过滤操作符/" itemprop="url">RxJava系列4(过滤操作符)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列4-过滤操作符/" class="post-title-link" itemprop="url">RxJava系列4(过滤操作符)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:33+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:20:33" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:33+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -3153,40 +2203,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列4-过滤操作符/" class="leancloud_visitors" data-flag-title="RxJava系列4(过滤操作符)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -3202,111 +2228,90 @@
 <hr>
 <p>前面一篇文章中我们介绍了转换类操作符，那么这一章我们就来介绍下过滤类的操作符。顾名思义，这类operators主要用于对事件数据的筛选过滤，只返回满足我们条件的数据。过滤类操作符主要包含： <strong><code>Filter</code></strong> <strong><code>Take</code></strong> <strong><code>TakeLast</code></strong> <strong><code>TakeUntil</code></strong> <strong><code>Skip</code></strong> <strong><code>SkipLast</code></strong> <strong><code>ElementAt</code></strong> <strong><code>Debounce</code></strong> <strong><code>Distinct</code></strong> <strong><code>DistinctUntilChanged</code></strong> <strong><code>First</code></strong> <strong><code>Last</code></strong>等等。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列4-过滤操作符/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列4-过滤操作符/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列3-转换操作符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列3-转换操作符/" itemprop="url">RxJava系列3(转换操作符)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列3-转换操作符/" class="post-title-link" itemprop="url">RxJava系列3(转换操作符)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:19+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:20:19" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:19+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -3315,40 +2320,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列3-转换操作符/" class="leancloud_visitors" data-flag-title="RxJava系列3(转换操作符)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -3370,111 +2351,90 @@
 </ol>
 <p>这一章我们主要讲讲转换类操作符。所有这些Operators都作用于一个可观测序列，然后变换它发射的值，最后用一种新的形式返回它们。概念实在是不好理解，下面我们结合实际的例子一一介绍。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列3-转换操作符/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列3-转换操作符/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列2-基本概念及使用介绍/" itemprop="url">RxJava系列2(基本概念及使用介绍)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列2-基本概念及使用介绍/" class="post-title-link" itemprop="url">RxJava系列2(基本概念及使用介绍)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:04+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:20:04" itemprop="dateCreated datePublished" datetime="2017-02-06T00:20:04+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -3483,40 +2443,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列2-基本概念及使用介绍/" class="leancloud_visitors" data-flag-title="RxJava系列2(基本概念及使用介绍)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -3532,111 +2468,90 @@
 <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇的示例代码中大家一定发现了Observable这个类。从纯Java的观点看，Observable类源自于经典的观察者模式。RxJava的异步实现正是基于观察者模式来实现的，而且是一种扩展的观察者模式。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列2-基本概念及使用介绍/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列2-基本概念及使用介绍/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/RxJava/RxJava系列1-简介/" itemprop="url">RxJava系列1(简介)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/RxJava/RxJava系列1-简介/" class="post-title-link" itemprop="url">RxJava系列1(简介)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:19:48+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:19:48" itemprop="dateCreated datePublished" datetime="2017-02-06T00:19:48+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RxJava/" itemprop="url" rel="index">
-                    <span itemprop="name">RxJava</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RxJava/" itemprop="url" rel="index"><span itemprop="name">RxJava</span></a></span>
 
                 
                 
@@ -3645,40 +2560,16 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/RxJava/RxJava系列1-简介/" class="leancloud_visitors" data-flag-title="RxJava系列1(简介)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <ul>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
 <li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
@@ -3697,111 +2588,90 @@
 <p>由于我本人是个Android程序猿，因此这一系列文章中的场景都是基于Android平台的。如果你是个Java Web工程师或者是其它方向的那也没关系，我会尽量用通俗的语言将问题描述清楚。</p>
 </blockquote>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/RxJava/RxJava系列1-简介/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/RxJava/RxJava系列1-简介/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Android/Android-WebView那些坑之上传文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Android/Android-WebView那些坑之上传文件/" itemprop="url">Android WebView那些坑之上传文件</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Android/Android-WebView那些坑之上传文件/" class="post-title-link" itemprop="url">Android WebView那些坑之上传文件</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:16:41+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:16:41" itemprop="dateCreated datePublished" datetime="2017-02-06T00:16:41+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
@@ -3810,152 +2680,107 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Android/Android-WebView那些坑之上传文件/" class="leancloud_visitors" data-flag-title="Android WebView那些坑之上传文件">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <p>最近公司项目需要在<code>WebView</code>上调用手机系统相册来上传图片，开发过程中发现在很多机器上无法正常唤起系统相册来选择图片。</p>
 <p>解决问题之前我们先来说说<code>WebView</code>上传文件的逻辑：当我们在Web页面上点击选择文件的控件(<code>&lt;input type=&quot;file&quot;&gt;</code>)时，会回调<code>WebChromeClient</code>下的<code>openFileChooser()</code>（5.0及以上系统回调<code>onShowFileChooser()</code>）。这个时候我们在<code>openFileChooser</code>方法中通过<code>Intent</code>打开系统相册或者支持该<code>Intent</code>的第三方应用来选择图片。like this：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture)</span> </span>&#123;</div><div class="line">	uploadMessage = valueCallback;</div><div class="line">   	openImageChooserActivity();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openImageChooserActivity</span><span class="params">()</span> </span>&#123;</div><div class="line">    Intent i = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);</div><div class="line">    i.addCategory(Intent.CATEGORY_OPENABLE);</div><div class="line">    i.setType(<span class="string">"image/*"</span>);</div><div class="line">    startActivityForResult(Intent.createChooser(i,</div><div class="line">    			<span class="string">"Image Chooser"</span>), FILE_CHOOSER_RESULT_CODE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture)</span> </span>&#123;</span><br><span class="line">	uploadMessage = valueCallback;</span><br><span class="line">   	openImageChooserActivity();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openImageChooserActivity</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Intent i = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);</span><br><span class="line">    i.addCategory(Intent.CATEGORY_OPENABLE);</span><br><span class="line">    i.setType(<span class="string">"image/*"</span>);</span><br><span class="line">    startActivityForResult(Intent.createChooser(i,</span><br><span class="line">    			<span class="string">"Image Chooser"</span>), FILE_CHOOSER_RESULT_CODE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Android/Android-WebView那些坑之上传文件/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Android/Android-WebView那些坑之上传文件/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/DesignPatterns/观察者模式-ObserverPattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/DesignPatterns/观察者模式-ObserverPattern/" itemprop="url">观察者模式(ObserverPattern)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/DesignPatterns/观察者模式-ObserverPattern/" class="post-title-link" itemprop="url">观察者模式(ObserverPattern)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-06T00:16:14+08:00">
-                2017-02-06
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-06 00:16:14" itemprop="dateCreated datePublished" datetime="2017-02-06T00:16:14+08:00">2017-02-06</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:56:35" itemprop="dateModified" datetime="2019-08-19T20:56:35+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DesignPatterns/" itemprop="url" rel="index">
-                    <span itemprop="name">DesignPatterns</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/DesignPatterns/" itemprop="url" rel="index"><span itemprop="name">DesignPatterns</span></a></span>
 
                 
                 
@@ -3964,150 +2789,105 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/DesignPatterns/观察者模式-ObserverPattern/" class="leancloud_visitors" data-flag-title="观察者模式(ObserverPattern)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们接到一个来自气象局的需求：气象局需要我们构建一套系统，这系统有两个公告牌，分别用于显示当前的实时天气和未来几天的天气预报。当气象局发布新的天气数据（WeatherData）后，两个公告牌上显示的天气数据必须实时更新。气象局同时要求我们保证程序拥有足够的可扩展性，因为后期随时可能要新增新的公告牌。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/DesignPatterns/观察者模式-ObserverPattern/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/DesignPatterns/观察者模式-ObserverPattern/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
       
 
-  
-
-  
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://baronzhang.com/blog/Java/在Android项目中使用Java8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张磊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="专注 Android Java 技术分享">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="技术男的后花园">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Java/在Android项目中使用Java8/" itemprop="url">在Android项目中使用Java8</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/blog/Java/在Android项目中使用Java8/" class="post-title-link" itemprop="url">在Android项目中使用Java8</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-05T23:37:48+08:00">
-                2017-02-05
-              </time>
-            
 
-            
-
-            
-          </span>
-
+              <time title="Created: 2017-02-05 23:37:48" itemprop="dateCreated datePublished" datetime="2017-02-05T23:37:48+08:00">2017-02-05</time>
+            </span>
           
-            <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 20:55:38" itemprop="dateModified" datetime="2019-08-19T20:55:38+08:00">2019-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -4116,107 +2896,66 @@
           
 
           
-            
-          
-
-          
-          
-             <span id="/blog/Java/在Android项目中使用Java8/" class="leancloud_visitors" data-flag-title="在Android项目中使用Java8">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <blockquote>
 <p>微信公众号：<strong>BaronTalk</strong></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在过去的文章中我介绍过Java8的一些新特性，包括：</p>
 <ol>
-<li><a href="https://zhuanlan.zhihu.com/p/20540175">Java8新特性第1章(Lambda表达式)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/20540188">Java8新特性第2章(接口默认方法)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/20540202">Java8新特性第3章(Stream API)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20540175" target="_blank" rel="noopener">Java8新特性第1章(Lambda表达式)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20540188" target="_blank" rel="noopener">Java8新特性第2章(接口默认方法)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20540202" target="_blank" rel="noopener">Java8新特性第3章(Stream API)</a></li>
 </ol>
 <p>之前由于Android平台不支持Java8，如果我们想在Android项目中使用Lambda表达式、Stream API等Java8中的新特性就必须使用Retrolambda、Lightweight-Stream-API等第三方开源库来实现。现在Google爸爸终于让Android平台支持Java8了，这篇文章中便来和大家聊聊如何在Android项目中配置使用Java8。</p>
 <p>遗憾的是目前Android平台仅支持Java8的部分新特性，当我们在开发面向Android N及以上版本的应用时(即minSdkVersion&gt;=24)，可以使用如下新特性：</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Java/在Android项目中使用Java8/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Java/在Android项目中使用Java8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
   </article>
-
 
     
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
-
 
 
           </div>
           
 
-
-          
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -4228,185 +2967,166 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
-      
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
 
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张磊</p>
+  <div class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
       
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="张磊" />
-          <p class="site-author-name" itemprop="name">张磊</p>
-           
-              <p class="site-description motion-element" itemprop="description">专注 Android Java 技术分享</p>
+      
+      <div class="site-state-item site-state-categories">
+        
           
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+
         </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/BaronZ88" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://zhuanlan.zhihu.com/baron" target="_blank" title="知乎专栏">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎专栏
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/1832867270" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/BaronZ88" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">张磊</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
-
-    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
+        <span>0%</span>
       </div>
+
     
 
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -4423,196 +3143,17 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
-
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
 
 
 
-  
 
 
 
 
 
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("1jDir2impsrfrJPT6gBcvMYi-gzGzoHsz", "HJsYHtmlFK9j3k0tA8etOFYQ");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
 
 
 
@@ -4622,9 +3163,7 @@
 
   
 
-  
 
   
-
 </body>
 </html>
