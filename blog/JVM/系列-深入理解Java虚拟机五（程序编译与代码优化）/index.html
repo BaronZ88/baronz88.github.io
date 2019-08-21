@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/5/方法调用计数器触发即时编译.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/5/回边计数器触发即时编译.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-19T17:00:44.305Z">
+<meta property="og:updated_time" content="2019-08-21T15:36:41.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系列 | 深入理解Java虚拟机五（程序编译与代码优化）">
 <meta name="twitter:description" content="首发于微信公众号：BaronTalk，欢迎关注！  对于性能和效率的追求一直是程序开发中永恒不变的宗旨，除了我们自己在编码过程中要充分考虑代码的性能和效率，虚拟机在编译阶段也会对代码进行优化。本文就从虚拟机层面来看看虚拟机对我们所编写的代码采用了哪些优化手段。 一. 早期优化（编译期优化）Java 语言的「编译期」其实是一段「不确定」的操作过程。因为它可能是一个前端编译器（如 Javac）把 .">
@@ -384,10 +384,8 @@
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
 <p>对于性能和效率的追求一直是程序开发中永恒不变的宗旨，除了我们自己在编码过程中要充分考虑代码的性能和效率，虚拟机在编译阶段也会对代码进行优化。本文就从虚拟机层面来看看虚拟机对我们所编写的代码采用了哪些优化手段。</p>
-<h2 id="一-早期优化（编译期优化）"><a href="#一-早期优化（编译期优化）" class="headerlink" title="一. 早期优化（编译期优化）"></a>一. 早期优化（编译期优化）</h2><p>Java 语言的「编译期」其实是一段「不确定」的操作过程。因为它可能是一个前端编译器（如 Javac）把 <em>.java 文件编译成 </em>.class 文件的过程；也可能是程序运行期的即时编译器（JIT 编译器，Just In Time Compiler）把字节码文件编译成机器码的过程；还可能是静态提前编译器（AOT 编译器，Ahead Of Time Compiler）直接把 *.java 文件编译成本地机器码的过程。</p>
-<p>Javac 这类编译器对代码的运行效率几乎没有任何优化措施，虚拟机设计团队把对性能的优化都放到了后端的即时编译器中，这样可以让那些不是由 Javac 产生的 class 文件（如 Groovy、Kotlin 等语言产生的 class 文件）也能享受到编译器优化带来的好处。但是 Javac 做了很多针对 Java 语言编码过程的优化措施来改善程序员的编码风格、提升编码效率。相当多新生的 Java 语法特性，都是靠编译器的「语法糖」来实现的，而不是依赖虚拟机的底层改进来支持。</p>
+<h2 id="一-早期优化（编译期优化）"><a href="#一-早期优化（编译期优化）" class="headerlink" title="一. 早期优化（编译期优化）"></a>一. 早期优化（编译期优化）</h2><p>Java 语言的「编译期」其实是一段「不确定」的操作过程。因为它可能是一个前端编译器（如 Javac）把 <em>.java 文件编译成 </em>.class 文件的过程；也可能是程序运行期的即时编译器（JIT 编译器，Just In Time Compiler）把字节码文件编译成机器码的过程；还可能是静态提前编译器（AOT 编译器，Ahead Of Time Compiler）直接把 *.java 文件编译成本地机器码的过程。<br><a id="more"></a><br>Javac 这类编译器对代码的运行效率几乎没有任何优化措施，虚拟机设计团队把对性能的优化都放到了后端的即时编译器中，这样可以让那些不是由 Javac 产生的 class 文件（如 Groovy、Kotlin 等语言产生的 class 文件）也能享受到编译器优化带来的好处。但是 Javac 做了很多针对 Java 语言编码过程的优化措施来改善程序员的编码风格、提升编码效率。相当多新生的 Java 语法特性，都是靠编译器的「语法糖」来实现的，而不是依赖虚拟机的底层改进来支持。</p>
 <p>Java 中即时编译器在运行期的优化过程对于程序运行来说更重要，而前端编译器在编译期的优化过程对于程序编码来说更加密切。</p>
-<a id="more"></a>
 <h3 id="1-1-Javac-编译器"><a href="#1-1-Javac-编译器" class="headerlink" title="1.1 Javac 编译器"></a>1.1 Javac 编译器</h3><p>Javac 编译器的编译过程大致可分为 3 个步骤：</p>
 <ol>
 <li>解析与填充符号表；</li>

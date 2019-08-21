@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/复制算法.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/标记-整理算法.png">
 <meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-19T17:01:44.761Z">
+<meta property="og:updated_time" content="2019-08-21T15:35:47.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
 <meta name="twitter:description" content="首发于微信公众号：BaronTalk，欢迎关注！  书籍真的是常读常新，古人说「书读百遍其义自见」还是蛮有道理的。周志明老师的这本《深入理解 Java 虚拟机》我细读了不下三遍，每一次阅读都有新的收获，每一次阅读对 Java 虚拟机的理解就更进一步。因而萌生了将读书笔记整理成文的想法，一是想检验下自己的学习成果，对学习内容进行一次系统性的复盘；二是给还没接触过这部好作品的同学推荐下，在阅读这部佳">
@@ -391,10 +391,8 @@
         <blockquote>
 <p>首发于微信公众号：<strong>BaronTalk</strong>，欢迎关注！</p>
 </blockquote>
-<p>书籍真的是常读常新，古人说「书读百遍其义自见」还是蛮有道理的。周志明老师的这本《深入理解 Java 虚拟机》我细读了不下三遍，每一次阅读都有新的收获，每一次阅读对 Java 虚拟机的理解就更进一步。因而萌生了将读书笔记整理成文的想法，一是想检验下自己的学习成果，对学习内容进行一次系统性的复盘；二是给还没接触过这部好作品的同学推荐下，在阅读这部佳作之前能通过我的文章一窥书中的精华。</p>
-<p>原想着一篇文章就够了，但写着写着就发现篇幅大大超出了预期。看来还是功力不够，索性拆成了六篇文章，分别从<strong>自动内存管理机制</strong>、<strong>类文件结构</strong>、<strong>类加载机制</strong>、<strong>字节码执行引擎</strong>、<strong>程序编译与代码优化</strong>、<strong>高效并发</strong>六个方面来做更加细致的介绍。本文先说说 Java 虚拟机的自动内存管理机制。</p>
+<p>书籍真的是常读常新，古人说「书读百遍其义自见」还是蛮有道理的。周志明老师的这本《深入理解 Java 虚拟机》我细读了不下三遍，每一次阅读都有新的收获，每一次阅读对 Java 虚拟机的理解就更进一步。因而萌生了将读书笔记整理成文的想法，一是想检验下自己的学习成果，对学习内容进行一次系统性的复盘；二是给还没接触过这部好作品的同学推荐下，在阅读这部佳作之前能通过我的文章一窥书中的精华。<br><a id="more"></a><br>原想着一篇文章就够了，但写着写着就发现篇幅大大超出了预期。看来还是功力不够，索性拆成了六篇文章，分别从<strong>自动内存管理机制</strong>、<strong>类文件结构</strong>、<strong>类加载机制</strong>、<strong>字节码执行引擎</strong>、<strong>程序编译与代码优化</strong>、<strong>高效并发</strong>六个方面来做更加细致的介绍。本文先说说 Java 虚拟机的自动内存管理机制。</p>
 <h2 id="一-运行时数据区"><a href="#一-运行时数据区" class="headerlink" title="一. 运行时数据区"></a>一. 运行时数据区</h2><p>Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存区域划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建和销毁的时间，有些区域随着虚拟机进程的启动而存在，有些区域则是依赖线程的启动和结束而建立和销毁。Java 虚拟机所管理的内存被划分为如下几个区域：</p>
-<a id="more"></a>
 <div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/运行时数据区.png" width="60%"></div>
 
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>程序计数器是一块较小的内存区域，可以看做是当前线程所执行的字节码的行号指示器。在虚拟机的概念模型里，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。「属于线程私有的内存区域」</p>
