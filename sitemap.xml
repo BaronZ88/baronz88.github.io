@@ -65,14 +65,7 @@
   </url>
   
   <url>
-    <loc>http://baronzhang.com/blog/OpenSource/Java/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8Dagger2/</loc>
-    
-    <lastmod>2019-08-19T12:56:35.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%974-%E8%BF%87%E6%BB%A4%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
+    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%973-%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
     
     <lastmod>2019-08-19T12:56:35.814Z</lastmod>
     
@@ -86,21 +79,28 @@
   </url>
   
   <url>
-    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%973-%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
+    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%974-%E8%BF%87%E6%BB%A4%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
     
     <lastmod>2019-08-19T12:56:35.814Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%975-%E7%BB%84%E5%90%88%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
+    <loc>http://baronzhang.com/blog/OpenSource/Java/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8Dagger2/</loc>
+    
+    <lastmod>2019-08-19T12:56:35.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%97%E7%95%AA%E5%A4%96%E7%AF%87%EF%BC%9A%E4%B8%80%E4%B8%AARxJava%E8%A7%A3%E5%86%B3%E5%A4%8D%E6%9D%82%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E7%9A%84%E6%A1%88%E4%BE%8B/</loc>
     
     <lastmod>2019-08-19T12:56:35.813Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%97%E7%95%AA%E5%A4%96%E7%AF%87%EF%BC%9A%E4%B8%80%E4%B8%AARxJava%E8%A7%A3%E5%86%B3%E5%A4%8D%E6%9D%82%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E7%9A%84%E6%A1%88%E4%BE%8B/</loc>
+    <loc>http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%975-%E7%BB%84%E5%90%88%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
     
     <lastmod>2019-08-19T12:56:35.813Z</lastmod>
     
@@ -212,14 +212,14 @@
   </url>
   
   <url>
-    <loc>http://baronzhang.com/categories/index.html</loc>
+    <loc>http://baronzhang.com/tags/index.html</loc>
     
     <lastmod>2017-06-12T15:39:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://baronzhang.com/tags/index.html</loc>
+    <loc>http://baronzhang.com/categories/index.html</loc>
     
     <lastmod>2017-06-12T15:39:45.000Z</lastmod>
     
