@@ -103,15 +103,15 @@
 <meta property="og:site_name" content="技术男的后花园">
 <meta property="og:description" content="首发于微信公众号：BaronTalk，欢迎关注！  对于性能和效率的追求一直是程序开发中永恒不变的宗旨，除了我们自己在编码过程中要充分考虑代码的性能和效率，虚拟机在编译阶段也会对代码进行优化。本文就从虚拟机层面来看看虚拟机对我们所编写的代码采用了哪些优化手段。 一. 早期优化（编译期优化）Java 语言的「编译期」其实是一段「不确定」的操作过程。因为它可能是一个前端编译器（如 Javac）把 .">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/5/Javac编译过程.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/5/方法调用计数器触发即时编译.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/5/回边计数器触发即时编译.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-21T15:36:41.981Z">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/5/Javac编译过程.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/5/方法调用计数器触发即时编译.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/5/回边计数器触发即时编译.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-09-29T03:54:09.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系列 | 深入理解Java虚拟机五（程序编译与代码优化）">
 <meta name="twitter:description" content="首发于微信公众号：BaronTalk，欢迎关注！  对于性能和效率的追求一直是程序开发中永恒不变的宗旨，除了我们自己在编码过程中要充分考虑代码的性能和效率，虚拟机在编译阶段也会对代码进行优化。本文就从虚拟机层面来看看虚拟机对我们所编写的代码采用了哪些优化手段。 一. 早期优化（编译期优化）Java 语言的「编译期」其实是一段「不确定」的操作过程。因为它可能是一个前端编译器（如 Javac）把 .">
-<meta name="twitter:image" content="http://resources.baronzhang.com/blog/jvm/5/Javac编译过程.png">
+<meta name="twitter:image" content="https://resources.baronzhang.com/blog/jvm/5/Javac编译过程.png">
 
 
 
@@ -393,7 +393,7 @@
 <li>分析与字节码生成。</li>
 </ol>
 <p>这 3 个步骤之间的关系如下图所示：</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/5/Javac编译过程.png" width="85%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/5/Javac编译过程.png" width="85%"></div>
 
 <h4 id="解析与填充符号表"><a href="#解析与填充符号表" class="headerlink" title="解析与填充符号表"></a>解析与填充符号表</h4><p>解析步骤包含了经典程序编译原理中的词法分析和语法分析两个过程；完成词法分析和语法分析之后，下一步就是填充符号表的过程。符号表是由一组符号地址和符号信息构成的表格。在语义分析中，符号表所登记的内容将用于语义检查和产生中间代码。在目标代码生成阶段，当对符号名进行地址分配时，符号表是地址分配的依据。</p>
 <h4 id="注解处理器"><a href="#注解处理器" class="headerlink" title="注解处理器"></a>注解处理器</h4><p>注解（Annotation）是在 JDK 1.5 中新增的，有了编译器注解处理的标准 API 后，我们的代码就可以干涉编译器的行为，比如在编译期生成 class 文件。</p>
@@ -446,14 +446,14 @@
 <p><strong>方法调用计数器</strong></p>
 <p>顾名思义，这个计数器用于统计方法被调用的次数。当一个方法被调用时，会首先检查该方法是否存在被 JIT 编译过的版本，如果存在，则优先使用编译后的本地代码来执行。如果不存在，则将此方法的调用计数器加 1，然后判断方法调用计数器与回边计数器之和是否超过方法调用计数器的阈值。如果超过阈值，将会向即时编译器提交一个该方法的代码编译请求。</p>
 <p>如果不做任何设置，执行引擎不会同步等待编译请求完成，而是继续进入解释器按照解释方式执行字节码，直到提交的请求被编译器编译完成。当编译完成后，这个方法的调用入口地址就会被系统自动改写成新的，下一次调用该方法时就会使用已编译的版本。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/5/方法调用计数器触发即时编译.png" width="65%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/5/方法调用计数器触发即时编译.png" width="65%"></div>
 
 <p>如果不做任何设置，方法调用计数器统计的并不是方法被调用的绝对次数，而是一个相对的执行频率，即一段时间内方法调用的次数。当超过一定的时间限度，如果方法的调用次数仍然不足以让它提交给即时编译器编译，那这个方法的调用计数器值就会被减少一半，这个过程称为方法调用计数器热度的衰减，而这段时间就称为此方法统计的半衰期。</p>
 <p>进行热度衰减的动作是在虚拟机进行 GC 时顺便进行的，可以设置虚拟机参数来关闭热度衰减，让方法计数器统计方法调用的绝对次数，这样，只要系统运行时间足够长，绝大部分方法都会被编译成本地代码。此外还可以设置虚拟机参数调整半衰期的时间。</p>
 <p><strong>回边计数器</strong></p>
 <p>回边计数器的作用是统计一个方法中循环体代码执行的次数，在字节码中遇到控制流向后跳转的指令称为「回边」（Back Edge）。建立回边计数器统计的目的是为了触发 OSR 编译。</p>
 <p>当解释器遇到一条回边指令时，会先查找将要执行的代码片段是否已经有编译好的版本，如果有，它将优先执行已编译的代码，否则就把回边计数器值加 1，然后判断方法调用计数器和回边计数器值之和是否超过计数器的阈值。当超过阈值时，将会提交一个 OSR 编译请求，并且把回边计数器的值降低一些，以便继续在解释器中执行循环，等待编译器输出编译结果。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/5/回边计数器触发即时编译.png" width="65%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/5/回边计数器触发即时编译.png" width="65%"></div>
 
 <p>与方法计数器不同，回边计数器没有计算热度衰减的过程，因此这个计数器统计的就是该方法循环执行的绝对次数。当计数器溢出时，它还会把方法计数器的值也调整到溢出状态，这样下次再进入该方法的时候就会执行标准编译过程。</p>
 <h3 id="2-2-编译优化技术"><a href="#2-2-编译优化技术" class="headerlink" title="2.2 编译优化技术"></a>2.2 编译优化技术</h3><p>我们都知道，以编译方式执行本地代码比解释执行方式更快，一方面是因为节约了虚拟机解释执行字节码额外消耗的时间；另一方面是因为虚拟机设计团队几乎把所有对代码的优化措施都集中到了即时编译器中。这一小节我们来介绍下 HotSpot 虚拟机的即时编译器在编译代码时采用的优化技术。</p>
@@ -501,7 +501,7 @@
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
 </ul>
 </blockquote>
-<div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
       
     </div>
 

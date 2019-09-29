@@ -103,23 +103,23 @@
 <meta property="og:site_name" content="技术男的后花园">
 <meta property="og:description" content="首发于微信公众号：BaronTalk，欢迎关注！  书籍真的是常读常新，古人说「书读百遍其义自见」还是蛮有道理的。周志明老师的这本《深入理解 Java 虚拟机》我细读了不下三遍，每一次阅读都有新的收获，每一次阅读对 Java 虚拟机的理解就更进一步。因而萌生了将读书笔记整理成文的想法，一是想检验下自己的学习成果，对学习内容进行一次系统性的复盘；二是给还没接触过这部好作品的同学推荐下，在阅读这部佳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/运行时数据区.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/JVM 创建对象.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/内存分配的两种方式.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/内存分配时保证线程安全的两种方式.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/对象创建的完整过程.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/对象访问定位-句柄.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/对象访问定位-直接指针.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/可达性分析.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/标记-清除算法.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/复制算法.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/jvm/1/标记-整理算法.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-21T15:35:47.436Z">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/运行时数据区.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/JVM 创建对象.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/内存分配的两种方式.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/内存分配时保证线程安全的两种方式.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/对象创建的完整过程.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/对象访问定位-句柄.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/对象访问定位-直接指针.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/可达性分析.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/标记-清除算法.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/复制算法.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/jvm/1/标记-整理算法.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-09-29T03:54:09.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系列 | 深入理解Java虚拟机一（自动内存管理机制）">
 <meta name="twitter:description" content="首发于微信公众号：BaronTalk，欢迎关注！  书籍真的是常读常新，古人说「书读百遍其义自见」还是蛮有道理的。周志明老师的这本《深入理解 Java 虚拟机》我细读了不下三遍，每一次阅读都有新的收获，每一次阅读对 Java 虚拟机的理解就更进一步。因而萌生了将读书笔记整理成文的想法，一是想检验下自己的学习成果，对学习内容进行一次系统性的复盘；二是给还没接触过这部好作品的同学推荐下，在阅读这部佳">
-<meta name="twitter:image" content="http://resources.baronzhang.com/blog/jvm/1/运行时数据区.png">
+<meta name="twitter:image" content="https://resources.baronzhang.com/blog/jvm/1/运行时数据区.png">
 
 
 
@@ -393,7 +393,7 @@
 </blockquote>
 <p>书籍真的是常读常新，古人说「书读百遍其义自见」还是蛮有道理的。周志明老师的这本《深入理解 Java 虚拟机》我细读了不下三遍，每一次阅读都有新的收获，每一次阅读对 Java 虚拟机的理解就更进一步。因而萌生了将读书笔记整理成文的想法，一是想检验下自己的学习成果，对学习内容进行一次系统性的复盘；二是给还没接触过这部好作品的同学推荐下，在阅读这部佳作之前能通过我的文章一窥书中的精华。<br><a id="more"></a><br>原想着一篇文章就够了，但写着写着就发现篇幅大大超出了预期。看来还是功力不够，索性拆成了六篇文章，分别从<strong>自动内存管理机制</strong>、<strong>类文件结构</strong>、<strong>类加载机制</strong>、<strong>字节码执行引擎</strong>、<strong>程序编译与代码优化</strong>、<strong>高效并发</strong>六个方面来做更加细致的介绍。本文先说说 Java 虚拟机的自动内存管理机制。</p>
 <h2 id="一-运行时数据区"><a href="#一-运行时数据区" class="headerlink" title="一. 运行时数据区"></a>一. 运行时数据区</h2><p>Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存区域划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建和销毁的时间，有些区域随着虚拟机进程的启动而存在，有些区域则是依赖线程的启动和结束而建立和销毁。Java 虚拟机所管理的内存被划分为如下几个区域：</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/运行时数据区.png" width="60%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/运行时数据区.png" width="60%"></div>
 
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>程序计数器是一块较小的内存区域，可以看做是当前线程所执行的字节码的行号指示器。在虚拟机的概念模型里，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。「属于线程私有的内存区域」</p>
 <h3 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h3><p>就是我们平时所说的栈，每个方法被执行时，都会创建一个栈帧（Stack Frame）用于存储局部变量表、操作栈、动态链接、方法出口等信息。<strong>每个方法从被调用到执行完成的过程，就对应着一个栈帧在虚拟机栈中从出栈到入栈的过程。</strong>「属于线程私有的内存区域」</p>
@@ -410,7 +410,7 @@
 <h2 id="二-对象的创建、内存布局及访问定位"><a href="#二-对象的创建、内存布局及访问定位" class="headerlink" title="二. 对象的创建、内存布局及访问定位"></a>二. 对象的创建、内存布局及访问定位</h2><p>前面介绍了 Java 虚拟机的运行时数据区，了解了虚拟机内存的情况。接下来我们看看对象是如何创建的、对象的内存布局是怎样的以及对象在内存中是如何定位的。</p>
 <h3 id="2-1-对象的创建"><a href="#2-1-对象的创建" class="headerlink" title="2.1 对象的创建"></a>2.1 对象的创建</h3><p>要创建一个对象首先得在 Java 堆中（不绝对，后面介绍虚拟机优化策略的时候会做详细介绍）为这个要创建的对象分配内存，分配内存的过程要保证并发安全，最后再对内存进行相应的初始化，这一系列的过程完成后，一个真正的对象就被创建了。</p>
 <h4 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h4><p>先说说内存分配，当虚拟机遇到一条 new 指令时，首先将去检查这个指令的参数是否能够在常量池中定位到一个类的符号引用，并且检查这个符号引用代表的类是否已被加载、解析和初始化。如果没有，那必须先执行相应的类加载过程。在类加载检查通过后，虚拟机将为新生对象分配内存。对象所需的内存大小在类加载完成后便可完全确定，为对象分配内存空间的任务等同于把一块确定大小的内存从 Java 堆中划分出来。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/JVM 创建对象.png" width="45%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/JVM 创建对象.png" width="45%"></div>
 
 <p>在 Java 堆中划分内存涉及到两个概念：<strong>指针碰撞（Bump the Pointer）</strong>、<strong>空闲列表（Free List）</strong>。</p>
 <ul>
@@ -420,7 +420,7 @@
 </li>
 </ul>
 <p>选择哪种分配方式是由 Java 堆是否规整来决定的，而 Java 堆是否规整又由所采用的垃圾收集器是否带有压缩整理功能决定。</p>
-<p><img src="http://resources.baronzhang.com/blog/jvm/1/内存分配的两种方式.png" alt="JVM 内存分配的两种方式"></p>
+<p><img src="https://resources.baronzhang.com/blog/jvm/1/内存分配的两种方式.png" alt="JVM 内存分配的两种方式"></p>
 <h4 id="保证并发安全"><a href="#保证并发安全" class="headerlink" title="保证并发安全"></a>保证并发安全</h4><p>对象的创建在虚拟机中是一个非常频繁的行为，哪怕只是修改一个指针所指向的位置，在并发情况下也是不安全的，可能出现正在给对象 A 分配内存，指针还没来得及修改，对象 B 又同时使用了原来的指针来分配内存的情况。解决这个问题有两种方案：</p>
 <ul>
 <li><p>对分配内存空间的动作进行同步处理（采用 CAS + 失败重试来保障更新操作的原子性）；</p>
@@ -428,12 +428,12 @@
 <li><p>把内存分配的动作按照线程划分在不同的空间之中进行，即每个线程在 Java 堆中预先分配一小块内存，称为本地线程分配缓冲（Thread Local Allocation Buffer, TLAB）。哪个线程要分配内存，就在哪个线程的 TLAB  上分配。只有 TLAB 用完并分配新的 TLAB 时，才需要同步锁。</p>
 </li>
 </ul>
-<p><img src="http://resources.baronzhang.com/blog/jvm/1/内存分配时保证线程安全的两种方式.png" alt="内存分配时保证线程安全的两种方式"></p>
+<p><img src="https://resources.baronzhang.com/blog/jvm/1/内存分配时保证线程安全的两种方式.png" alt="内存分配时保证线程安全的两种方式"></p>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>内存分配完后，虚拟机要将分配到的内存空间初始化为零值（不包括对象头），如果使用了 TLAB，这一步会提前到 TLAB 分配时进行。这一步保证了对象的实例字段在 Java 代码中可以不赋初始值就直接使用。</p>
 <p>接下来设置对象头（Object Header）信息，包括对象是哪个类的实例、如何找到类的元数据、对象的 Hash、对象的 GC 分代年龄等。</p>
 <p>这一系列动作完成之后，紧接着会执行 <init> 方法，把对象按照程序员的意图进行初始化，这样一个真正意义上的对象就产生了。</init></p>
 <p>JVM 中对象的创建过程大致如下图：</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/对象创建的完整过程.png" width="70%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/对象创建的完整过程.png" width="70%"></div>
 
 <h3 id="2-2-对象的内存布局"><a href="#2-2-对象的内存布局" class="headerlink" title="2.2 对象的内存布局"></a>2.2 对象的内存布局</h3><p>在 HotSpot 虚拟机中，对象在内存中的布局可以分为 3 块：<strong>对象头（Header）</strong>、<strong>实例数据（Instance Data）</strong>和<strong>对齐填充（Padding）</strong>。</p>
 <h4 id="对象头"><a href="#对象头" class="headerlink" title="对象头"></a>对象头</h4><p>对象头包含两部分信息，第一部分用于存储对象自身的运行时数据，比如哈希码（HashCode）、GC 分代年龄、锁状态标志、线程持有的锁、偏向线程 ID、偏向时间戳等，这部分数据称之为 Mark Word。对象头的另一部分是类型指针，即对象指向它的类元数据指针，虚拟机通过它来确定对象是哪个类的实例；如果是数组，对象头中还必须有一块用于记录数组长度的数据。（并不是所有所有虚拟机的实现都必须在对象数据上保留类型指针，在下一小节介绍「对象的访问定位」的时候再做详细说明）。</p>
@@ -441,11 +441,11 @@
 <h4 id="对齐填充"><a href="#对齐填充" class="headerlink" title="对齐填充"></a>对齐填充</h4><p>无特殊含义，不是必须存在的，仅作为占位符。</p>
 <h3 id="2-3-对象的访问定位"><a href="#2-3-对象的访问定位" class="headerlink" title="2.3 对象的访问定位"></a>2.3 对象的访问定位</h3><p>Java 程序需要通过栈上的 reference 信息来操作堆上的具体对象。根据不同的虚拟机实现，主流的访问对象的方式主要有<strong>句柄访问</strong>和<strong>直接指针</strong>两种。</p>
 <h4 id="句柄访问"><a href="#句柄访问" class="headerlink" title="句柄访问"></a>句柄访问</h4><p>Java 堆中划分出一块内存来作为句柄池，reference 中存储的就是对象的句柄地址，而句柄中包含了对象实例数据与类型数据各自的具体地址信息。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/对象访问定位-句柄.png" width="75%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/对象访问定位-句柄.png" width="75%"></div>
 
 <p>使用句柄访问的好处就是 reference 中存储的是稳定的句柄地址，在对象被移动时只需要改变句柄中实例数据的指针，而 reference 本身不需要修改。</p>
 <h4 id="直接指针"><a href="#直接指针" class="headerlink" title="直接指针"></a>直接指针</h4><p>在对象头中存储类型数据相关信息，reference 中存储的对象地址。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/对象访问定位-直接指针.png" width="75%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/对象访问定位-直接指针.png" width="75%"></div>
 
 <p>使用直接指针访问的好处是速度更快，它节省了一次指针定位的开销。由于对象访问在 Java 中非常频繁，因此这类开销积少成多也是一项非常可观的执行成本。HotSpot 中采用的就是这种方式。</p>
 <h2 id="三-垃圾回收器与内存分配策略"><a href="#三-垃圾回收器与内存分配策略" class="headerlink" title="三. 垃圾回收器与内存分配策略"></a>三. 垃圾回收器与内存分配策略</h2><p>在前面我们介绍 JVM 运行时数据区的时候说过，程序计数器、虚拟机栈、本地方法栈 3 个区域随线程而生，随线程而死；栈中的栈帧随着方法的进入和退出而有条不紊的执行着入栈和出栈的操作。每一个栈帧中分配多少内存基本上在数据结构确定下来的时候就已经知道了，因此这几个区域内存的分配和回收是具有确定性的，所以不用过度考虑内存回收的问题，因为在方法结束或者线程结束时，内存就跟着回收了。</p>
@@ -453,7 +453,7 @@
 <h3 id="3-1-对象回收的判定规则"><a href="#3-1-对象回收的判定规则" class="headerlink" title="3.1 对象回收的判定规则"></a>3.1 对象回收的判定规则</h3><p>垃圾收集器在做垃圾回收的时候，首先需要判定的就是哪些内存是需要被回收的，哪些对象是「存活」的，是不可以被回收的；哪些对象已经「死掉」了，需要被回收。</p>
 <h4 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h4><p>判断对象存活与否的一种方式是「引用计数」，即对象被引用一次，计数器就加 1，如果计数器为 0 则判断这个对象可以被回收。但是引用计数法有一个很致命的缺陷就是它无法解决循环依赖的问题，因此现在主流的虚拟机基本不会采用这种方式。</p>
 <h4 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h4><p>可达性分析算法又叫根搜索算法，该算法的基本思想就是通过一系列称为「GC Roots」的对象作为起始点，从这些起始点开始往下搜索，搜索所走过的路径称为引用链，当一个对象到 GC Roots 对象之间没有任何引用链的时候（不可达），证明该对象是不可用的，于是就会被判定为可回收对象。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/可达性分析.png" width="65%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/可达性分析.png" width="65%"></div>
 
 <p>在 Java 中可作为 GC Roots 的对象包含以下几种：</p>
 <ul>
@@ -481,15 +481,15 @@
 </ol>
 <h3 id="3-2-垃圾回收算法"><a href="#3-2-垃圾回收算法" class="headerlink" title="3.2 垃圾回收算法"></a>3.2 垃圾回收算法</h3><h4 id="标记-清除算法"><a href="#标记-清除算法" class="headerlink" title="标记-清除算法"></a>标记-清除算法</h4><p>正如标记-清除的算法名一样，该算法分为「标记」和「清除」两个阶段：</p>
 <p>首先标记出所有需要回收的对象，在标记完成后回收所有被标记的对象。标记-清除算法是一种最基础的算法，后续其它算法都是在它的基础上基于不足之处改进而来的。它的不足体现在两方面：一是效率问题，标记和清除的效率都不高；二是空间问题，标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致以后程序的运行过程中又要分配较大对象是，无法找打足够的连续内存而不得不提前出发下一次 GC。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/标记-清除算法.png" width="60%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/标记-清除算法.png" width="60%"></div>
 
 <h4 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h4><p>为了解决效率问题，于是就有了复制算法，它将内存一分为二划分为大小相等的两块内存区域。每次只使用其中的一块。当这一块用完时，就将还存活的对象复制到另一块上面，然后再把已使用过的内存空间一次清理掉。这样做的好处是不用考虑内存碎片问题了，简单高效。只不过这种算法代价也很高，内存因此缩小了一半。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/复制算法.png" width="60%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/复制算法.png" width="60%"></div>
 
 <p>现在的商业虚拟机都采用这种算法来回收新生代，在 IBM 的研究中新生代中的对象 98% 都是「朝生夕死」，所以并不需要按照 1:1 的比例来划分空间，而是将内存分为一块较大的 Eden 空间和两块较小的 Survivor 空间，每次使用 Eden 和其中一块 Survivor。当回收时，将 Eden 和 Survivor 中还存活的对象一次性复制到另一块 Survivor 空间上，最后清理掉 Eden 和刚才用过的 Survivor 空间。 HotSpot 默认 Eden 和 Survivor 的大小比例是 8:1，也就是每次新生代中可用的内存为整个新生代容量的 90%（80%+10%），只有 10% 会被浪费。当然，98% 的对象可回收只是一般场景下的数据，我们没办法保证每次回收后都只有不多于 10% 的对象存活，当 Survivor 空间不够用时，需要依赖其它内存（这里指老年代）进行分配担保。如果另外一块 Survivor 空间没有足够空间存放上一次新生代收集下来存活的对象时，这些对象将直接通过分配担保机制进入老年代。</p>
 <h4 id="标记-整理算法"><a href="#标记-整理算法" class="headerlink" title="标记-整理算法"></a>标记-整理算法</h4><p>通过前面对复制-收集算法的介绍我们知道，其对老年代这种对象存活时间长的内存区域就不适用了，而标记整理的算法就比较适用这一场景。</p>
 <p>标记-整理算法的标记过程与「标记-清除」算法一样，但是后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。</p>
-<div align="center"><img src="http://resources.baronzhang.com/blog/jvm/1/标记-整理算法.png" width="60%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/jvm/1/标记-整理算法.png" width="60%"></div>
 
 <h4 id="分代回收算法"><a href="#分代回收算法" class="headerlink" title="分代回收算法"></a>分代回收算法</h4><p>当前商业虚拟机的垃圾搜集都采用「分代回收」算法，这种算法并没有什么新的思想，只是根据对象存活周期的不同将内存划分为几块。一般是将 Java 堆分为新生代和老年代，这样可以根据各个年代的特点采用最合适的搜集算法。</p>
 <p>在新生代中，每次垃圾收集时都发现有大批对象死去，只有少量存活，那就选用复制算法，只需要付出少量存活对象的复制成本就可以完成收集。</p>
@@ -524,7 +524,7 @@
 <li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
 </ul>
 </blockquote>
-<div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
       
     </div>
 

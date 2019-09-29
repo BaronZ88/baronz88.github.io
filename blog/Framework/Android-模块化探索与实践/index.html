@@ -103,18 +103,18 @@
 <meta property="og:site_name" content="技术男的后花园">
 <meta property="og:description" content="首发于《程序员》杂志五月刊 微信公众号：BaronTalk  前言万维网发明人 Tim Berners-Lee 谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。” 由此可见模块化之于软件工程领域的重要性。 从 2016 年开始，模块化在 Android 社区越来越多的被提及。随着移动平台的不断发展，移动平台上的软件慢慢走向复杂化，体积也变得臃肿庞大；为了降低">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/2/header.jpg">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/2/modularization.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/2/modules.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/2/manifest.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/2/router2.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/framework/android/2/router.png">
-<meta property="og:image" content="http://resources.baronzhang.com/blog/common/gzh3.png">
-<meta property="og:updated_time" content="2019-08-21T10:07:59.521Z">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/framework/android/2/header.jpg">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/framework/android/2/modularization.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/framework/android/2/modules.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/framework/android/2/manifest.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/framework/android/2/router2.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/framework/android/2/router.png">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-09-29T03:54:09.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 模块化探索与实践">
 <meta name="twitter:description" content="首发于《程序员》杂志五月刊 微信公众号：BaronTalk  前言万维网发明人 Tim Berners-Lee 谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。” 由此可见模块化之于软件工程领域的重要性。 从 2016 年开始，模块化在 Android 社区越来越多的被提及。随着移动平台的不断发展，移动平台上的软件慢慢走向复杂化，体积也变得臃肿庞大；为了降低">
-<meta name="twitter:image" content="http://resources.baronzhang.com/blog/framework/android/2/header.jpg">
+<meta name="twitter:image" content="https://resources.baronzhang.com/blog/framework/android/2/header.jpg">
 
 
 
@@ -383,7 +383,7 @@
       
 
       
-        <p><img src="http://resources.baronzhang.com/blog/framework/android/2/header.jpg" alt></p>
+        <p><img src="https://resources.baronzhang.com/blog/framework/android/2/header.jpg" alt></p>
 <blockquote>
 <p>首发于《程序员》杂志五月刊</p>
 <p>微信公众号：<strong>BaronTalk</strong></p>
@@ -411,7 +411,7 @@
 </li>
 </ul>
 <p>具体设计方案如下图：</p>
-<p><img src="http://resources.baronzhang.com/blog/framework/android/2/modularization.png" alt="Android 模块化设计方案"></p>
+<p><img src="https://resources.baronzhang.com/blog/framework/android/2/modularization.png" alt="Android 模块化设计方案"></p>
 <p>整个项目分为三层，从下至上分别是：</p>
 <ul>
 <li>Basic Component Layer: 基础组件层，顾名思义就是一些基础组件，包含了各种开源库以及和业务无关的各种自研工具库；</li>
@@ -420,7 +420,7 @@
 </ul>
 <p>我们在谈模块化的时候，其实就是将业务模块层的各个功能业务拆分层独立的业务模块。所以我们进行模块化的第一步就是业务模块划分，但是模块划分并没有一个业界通用的标准，因此划分的粒度需要根据项目情况进行合理把控，这就需要对业务和项目有较为透彻的理解。拿安居客来举例，我们会将项目划分为新房模块、二手房模块、IM 模块等等。</p>
 <p>每个业务模块在 Android Studio 中的都是一个 Module ,因此在命名方面我们要求每个业务模块都以 Module 为后缀。如下图所示：</p>
-<div align="left"><img src="http://resources.baronzhang.com/blog/framework/android/2/modules.png" width="40%" alt="图片名称" align="center"></div>
+<div align="left"><img src="https://resources.baronzhang.com/blog/framework/android/2/modules.png" width="40%" alt="图片名称" align="center"></div>
 
 <p>对于模块化项目，每个单独的 Business Module 都可以单独编译成 APK。在开发阶段需要单独打包编译，项目发布的时候又需要它作为项目的一个 Module 来整体编译打包。简单的说就是开发时是 Application，发布时是 Library。因此需要在 Business Module 的 build.gradle 中加入如下代码：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(isBuildModule.toBoolean())&#123;</span><br><span class="line">    apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    apply <span class="string">plugin:</span> <span class="string">'com.android.library'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -431,7 +431,7 @@
 <p>同样 Manifest.xml 也需要有两套：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sourceSets &#123;</span><br><span class="line">   main &#123;</span><br><span class="line">       <span class="keyword">if</span> (isBuildModule.toBoolean()) &#123;</span><br><span class="line">           manifest.srcFile <span class="string">'src/main/debug/AndroidManifest.xml'</span></span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           manifest.srcFile <span class="string">'src/main/release/AndroidManifest.xml'</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如图：</p>
-<div align="left"><img src="http://resources.baronzhang.com/blog/framework/android/2/manifest.png" width="45%" alt="图片名称" align="center"></div>
+<div align="left"><img src="https://resources.baronzhang.com/blog/framework/android/2/manifest.png" width="45%" alt="图片名称" align="center"></div>
 
 <p>debug 模式下的 AndroidManifest.xml :</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">   <span class="attr">...</span></span></span><br><span class="line"><span class="tag">   &gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">activity</span></span></span><br><span class="line"><span class="tag">       <span class="attr">android:name</span>=<span class="string">"com.baronzhang.android.newhouse.NewHouseMainActivity"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">android:label</span>=<span class="string">"@string/new_house_label_home_page"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -451,10 +451,10 @@
 <p>有的同学可能会想到用隐式跳转，通过 Intent 匹配规则来实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, <span class="string">"&lt;scheme&gt;://&lt;host&gt;:&lt;port&gt;/&lt;path&gt;"</span>);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
 <p>但是这种代码写起来比较繁琐，且容易出错，出错也不太容易定位问题。因此一个简单易用、解放开发的路由框架是必须的了。</p>
-<div align="left"><img src="http://resources.baronzhang.com/blog/framework/android/2/router2.png" width="45%" alt="图片名称" align="center"></div>
+<div align="left"><img src="https://resources.baronzhang.com/blog/framework/android/2/router2.png" width="45%" alt="图片名称" align="center"></div>
 
 <p>我自己实现的路由框架分为<b>路由（Router）</b> 和<b>参数注入器（Injector）</b> 两部分：</p>
-<div align="left"><img src="http://resources.baronzhang.com/blog/framework/android/2/router.png" width="45%" alt="图片名称" align="center"></div>
+<div align="left"><img src="https://resources.baronzhang.com/blog/framework/android/2/router.png" width="45%" alt="图片名称" align="center"></div>
 
 <blockquote>
 <p>Router 提供 Activity 跳转传参的功能；Injector 提供参数注入功能，通过编译时生成代码的方式在 Activity 获取获取传递过来的参数，简化开发。</p>
@@ -511,7 +511,7 @@
 <li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
 </ul>
 </blockquote>
-<div align="center"><img src="http://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
+<div align="center"><img src="https://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
 
       
     </div>
