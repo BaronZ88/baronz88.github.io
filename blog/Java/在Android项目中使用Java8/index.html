@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>在Android项目中使用Java8 | 技术男的后花园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="微信公众号：BaronTalk  前言在过去的文章中我介绍过Java8的一些新特性，包括：  Java8新特性第1章(Lambda表达式) Java8新特性第2章(接口默认方法) Java8新特性第3章(Stream API)  之前由于Android平台不支持Java8，如果我们想在Android项目中使用Lambda表达式、Stream API等Java8中的新特性就必须使用Retrolam">
+<meta name="keywords" content="Java,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Android项目中使用Java8">
+<meta property="og:url" content="http://baronzhang.com/blog/Java/在Android项目中使用Java8/index.html">
+<meta property="og:site_name" content="技术男的后花园">
+<meta property="og:description" content="微信公众号：BaronTalk  前言在过去的文章中我介绍过Java8的一些新特性，包括：  Java8新特性第1章(Lambda表达式) Java8新特性第2章(接口默认方法) Java8新特性第3章(Stream API)  之前由于Android平台不支持Java8，如果我们想在Android项目中使用Lambda表达式、Stream API等Java8中的新特性就必须使用Retrolam">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-09-29T03:54:09.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Android项目中使用Java8">
+<meta name="twitter:description" content="微信公众号：BaronTalk  前言在过去的文章中我介绍过Java8的一些新特性，包括：  Java8新特性第1章(Lambda表达式) Java8新特性第2章(接口默认方法) Java8新特性第3章(Stream API)  之前由于Android平台不支持Java8，如果我们想在Android项目中使用Lambda表达式、Stream API等Java8中的新特性就必须使用Retrolam">
+<meta name="twitter:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+  
+    <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">技术男的后花园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">公众号：BaronTalk</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://baronzhang.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-在Android项目中使用Java8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Java/在Android项目中使用Java8/" class="article-date">
+  <time datetime="2017-02-05T15:37:48.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在Android项目中使用Java8
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在过去的文章中我介绍过Java8的一些新特性，包括：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/20540175" target="_blank" rel="noopener">Java8新特性第1章(Lambda表达式)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20540188" target="_blank" rel="noopener">Java8新特性第2章(接口默认方法)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20540202" target="_blank" rel="noopener">Java8新特性第3章(Stream API)</a></li>
+</ol>
+<p>之前由于Android平台不支持Java8，如果我们想在Android项目中使用Lambda表达式、Stream API等Java8中的新特性就必须使用Retrolambda、Lightweight-Stream-API等第三方开源库来实现。现在Google爸爸终于让Android平台支持Java8了，这篇文章中便来和大家聊聊如何在Android项目中配置使用Java8。</p>
+<p>遗憾的是目前Android平台仅支持Java8的部分新特性，当我们在开发面向Android N及以上版本的应用时(即minSdkVersion&gt;=24)，可以使用如下新特性：</p>
+<a id="more"></a>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html" target="_blank" rel="noopener">Lambda表达式(Lambda Expressions)</a>（也可以在minSdkVersion&lt;24的情况下使用）</li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html" target="_blank" rel="noopener">方法引用(Method References)</a>（也可以在minSdkVersion&lt;24的情况下使用）</li>
+<li><a href="http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html" target="_blank" rel="noopener">Stream API(Streams)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html" target="_blank" rel="noopener">接口默认方法(Default Methods)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="noopener">重复注解(Repeating Annotations)</a></li>
+</ul>
+<p>简单的说就是现在你的项目要想使用Stream API、接口默认方法和重复注解就要求你的minSdkVersion&gt;=24，而Lambda表达式和方法引用则对minSdkVersion无要求。关于这些新特的使用及分析可以看看我之前的文章。</p>
+<h2 id="Jack-Java-Android-Compiler-Kit"><a href="#Jack-Java-Android-Compiler-Kit" class="headerlink" title="Jack(Java Android Compiler Kit)"></a>Jack(Java Android Compiler Kit)</h2><p>要想在Android项目中使用Java8的新特性，需要将你的Android Studio升级到2.1及以上版本，并采用新的Jack(Java Android Compiler Kit)编译。新的 Android 工具链将 Java 源语言编译成 Android 可读取的 Dalvik 可执行文件字节码，且有其自己的 .jack 库格式，在一个工具中提供了大多数工具链功能：重新打包、压缩、模糊化以及 Dalvik 可执行文件分包。</p>
+<p>以下是构建 Android Dalvik 可执行文件可用的两种工具链的对比：</p>
+<ul>
+<li>旧版 javac 工具链：  <font color="ff0000"> <code>javac (.java --&gt; .class) --&gt; dx (.class --&gt; .dex)</code> </font></li>
+<li>新版 Jack 工具链：  <font color="ff0000"> <code>Jack (.java --&gt; .jack --&gt; .dex)</code> </font>
+
+</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>为了在项目中使用Java8，我们还需要项目module中的gradle.build文件中加入如下代码：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line"></span><br><span class="line">  compileSdkVersion <span class="number">24</span></span><br><span class="line">  buildToolsVersion <span class="string">"24.0.3"</span></span><br><span class="line"></span><br><span class="line">  defaultConfig &#123;</span><br><span class="line"></span><br><span class="line">    applicationId <span class="string">"me.baron.hellojava8"</span></span><br><span class="line">    minSdkVersion <span class="number">24</span></span><br><span class="line">    targetSdkVersion <span class="number">24</span></span><br><span class="line">    versionCode <span class="number">1</span></span><br><span class="line">    versionName <span class="string">"1.0"</span></span><br><span class="line"></span><br><span class="line">    jackOptions &#123;</span><br><span class="line">      enabled <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  compileOptions &#123;</span><br><span class="line">    sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>进行上述配置后大家就可以在Android项目中尽情的探索使用Java8的新特性了。比如之前我们实现button的点击事件时需要这这样写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">		v.setText(<span class="string">"lalala"</span>);</span><br><span class="line">   	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>现在我们便可以使用Java8的Lambda表达式来实现了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button.setOnClickListener(v -&gt; v.setText(<span class="string">"lalala"</span>));</span><br></pre></td></tr></table></figure>
+<p>如果你项目的minSdkVersion&gt;=24，我们还可以使用Stream API。比方说有一个形状集合shapes，现在我们想把所有蓝色的形状提取到新的List里。通过Stream API则可以很轻易的办到：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Shape&gt; blue = shapes.stream()</span><br><span class="line">	.filter(s -&gt; s.getColor() == BLUE)</span><br><span class="line">	.collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Java8的新特性并不是本文的重点，对此有兴趣的同学可以去翻看我之前的文章。当前Jack编译器还有诸多限制，比如在使用新的Jack工具链时会禁用Instant Run以及前面提到的新特性对我们的最低支持版本和编译版本有要求等等(我猜想Jack对Buck、Layoutcast、Freeline等编译方案也会有影响，没做过验证，有了解的同学可以在评论区留言和大家交流下)；总之要想在Android项目中愉快的使用Java8全部的新特性还需时日。期待Google爸爸尽快优化吧！</p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://developer.android.com/guide/platform/j8-jack.html" target="_blank" rel="noopener">https://developer.android.com/guide/platform/j8-jack.html</a></li>
+<li><a href="https://medium.com/@sergii/java-8-in-android-n-preview-76184e2ab7ad" target="_blank" rel="noopener">https://medium.com/@sergii/java-8-in-android-n-preview-76184e2ab7ad</a></li>
+</ul>
+<blockquote>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="noopener"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
+<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/baron</a>  </li>
+<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
+</ul>
+</blockquote>
+<div align="center"><img src="https://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://baronzhang.com/blog/Java/在Android项目中使用Java8/" data-id="ck2n5a27200062e31jxbbmd86" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/DesignPatterns/观察者模式-ObserverPattern/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          观察者模式(ObserverPattern)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/Java/Java8新特性第3章-Stream-API/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java8新特性第3章(Stream API)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/APM/">APM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPatterns/">DesignPatterns</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Framework/">Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OpenSource/">OpenSource</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OpenSource/Java/">Java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJava/">RxJava</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APM/">APM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binder/">Binder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPC/">IPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebView/">WebView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/依赖注入/">依赖注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源框架/">开源框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APM/" style="font-size: 10px;">APM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Binder/" style="font-size: 10px;">Binder</a> <a href="/tags/Design-Pattern/" style="font-size: 10px;">Design Pattern</a> <a href="/tags/Framework/" style="font-size: 12.5px;">Framework</a> <a href="/tags/IPC/" style="font-size: 10px;">IPC</a> <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/RxJava/" style="font-size: 17.5px;">RxJava</a> <a href="/tags/WebView/" style="font-size: 10px;">WebView</a> <a href="/tags/依赖注入/" style="font-size: 10px;">依赖注入</a> <a href="/tags/开源框架/" style="font-size: 10px;">开源框架</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/">邮件这样写，PK 掉 99% 的同事</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/">系列 | 深入理解Java虚拟机六（高效并发）</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/">系列 | 深入理解Java虚拟机五（程序编译与代码优化）</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/">系列 | 深入理解Java虚拟机四（字节码执行引擎）</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/">系列 | 深入理解Java虚拟机三（类加载机制）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 张磊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

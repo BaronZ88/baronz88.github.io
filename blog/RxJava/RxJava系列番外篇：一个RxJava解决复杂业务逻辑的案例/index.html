@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例 | 技术男的后花园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="微信公众号：BaronTalk  之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：  RxJava系列1(简介) RxJava系列2(基">
+<meta name="keywords" content="Android,RxJava">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例">
+<meta property="og:url" content="http://baronzhang.com/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/index.html">
+<meta property="og:site_name" content="技术男的后花园">
+<meta property="og:description" content="微信公众号：BaronTalk  之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：  RxJava系列1(简介) RxJava系列2(基">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+<meta property="og:updated_time" content="2019-09-29T03:54:09.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例">
+<meta name="twitter:description" content="微信公众号：BaronTalk  之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：  RxJava系列1(简介) RxJava系列2(基">
+<meta name="twitter:image" content="https://resources.baronzhang.com/blog/common/gzh3.png">
+  
+    <link rel="alternate" href="/atom.xml" title="技术男的后花园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">技术男的后花园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">公众号：BaronTalk</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://baronzhang.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/" class="article-date">
+  <time datetime="2017-02-05T16:30:27.000Z" itemprop="datePublished">2017-02-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/RxJava/">RxJava</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>微信公众号：<strong>BaronTalk</strong></p>
+</blockquote>
+<p>之前写过一系列RxJava1的文章，也承诺过会尽快有RxJava2的介绍。无奈实际项目中还未真正的使用RxJava2，不敢妄动笔墨。所以这次还是给大家分享一个使用RxJava1解决问题的案例，希望对大家在使用RxJava的时候有一点点启发。对RxJava还不了解的同学可以先去看看我之前的RxJava系列文章：</p>
+<ul>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列1-简介/">RxJava系列1(简介)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列2-基本概念及使用介绍/">RxJava系列2(基本概念及使用介绍)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列3-转换操作符/">RxJava系列3(转换操作符)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列4-过滤操作符/">RxJava系列4(过滤操作符)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列5-组合操作符/">RxJava系列5(组合操作符)</a></li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列6-从微观角度解读RxJava源码/">RxJava系列6(从微观角度解读RxJava源码)</a>   </li>
+<li><a href="http://baronzhang.com/blog/RxJava/RxJava系列7-最佳实践/">RxJava系列7(最佳实践)</a>  </li>
+</ul>
+<h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>拿<a href="https://github.com/BaronZ88/MinimalistWeather" target="_blank" rel="noopener">MinimalistWeather</a>这个开源的天气App来举例：</p>
+<a id="more"></a>
+<p>进入App首页后，首先我们需要从数据库中获取当前城市的天气数据，如果数据库中存在天气数据则在UI页面上展示天气数据；如果数据库中未存储当前城市的天气数据，或者已存储的天气数据的发布时间相比现在已经超过了一小时，并且网络属于连接状态则调用API从服务端获取天气数据。如果获取到到的天气数据发布时间和当前数据库中的天气数据发布时间一致则丢弃掉从服务端获取到的天气数据，如果不一致则更新数据库并且在页面上展示最新的天气信息。（同时天气数据源是可配置的，可选择是小米天气数据源还是Know天气数据源）</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>首先我们需要创建一个从数据库获取天气数据的Observable <code>observableForGetWeatherFromDB</code>，同时我们也需要创建一个从API获取天气数据的Observable <code>observableForGetWeatherFromNetWork</code>；为了在无网络状态下免于创建<code>observableForGetWeatherFromNetWork</code>我们在这之前需要首先判断下网络状态。最后使用<code>contact</code>操作符将两个Observable合并，同时使用<code>distinct</code>和<code>takeUntil</code>操作符来过滤筛选数据以符合业务需求，然后结合<code>subscribeOn</code>和<code>observeOn</code>做线程切换。上述这一套复杂的业务逻辑如果使用传统编码方式将是极其复杂的。下面我们来看看使用RxJava如何清晰简洁的来实现这个复杂的业务：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;Weather&gt; observableForGetWeatherData;</span><br><span class="line"><span class="comment">//首先创建一个从数据库获取天气数据的Observable</span></span><br><span class="line">Observable&lt;Weather&gt; observableForGetWeatherFromDB = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;Weather&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> Weather&gt; subscriber)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Weather weather = weatherDao.queryWeather(cityId);</span><br><span class="line">            subscriber.onNext(weather);</span><br><span class="line">            subscriber.onCompleted();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> Exceptions.propagate(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!NetworkUtils.isNetworkConnected(context)) &#123;</span><br><span class="line">    observableForGetWeatherData = observableForGetWeatherFromDB;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//接着创建一个从网络获取天气数据的Observable</span></span><br><span class="line">    Observable&lt;Weather&gt; observableForGetWeatherFromNetWork = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">switch</span> (configuration.getDataSourceType()) &#123;</span><br><span class="line">        <span class="keyword">case</span> ApiConstants.WEATHER_DATA_SOURCE_TYPE_KNOW:</span><br><span class="line">            observableForGetWeatherFromNetWork = ApiClient.weatherService.getKnowWeather(cityId)</span><br><span class="line">                    .map(<span class="keyword">new</span> Func1&lt;KnowWeather, Weather&gt;() &#123;</span><br><span class="line">                        <span class="meta">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">public</span> Weather <span class="title">call</span><span class="params">(KnowWeather knowWeather)</span> </span>&#123;</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">new</span> KnowWeatherAdapter(knowWeather).getWeather();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> ApiConstants.WEATHER_DATA_SOURCE_TYPE_MI:</span><br><span class="line">            observableForGetWeatherFromNetWork = ApiClient.weatherService.getMiWeather(cityId)</span><br><span class="line">                    .map(<span class="keyword">new</span> Func1&lt;MiWeather, Weather&gt;() &#123;</span><br><span class="line">                        <span class="meta">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">public</span> Weather <span class="title">call</span><span class="params">(MiWeather miWeather)</span> </span>&#123;</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">new</span> MiWeatherAdapter(miWeather).getWeather();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">assert</span> observableForGetWeatherFromNetWork != <span class="keyword">null</span>;</span><br><span class="line">    observableForGetWeatherFromNetWork = observableForGetWeatherFromNetWork</span><br><span class="line">            .doOnNext(<span class="keyword">new</span> Action1&lt;Weather&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">                    Schedulers.io().createWorker().schedule(() -&gt; &#123;</span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            weatherDao.insertOrUpdateWeather(weather);</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                            <span class="keyword">throw</span> Exceptions.propagate(e);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用concat操作符将两个Observable合并</span></span><br><span class="line">    observableForGetWeatherData = Observable.concat(observableForGetWeatherFromDB, observableForGetWeatherFromNetWork)</span><br><span class="line">            .filter(<span class="keyword">new</span> Func1&lt;Weather, Boolean&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> Boolean <span class="title">call</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> weather != <span class="keyword">null</span> &amp;&amp; !TextUtils.isEmpty(weather.getCityId());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .distinct(<span class="keyword">new</span> Func1&lt;Weather, Long&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> Long <span class="title">call</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> weather.getRealTime().getTime();<span class="comment">//如果天气数据发布时间一致，我们再认为是相同的数据从丢弃掉</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .takeUntil(<span class="keyword">new</span> Func1&lt;Weather, Boolean&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> Boolean <span class="title">call</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> System.currentTimeMillis() - weather.getRealTime().getTime() &lt;= <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>;<span class="comment">//如果天气数据发布的时间和当前时间差在一小时以内则终止事件流</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">observableForGetWeatherData.subscribeOn(Schedulers.io())</span><br><span class="line">        .observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;Weather&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">                displayWeatherInformation();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="keyword">new</span> Action1&lt;Throwable&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Throwable throwable)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(context, throwable.getMessage(), Toast.LENGTH_LONG).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>上面的代码看起来比较复杂，我们采用Lambda表达式简化下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;Weather&gt; observableForGetWeatherData;</span><br><span class="line"><span class="comment">//首先创建一个从数据库获取天气数据的Observable</span></span><br><span class="line">Observable&lt;Weather&gt; observableForGetWeatherFromDB = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;Weather&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> Weather&gt; subscriber)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Weather weather = weatherDao.queryWeather(cityId);</span><br><span class="line">            subscriber.onNext(weather);</span><br><span class="line">            subscriber.onCompleted();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> Exceptions.propagate(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!NetworkUtils.isNetworkConnected(context)) &#123;</span><br><span class="line">    observableForGetWeatherData = observableForGetWeatherFromDB;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//接着创建一个从网络获取天气数据的Observable</span></span><br><span class="line">    Observable&lt;Weather&gt; observableForGetWeatherFromNetWork = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">switch</span> (configuration.getDataSourceType()) &#123;</span><br><span class="line">        <span class="keyword">case</span> ApiConstants.WEATHER_DATA_SOURCE_TYPE_KNOW:</span><br><span class="line">            observableForGetWeatherFromNetWork = ApiClient.weatherService.getKnowWeather(cityId)</span><br><span class="line">                    .map(knowWeather -&gt; <span class="keyword">new</span> KnowWeatherAdapter(knowWeather).getWeather());</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> ApiConstants.WEATHER_DATA_SOURCE_TYPE_MI:</span><br><span class="line">            observableForGetWeatherFromNetWork = ApiClient.weatherService.getMiWeather(cityId)</span><br><span class="line">                    .map(miWeather -&gt; <span class="keyword">new</span> MiWeatherAdapter(miWeather).getWeather());</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">assert</span> observableForGetWeatherFromNetWork != <span class="keyword">null</span>;</span><br><span class="line">    observableForGetWeatherFromNetWork = observableForGetWeatherFromNetWork</span><br><span class="line">            .doOnNext(weather -&gt; Schedulers.io().createWorker().schedule(() -&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    weatherDao.insertOrUpdateWeather(weather);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> Exceptions.propagate(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;));</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用concat操作符将两个Observable合并</span></span><br><span class="line">    observableForGetWeatherData = Observable.concat(observableForGetWeatherFromDB, observableForGetWeatherFromNetWork)</span><br><span class="line">            .filter(weather -&gt; weather != <span class="keyword">null</span> &amp;&amp; !TextUtils.isEmpty(weather.getCityId()))</span><br><span class="line">            .distinct(weather -&gt; weather.getRealTime().getTime())<span class="comment">//如果天气数据发布时间一致，我们再认为是相同的数据从丢弃掉</span></span><br><span class="line">            .takeUntil(weather -&gt; System.currentTimeMillis() - weather.getRealTime().getTime() &lt;= <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>);<span class="comment">//如果天气数据发布的时间和当前时间差在一小时以内则终止事件流</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">observableForGetWeatherData.subscribeOn(Schedulers.io())</span><br><span class="line">        .observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">        .subscribe(weather -&gt; displayWeatherInformation(),</span><br><span class="line">                throwable -&gt; Toast.makeText(context, throwable.getMessage(), Toast.LENGTH_LONG).show());</span><br></pre></td></tr></table></figure>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>在上述的实现中有几点是我们需要注意的:</p>
+<ol>
+<li><p>为什么我需要在判断网络那块整个if else？这样看起来很不优雅，我们通过RxJava符完全可以实现同样的操作啊！之所以这样做是为了在无网络状况下去创建不必要的Observable <code>observableForGetWeatherFromNetWork</code>;</p>
+</li>
+<li><p>更新数据库的操作不应该阻塞更新UI，因此我们在<code>observableForGetWeatherFromNetWork</code>的<code>doOnNext</code>中需要通过<code>Schedulers.io().createWorker()</code>去另起一条线程，以此保证更新数据库不会阻塞更新UI的操作。</p>
+<blockquote>
+<p>有同学可能会问为什么不在<code>doOnNext</code>之后再调用一次<code>observeOn</code>把更新数据库的操作切换到一条新的子线程去操作呢？其实一开始我也是这样做的，后来想想不对。整个Observable的事件传递处理就像是在一条流水线上完成的，虽然我们可以通过<code>observeOn</code>来指定子线程去处理更新数据库的操作，但是只有等这条子线程完成了更新数据库的任务后事件才会继续往后传递，这样就阻塞了更新UI的操作。对此有疑问的同学可以去看看我之前关于RxJava源码分析的文章或者自己动手debug看看。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最后给大家留个两个问题：</p>
+<ol>
+<li>上述代码是最佳实现方案吗？还有什么更加合理的做法？</li>
+<li>我们在<code>observableForGetWeatherData</code>中使用<code>distinct</code>和<code>takeUntil</code>过滤筛选天气数据的时候网络请求会不会已经发出去了？这样做还有意义吗？</li>
+</ol>
+<p>欢迎大家留言讨论。</p>
+<blockquote>
+<p>本文中的代码在<a href="https://github.com/BaronZ88/MinimalistWeather" target="_blank" rel="noopener">MinimalistWeather</a>中的<code>WeatherDataRepository</code>类中有同样的实现，文章中为了更完整的将整个实现过程呈现出来，对代码做了部分改动。</p>
+<p>如果你喜欢我的文章，就关注下我的公众号 <strong>BaronTalk</strong> 、 <a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener"><strong>知乎专栏</strong></a> 或者在 <a href="https://github.com/BaronZ88" target="_blank" rel="noopener"><strong>GitHub</strong></a> 上添个 Star 吧！</p>
+<ul>
+<li>微信公众号：<strong>BaronTalk</strong></li>
+<li>知乎专栏：<a href="https://zhuanlan.zhihu.com/baron" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/baron</a>  </li>
+<li>GitHub：<a href="https://github.com/BaronZ88" target="_blank" rel="noopener">https://github.com/BaronZ88</a></li>
+<li>个人博客：<a href="http://baronzhang.com">http://baronzhang.com</a></li>
+</ul>
+</blockquote>
+<div align="center"><img src="https://resources.baronzhang.com/blog/common/gzh3.png" width="85%"></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://baronzhang.com/blog/RxJava/RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例/" data-id="ck2n5a27f000d2e31mc2n80w7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJava/">RxJava</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/OpenSource/Java/神兵利器Dagger2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          神兵利器Dagger2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/RxJava/RxJava系列7-最佳实践/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">RxJava系列7(最佳实践)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/APM/">APM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPatterns/">DesignPatterns</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Framework/">Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OpenSource/">OpenSource</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OpenSource/Java/">Java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJava/">RxJava</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APM/">APM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binder/">Binder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPC/">IPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebView/">WebView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/依赖注入/">依赖注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源框架/">开源框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APM/" style="font-size: 10px;">APM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Binder/" style="font-size: 10px;">Binder</a> <a href="/tags/Design-Pattern/" style="font-size: 10px;">Design Pattern</a> <a href="/tags/Framework/" style="font-size: 12.5px;">Framework</a> <a href="/tags/IPC/" style="font-size: 10px;">IPC</a> <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/RxJava/" style="font-size: 17.5px;">RxJava</a> <a href="/tags/WebView/" style="font-size: 10px;">WebView</a> <a href="/tags/依赖注入/" style="font-size: 10px;">依赖注入</a> <a href="/tags/开源框架/" style="font-size: 10px;">开源框架</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/uncategorized/邮件这样写，PK-掉-99-的同事/">邮件这样写，PK 掉 99% 的同事</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机六（高效并发）/">系列 | 深入理解Java虚拟机六（高效并发）</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机五（程序编译与代码优化）/">系列 | 深入理解Java虚拟机五（程序编译与代码优化）</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机四（字节码执行引擎）/">系列 | 深入理解Java虚拟机四（字节码执行引擎）</a>
+          </li>
+        
+          <li>
+            <a href="/blog/JVM/系列-深入理解Java虚拟机三（类加载机制）/">系列 | 深入理解Java虚拟机三（类加载机制）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 张磊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
